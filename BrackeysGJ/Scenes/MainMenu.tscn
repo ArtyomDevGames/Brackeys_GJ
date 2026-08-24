@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://l5572152vbj5" path="res://Scripts/Play.gd" id="1_tt5f1"]
 [ext_resource type="PackedScene" uid="uid://b567a1adpq05o" path="res://Scenes/LevelSelection.tscn" id="2_853f1"]
+[ext_resource type="Script" uid="uid://bgiyog4flos6j" path="res://Scripts/SceneChangeButton.gd" id="3_ghw46"]
+[ext_resource type="PackedScene" uid="uid://d17wmoswm3nn" path="res://Scenes/settings.tscn" id="4_df05h"]
+[ext_resource type="PackedScene" uid="uid://dychoup62b7yq" path="res://Scenes/credits.tscn" id="5_df05h"]
 
 [node name="Node2D" type="Node2D" unique_id=1190387963]
 
@@ -22,13 +25,16 @@ text = "Register"
 script = ExtResource("1_tt5f1")
 GameScene = ExtResource("2_853f1")
 
-[node name="Button2" type="Button" parent="." unique_id=445206842]
+[node name="Button2" type="Button" parent="." unique_id=1609758781]
 offset_left = 500.0
 offset_top = 325.0
 offset_right = 750.0
 offset_bottom = 415.0
 text = "Settings
 "
+script = ExtResource("3_ghw46")
+SceneToChange = ExtResource("4_df05h")
+metadata/_custom_type_script = "uid://bgiyog4flos6j"
 
 [node name="Button3" type="Button" parent="." unique_id=769113412]
 offset_left = 500.0
@@ -36,6 +42,8 @@ offset_top = 450.0
 offset_right = 750.0
 offset_bottom = 540.0
 text = "Credit"
+script = ExtResource("3_ghw46")
+SceneToChange = ExtResource("5_df05h")
 
 [node name="Button4" type="Button" parent="." unique_id=1560493346]
 offset_left = 500.0

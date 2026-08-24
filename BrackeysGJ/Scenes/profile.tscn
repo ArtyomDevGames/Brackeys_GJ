@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0ub0vleo0dok"]
 
 [ext_resource type="Texture2D" uid="uid://cja0l5qtbb413" path="res://Assets/Sprites/RedGuy.png" id="1_ge2pj"]
-[ext_resource type="Script" uid="uid://creufwa7kwovd" path="res://Scripts/ChatButton.gd" id="2_b77ww"]
+[ext_resource type="Script" uid="uid://bgiyog4flos6j" path="res://Scripts/SceneChangeButton.gd" id="2_yml3r"]
 [ext_resource type="PackedScene" uid="uid://1ohtjn64opgi" path="res://Scenes/Chat.tscn" id="3_12suc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1wn0w"]
@@ -45,14 +45,13 @@ position = Vector2(153.99998, 106)
 scale = Vector2(5, 5)
 texture = ExtResource("1_ge2pj")
 
-[node name="Button" type="Button" parent="." unique_id=1445686213]
+[node name="Button" type="Button" parent="." unique_id=569769604]
 offset_left = 453.0
 offset_top = 556.0
 offset_right = 953.0
 offset_bottom = 606.0
 text = "Chat
 "
-script = ExtResource("2_b77ww")
-ChatScene = ExtResource("3_12suc")
-
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+script = ExtResource("2_yml3r")
+SceneToChange = ExtResource("3_12suc")
+metadata/_custom_type_script = "uid://bgiyog4flos6j"

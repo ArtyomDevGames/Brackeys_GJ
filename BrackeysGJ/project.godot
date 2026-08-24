@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="SceneController"
+config/name="BrackeysGJ"
 run/main_scene="uid://esmidxb01j0"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
 

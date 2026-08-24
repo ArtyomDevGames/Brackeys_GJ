@@ -1,14 +1,13 @@
 class_name GameControllerNode extends Node
 
 @export var Game2D: Node
-@export var MainScene2D: Node2D
+@export var MainScene2D: Node
 @export var Audio:Node
 
 func _ready() -> void:
 	Global.SceneController = self
 
-func ChangeScene2D(ScenePath:PackedScene, Delete: bool = true, Hide:bool = true) -> Node2D:
-	print_tree_pretty()
+func ChangeScene2D(ScenePath:PackedScene, Delete: bool = true, Hide:bool = true) -> Node:
 	if MainScene2D:
 		if Delete:
 			MainScene2D.queue_free()
