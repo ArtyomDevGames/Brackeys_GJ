@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bip1tl5rmkerv"]
+
+[ext_resource type="Script" uid="uid://l5572152vbj5" path="res://Scripts/Play.gd" id="1_tt5f1"]
+[ext_resource type="PackedScene" uid="uid://b567a1adpq05o" path="res://Scenes/LevelSelection.tscn" id="2_853f1"]
+
+[node name="Node2D" type="Node2D" unique_id=1190387963]
+
+[node name="Label" type="Label" parent="." unique_id=487832478]
+offset_left = 600.0
+offset_top = 47.0
+offset_right = 634.0
+offset_bottom = 96.0
+text = "Title
+"
+
+[node name="Button" type="Button" parent="." unique_id=1772477215]
+offset_left = 500.0
+offset_top = 200.0
+offset_right = 750.0
+offset_bottom = 290.0
+text = "Register"
+script = ExtResource("1_tt5f1")
+GameScene = ExtResource("2_853f1")
+
+[node name="Button2" type="Button" parent="." unique_id=445206842]
+offset_left = 500.0
+offset_top = 325.0
+offset_right = 750.0
+offset_bottom = 415.0
+text = "Settings
+"
+
+[node name="Button3" type="Button" parent="." unique_id=769113412]
+offset_left = 500.0
+offset_top = 450.0
+offset_right = 750.0
+offset_bottom = 540.0
+text = "Credit"
+
+[node name="Button4" type="Button" parent="." unique_id=1560493346]
+offset_left = 500.0
+offset_top = 575.0
+offset_right = 750.0
+offset_bottom = 665.0
+text = "Exit
+"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

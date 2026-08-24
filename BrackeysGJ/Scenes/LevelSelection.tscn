@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b567a1adpq05o"]
+
+[ext_resource type="Texture2D" uid="uid://cja0l5qtbb413" path="res://Assets/Sprites/RedGuy.png" id="1_uu1jp"]
+[ext_resource type="Script" uid="uid://e8pmxd0aisxf" path="res://Scripts/Level.gd" id="2_68pxg"]
+[ext_resource type="PackedScene" uid="uid://0ub0vleo0dok" path="res://Scenes/profile.tscn" id="3_4sppe"]
+[ext_resource type="PackedScene" uid="uid://1ohtjn64opgi" path="res://Scenes/Chat.tscn" id="4_o87qn"]
+
+[sub_resource type="Theme" id="Theme_uu1jp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sppe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68pxg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="LevelSelection" type="Node2D" unique_id=1304296820]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=9540845]
+position = Vector2(80, 80)
+scale = Vector2(80, 80)
+texture = ExtResource("1_uu1jp")
+region_enabled = true
+region_rect = Rect2(16, 16, 1, 1)
+
+[node name="Button2" type="Button" parent="Sprite2D" unique_id=84922333]
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+theme = SubResource("Theme_uu1jp")
+theme_override_icons/icon = SubResource("AtlasTexture_4sppe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_68pxg")
+script = ExtResource("2_68pxg")
+Level = ExtResource("3_4sppe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1087472021]
+position = Vector2(240, 80)
+scale = Vector2(80, 80)
+texture = ExtResource("1_uu1jp")
+region_enabled = true
+region_rect = Rect2(16, 16, 1, 1)
+
+[node name="Button" type="Button" parent="Sprite2D2" unique_id=1202584044]
+offset_left = -0.5
+offset_top = -0.49999997
+offset_right = 0.5
+offset_bottom = 0.5
+theme = SubResource("Theme_uu1jp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_68pxg")
+script = ExtResource("2_68pxg")
+Level = ExtResource("4_o87qn")
+
+[node name="Label" type="Label" parent="." unique_id=1990588103]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "(Level Selection)"
+
+[connection signal="pressed" from="Sprite2D/Button2" to="Sprite2D/Button2" method="_on_pressed"]
