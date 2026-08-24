@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d17wmoswm3nn"]
+
+[ext_resource type="Script" uid="uid://bgiyog4flos6j" path="res://Scripts/SceneChangeButton.gd" id="1_4geyq"]
+
+[node name="Node2D" type="Node2D" unique_id=2033058158]
+
+[node name="SceneChangeButton" type="Button" parent="." unique_id=1490206189]
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_4geyq")
+metadata/_custom_type_script = "uid://bgiyog4flos6j"
