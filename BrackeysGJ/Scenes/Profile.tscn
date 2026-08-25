@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctiap24hhwwpq"]
+
+[ext_resource type="Script" uid="uid://c3h7plgpmhd1i" path="res://Scenes/ProfileCard.gd" id="1_prwbm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_in5c8"]
+
+[node name="Profile" type="Control" unique_id=984727410]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Button" type="Button" parent="." unique_id=2114708375]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 300.0
+script = ExtResource("1_prwbm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button" unique_id=109679297]
+sprite_frames = SubResource("SpriteFrames_in5c8")
