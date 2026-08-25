@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://2c032g0mg02o"]
+
+[ext_resource type="Script" uid="uid://creufwa7kwovd" path="res://Scripts/ChatButton.gd" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://du6j35y2g6f7" path="res://Assets/Sprites/TV.png" id="1_iukft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1wol"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gl6un"]
+font_size = 20
+font_color = Color(0, 0, 0.33333334, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5uwv"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=511173139]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=498387866]
+z_index = 1
+custom_minimum_size = Vector2(100, 325)
+offset_left = -424.0
+offset_top = -220.0
+offset_right = -219.0
+offset_bottom = 105.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1913525676]
+layout_mode = 2
+
+[node name="ChatButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=74183547]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Me"
+script = ExtResource("1_gl6un")
+metadata/_custom_type_script = "uid://creufwa7kwovd"
+
+[node name="ChatButton2" type="Button" parent="ScrollContainer/GridContainer" unique_id=1432967431]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ArtytomDev"
+script = ExtResource("1_gl6un")
+metadata/_custom_type_script = "uid://creufwa7kwovd"
+
+[node name="ChatButton3" type="Button" parent="ScrollContainer/GridContainer" unique_id=1418051438]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "RussianDevName1"
+script = ExtResource("1_gl6un")
+metadata/_custom_type_script = "uid://creufwa7kwovd"
+
+[node name="ChatButton4" type="Button" parent="ScrollContainer/GridContainer" unique_id=2110943503]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "RussianDevName2"
+script = ExtResource("1_gl6un")
+metadata/_custom_type_script = "uid://creufwa7kwovd"
+
+[node name="ChatButton5" type="Button" parent="ScrollContainer/GridContainer" unique_id=1798381135]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MyLittleBrother"
+script = ExtResource("1_gl6un")
+metadata/_custom_type_script = "uid://creufwa7kwovd"
+
+[node name="Tv" type="Sprite2D" parent="." unique_id=2006911593]
+texture = ExtResource("1_iukft")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tv" unique_id=1442165323]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=150576633]
+offset_left = -255.0
+offset_top = -220.0
+offset_right = 406.0
+offset_bottom = 99.0
+
+[node name="Control" type="Control" parent="." unique_id=964725336]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Response2" type="Label" parent="Control" unique_id=1073725296]
+custom_maximum_size = Vector2(606, 93)
+layout_mode = 0
+offset_left = -186.0
+offset_top = 30.0
+offset_right = 420.0
+offset_bottom = 123.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1wol")
+text = "Because it holds a special place in my heart "
+label_settings = SubResource("LabelSettings_gl6un")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Question" type="Label" parent="Control" unique_id=1708546756]
+custom_maximum_size = Vector2(634, 634)
+layout_mode = 0
+offset_left = -216.0
+offset_top = -60.0
+offset_right = 418.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1wol")
+text = "Why do you wanr this item you silly billy goof"
+label_settings = SubResource("LabelSettings_a5uwv")
+autowrap_mode = 2
+
+[node name="Response" type="Label" parent="Control" unique_id=2031616031]
+custom_maximum_size = Vector2(606, 93)
+layout_mode = 0
+offset_left = -169.0
+offset_top = -118.0
+offset_right = 437.0
+offset_bottom = -25.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1wol")
+text = "Because it holds a special place in my heart "
+label_settings = SubResource("LabelSettings_gl6un")
+horizontal_alignment = 2
+autowrap_mode = 2

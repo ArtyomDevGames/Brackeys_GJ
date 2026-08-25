@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bf1ctijb4hbxa"]
+
+[ext_resource type="Script" uid="uid://bgiyog4flos6j" path="res://Scripts/SceneChangeButton.gd" id="1_eiy7p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8h6y"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liseb"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=237303508]
+
+[node name="Label" type="Label" parent="." unique_id=1442811919]
+z_index = 1
+offset_left = -422.0
+offset_top = -210.0
+offset_right = -317.0
+offset_bottom = -141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Title"
+label_settings = SubResource("LabelSettings_i8h6y")
+
+[node name="SceneChangeButton" type="Button" parent="." unique_id=180379087]
+z_index = 1
+offset_left = -365.0
+offset_top = -121.0
+offset_right = -165.0
+offset_bottom = -81.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_liseb")
+text = "Register"
+script = ExtResource("1_eiy7p")
+SceneToChange = "uid://2c032g0mg02o"
+metadata/_custom_type_script = "uid://bgiyog4flos6j"
+
+[node name="SceneChangeButton2" type="Button" parent="." unique_id=639879136]
+z_index = 1
+offset_left = -364.0
+offset_top = -58.0
+offset_right = -164.0
+offset_bottom = -18.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_liseb")
+text = "Settings"
+script = ExtResource("1_eiy7p")
+metadata/_custom_type_script = "uid://bgiyog4flos6j"
+
+[node name="SceneChangeButton3" type="Button" parent="." unique_id=545392890]
+z_index = 1
+offset_left = -364.0
+offset_top = 4.0
+offset_right = -164.0
+offset_bottom = 44.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_liseb")
+text = "Credits"
+script = ExtResource("1_eiy7p")
+SceneToChange = "uid://cnd52rw2iq230"
+metadata/_custom_type_script = "uid://bgiyog4flos6j"
