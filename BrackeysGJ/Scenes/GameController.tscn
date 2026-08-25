@@ -12,9 +12,12 @@ Audio = NodePath("Audio")
 metadata/_custom_type_script = "uid://c7sylbw24vlyb"
 
 [node name="Tv" type="Sprite2D" parent="." unique_id=2087161727]
+position = Vector2(631.00006, 390)
+scale = Vector2(1.261111, 1.2611111)
 texture = ExtResource("2_liseb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630387930]
+enabled = false
 zoom = Vector2(1.2, 1.2)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1718516590]
