@@ -1,9 +1,10 @@
 class_name ChatButton extends Button
 
 @export var ProfileName: String
+var ChatManagerNode:ChatManager
 
 func _ready() -> void:
-	pass # Replace with function body.
+	ChatManagerNode = get_tree().get_first_node_in_group("ChatManager")
 
-func _process(delta: float) -> void:
-	pass
+func _pressed() -> void:
+	ChatManagerNode.ChatName = ProfileName

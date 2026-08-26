@@ -4,5 +4,4 @@ var Parent:Node
 
 # Called when the node enters the scene tree for the first time.
 func _pressed() -> void:
-	Parent.NewProfile = null
-	queue_free()
+	hide()
