@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b1hsf0u1vwvqb"]
+
+[node name="Registration" type="CanvasLayer" unique_id=1944704444]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1303768010]
+anchors_preset = -1
+anchor_left = 0.228125
+anchor_right = 0.76875
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
