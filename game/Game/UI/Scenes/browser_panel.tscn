@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bjks2axknljtx"]
+
+[node name="BrowserPanel" type="CanvasLayer" unique_id=1156215172]
+layer = 36
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1038133545]
+offset_right = 1280.0
+offset_bottom = 93.0
+color = Color(0.6431373, 0.7137255, 0.75686276, 1)

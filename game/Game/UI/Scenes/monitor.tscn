@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bv6amqqijov61"]
+
+[ext_resource type="Script" uid="uid://d272tsl161knu" path="res://Game/UI/Scripts/monitor.gd" id="1_110af"]
+[ext_resource type="Texture2D" uid="uid://dvo3uj3pphw7" path="res://Assets/Art/UI/Monitor.png" id="2_ve7nu"]
+[ext_resource type="Texture2D" uid="uid://b2yv5fuuh5gjt" path="res://Assets/Art/UI/MonitorButton.png" id="3_ve7nu"]
+
+[sub_resource type="Animation" id="Animation_ve7nu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bol4p"]
+resource_name = "TurnOn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_shgky"]
+_data = {
+&"RESET": SubResource("Animation_ve7nu"),
+&"TurnOn": SubResource("Animation_bol4p")
+}
+
+[sub_resource type="Animation" id="Animation_xvetb"]
+resource_name = "ExpandIcon"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button/MonitorButton:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.047558572, 0.047558572), Vector2(0.055, 0.055)]
+}
+
+[sub_resource type="Animation" id="Animation_6kq2i"]
+resource_name = "GameStart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monitor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3935978, 0.39359787), Vector2(0.44, 0.44)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(618, 590), Vector2(618, 620)]
+}
+
+[sub_resource type="Animation" id="Animation_dxfqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monitor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3935978, 0.39359787)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button/MonitorButton:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.047558572, 0.047558572)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(618, 590)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uobrj"]
+_data = {
+&"ExpandIcon": SubResource("Animation_xvetb"),
+&"GameStart": SubResource("Animation_6kq2i"),
+&"RESET": SubResource("Animation_dxfqe")
+}
+
+[node name="Monitor" type="CanvasLayer" unique_id=891887086]
+layer = 40
+script = ExtResource("1_110af")
+
+[node name="Screen" type="ColorRect" parent="." unique_id=5044036]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="ScreenAnimation" type="AnimationPlayer" parent="." unique_id=1018651806]
+root_node = NodePath("../Screen")
+libraries/ = SubResource("AnimationLibrary_shgky")
+
+[node name="Monitor" type="Sprite2D" parent="." unique_id=576165628]
+position = Vector2(631, 404)
+scale = Vector2(0.3935978, 0.39359787)
+texture = ExtResource("2_ve7nu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1382700388]
+libraries/ = SubResource("AnimationLibrary_uobrj")
+
+[node name="Button" type="Button" parent="." unique_id=676245316]
+offset_left = 618.0
+offset_top = 590.0
+offset_right = 671.0
+offset_bottom = 643.0
+flat = true
+metadata/_edit_group_ = true
+
+[node name="MonitorButton" type="Sprite2D" parent="Button" unique_id=2095514879]
+position = Vector2(26, 27)
+scale = Vector2(0.047558572, 0.047558572)
+texture = ExtResource("3_ve7nu")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

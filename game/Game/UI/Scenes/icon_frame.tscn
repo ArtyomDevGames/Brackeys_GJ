@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ceqpcqdialil7"]
+
+[ext_resource type="Texture2D" uid="uid://b2k3o8yn1urtn" path="res://Assets/Art/Icons/Cat.png" id="1_jxs24"]
+[ext_resource type="Texture2D" uid="uid://ctycf2blmvmk7" path="res://Assets/Art/Icons/Anonymous.png" id="2_nrgk6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jxs24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nrgk6")
+}],
+"loop": 1,
+"name": &"Icons",
+"speed": 5.0
+}]
+
+[node name="IconFrame" type="AnimatedSprite2D" unique_id=727484853]
+position = Vector2(-2.7105054e-20, 5.9604645e-08)
+scale = Vector2(0.09648437, 0.09648437)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Icons"

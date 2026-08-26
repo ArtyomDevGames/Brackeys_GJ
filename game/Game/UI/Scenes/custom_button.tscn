@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8rndrao5eeai"]
+
+[ext_resource type="Script" uid="uid://dxovq8yet47yu" path="res://Game/UI/Scripts/custom_button.gd" id="1_tnfv0"]
+
+[node name="CustomButton" type="Button" unique_id=1194507549]
+offset_right = 115.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "TEXT"
+script = ExtResource("1_tnfv0")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1006707378]
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="." unique_id=659764151]

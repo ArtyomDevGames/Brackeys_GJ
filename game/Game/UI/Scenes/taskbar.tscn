@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://17eeeiwdvcn1"]
+
+[sub_resource type="GDScript" id="GDScript_yg766"]
+script/source = "extends CanvasLayer
+
+func _ready() -> void:
+	pass # Replace with function body.
+"
+
+[node name="Taskbar" type="CanvasLayer" unique_id=1766470054]
+layer = 38
+script = SubResource("GDScript_yg766")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1370428735]
+anchors_preset = -1
+anchor_top = 0.75555557
+anchor_right = 1.0
+anchor_bottom = 1.0000001
+color = Color(0.6431373, 0.7137255, 0.75686276, 1)
+metadata/_edit_use_anchors_ = true
