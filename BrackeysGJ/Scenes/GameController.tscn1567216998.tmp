@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://esmidxb01j0"]
+
+[ext_resource type="Script" uid="uid://c7sylbw24vlyb" path="res://Scripts/GameControllerScript.gd" id="1_fyej0"]
+[ext_resource type="Texture2D" uid="uid://du6j35y2g6f7" path="res://Assets/Sprites/TV.png" id="2_liseb"]
+[ext_resource type="PackedScene" uid="uid://bf1ctijb4hbxa" path="res://MainMenu.tscn" id="3_occvc"]
+
+[node name="GameControllerNode" type="Node" unique_id=1933029207 node_paths=PackedStringArray("Game2D", "MainScene2D", "Audio")]
+script = ExtResource("1_fyej0")
+Game2D = NodePath("Node2D")
+MainScene2D = NodePath("Node2D/Node2D2")
+Audio = NodePath("Audio")
+metadata/_custom_type_script = "uid://c7sylbw24vlyb"
+
+[node name="Tv" type="Sprite2D" parent="." unique_id=2087161727]
+texture = ExtResource("2_liseb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1630387930]
+zoom = Vector2(1.2, 1.2)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1718516590]
+
+[node name="Node2D2" parent="Node2D" unique_id=237303508 instance=ExtResource("3_occvc")]
+
+[node name="Audio" type="Node" parent="." unique_id=987219984]

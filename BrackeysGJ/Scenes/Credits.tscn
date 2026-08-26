@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cnd52rw2iq230"]
+
+[ext_resource type="Script" uid="uid://bgiyog4flos6j" path="res://Scripts/SceneChangeButton.gd" id="2_obosj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_11jmy"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xic2l"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1353394265]
+
+[node name="Label" type="Label" parent="." unique_id=1788473682]
+z_index = 1
+offset_left = -400.0
+offset_top = -175.0
+offset_right = -150.0
+offset_bottom = -130.0
+text = "I love Miners <3"
+label_settings = SubResource("LabelSettings_11jmy")
+
+[node name="Label2" type="Label" parent="." unique_id=965912042]
+z_index = 1
+offset_left = -400.0
+offset_top = -100.0
+offset_right = -150.0
+offset_bottom = -55.0
+text = "I love Fortniters <3"
+label_settings = SubResource("LabelSettings_11jmy")
+
+[node name="Label3" type="Label" parent="." unique_id=335892186]
+z_index = 1
+offset_left = -400.0
+offset_top = -25.0
+offset_right = -150.0
+offset_bottom = 20.0
+text = "I love Kim Jong Un <3"
+label_settings = SubResource("LabelSettings_11jmy")
+
+[node name="SceneChangeButton" type="Button" parent="." unique_id=263994597]
+z_index = 1
+offset_left = 225.0
+offset_top = 8.0
+offset_right = 425.0
+offset_bottom = 83.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xic2l")
+text = "Back"
+script = ExtResource("2_obosj")
+SceneToChange = "uid://bf1ctijb4hbxa"
+metadata/_custom_type_script = "uid://bgiyog4flos6j"

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ctiap24hhwwpq"]
+
+[ext_resource type="Script" uid="uid://c3h7plgpmhd1i" path="res://Scripts/ProfileCard.gd" id="1_prwbm"]
+[ext_resource type="Texture2D" uid="uid://c1krn4ejue431" path="res://Assets/Sprites/Profile.png" id="2_irxi3"]
+[ext_resource type="Texture2D" uid="uid://cpu6o8maylqbq" path="res://Assets/Sprites/NullProfile.png" id="3_hjayj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irxi3"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7yon"]
+bg_color = Color(0, 0, 0, 0.5019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjayj"]
+bg_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_11jmy"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_in5c8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_irxi3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Button" type="Button" unique_id=2114708375]
+z_index = 3
+offset_right = 500.0
+offset_bottom = 300.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_irxi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h7yon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjayj")
+script = ExtResource("1_prwbm")
+
+[node name="Name" type="Label" parent="." unique_id=1672130590]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 36.0
+offset_right = 202.0
+offset_bottom = 59.0
+text = "John Doe"
+label_settings = SubResource("LabelSettings_11jmy")
+
+[node name="Registration" type="Label" parent="." unique_id=1894754464]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 135.0
+offset_right = 300.0
+offset_bottom = 158.0
+text = "Registration Date: 20/09/2013"
+label_settings = SubResource("LabelSettings_11jmy")
+
+[node name="Description" type="Label" parent="." unique_id=846620735]
+custom_maximum_size = Vector2(350, 69)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 175.0
+offset_right = 425.0
+offset_bottom = 244.0
+text = "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+label_settings = SubResource("LabelSettings_11jmy")
+autowrap_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=109679297]
+z_index = 2
+z_as_relative = false
+position = Vector2(250, 150)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_in5c8")
+
+[node name="NullProfile" type="Sprite2D" parent="." unique_id=1336570530]
+z_index = 2
+z_as_relative = false
+position = Vector2(93, 48)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_hjayj")
