@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ddybls5jx3blt"]
+
+[ext_resource type="Texture2D" uid="uid://37pt3irr0osr" path="res://Assets/Art/UI/Unavailable.png" id="1_ctuxq"]
+[ext_resource type="Texture2D" uid="uid://rdhidjx5lu62" path="res://Assets/Art/UI/ClearSuccess.png" id="2_5i4tm"]
+[ext_resource type="Texture2D" uid="uid://mq86iwdf5thn" path="res://Assets/Art/UI/ClearFailed.png" id="3_sd57o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 40
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ctuxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5i4tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sd57o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LevelSelectButton" type="Button" unique_id=865650154]
+offset_right = 117.0
+offset_bottom = 143.0
+flat = true
+
+[node name="Panel" type="Panel" parent="." unique_id=421326221]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 143.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="ItemIcon" type="AnimatedSprite2D" parent="." unique_id=1575802936]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+
+[node name="StateIcon" type="AnimatedSprite2D" parent="." unique_id=99723056]
+position = Vector2(59.000004, 53)
+scale = Vector2(0.082421854, 0.082421854)
+sprite_frames = SubResource("SpriteFrames_g4v7s")

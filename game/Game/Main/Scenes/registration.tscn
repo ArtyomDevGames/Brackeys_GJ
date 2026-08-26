@@ -113,6 +113,7 @@ theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/NameContainer" unique_id=1776320015]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 theme_override_font_sizes/font_size = 24
 text = "Name: "
 
@@ -127,6 +128,7 @@ theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/UsernameContainer" unique_id=1432483072]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 theme_override_font_sizes/font_size = 24
 text = "Username: "
 
@@ -141,6 +143,7 @@ theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/PasswordContainer" unique_id=879656977]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 theme_override_font_sizes/font_size = 24
 text = "Password: "
 
