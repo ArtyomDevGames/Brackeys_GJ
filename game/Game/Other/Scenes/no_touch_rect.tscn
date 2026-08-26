@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6kxicmdd5o16"]
+
+[node name="NoTouchRect" type="CanvasLayer" unique_id=1607159545]
+layer = 40
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1618507212]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)

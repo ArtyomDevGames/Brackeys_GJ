@@ -20,10 +20,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Monitor="*uid://bv6amqqijov61"
+NoTouchRect="*uid://c6kxicmdd5o16"
 Background="*uid://lwvd7oohf25"
 Taskbar="*uid://17eeeiwdvcn1"
 BrowserPanel="*uid://bjks2axknljtx"
-Settings="*uid://dgw887wwr4v7c"
+Pause="*uid://dgw887wwr4v7c"
 
 [display]
 

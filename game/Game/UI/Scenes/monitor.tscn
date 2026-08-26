@@ -130,7 +130,7 @@ _data = {
 }
 
 [node name="Monitor" type="CanvasLayer" unique_id=891887086]
-layer = 40
+layer = 47
 script = ExtResource("1_110af")
 
 [node name="Screen" type="ColorRect" parent="." unique_id=5044036]
