@@ -10,7 +10,12 @@ func _ready() -> void:
 
 
 func _on_custom_button_pressed() -> void:
-	Pause.show_pause()
+	if Global.is_paused == false:
+		Pause.show_pause()
+		Global.is_paused = true
+	else:
+		Pause.hide_pause()
+		Global.is_paused = false
 "
 
 [node name="Taskbar" type="CanvasLayer" unique_id=1766470054]

@@ -3,7 +3,12 @@
 [ext_resource type="Script" uid="uid://b1rnv5gksrt5a" path="res://Game/Main/Scripts/pause.gd" id="1_kwhm3"]
 [ext_resource type="ButtonGroup" uid="uid://dqbhqqvaqkyjs" path="res://Resources/Groups/PauseGroup.tres" id="2_o4apy"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_udjpa"]
+[ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="3_pl3rp"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="4_o4apy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("3_pl3rp")
+shader_parameter/blur = 0.0
 
 [sub_resource type="Animation" id="Animation_jbgb7"]
 length = 0.001
@@ -126,6 +131,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColorRect:material:shader_parameter/blur")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_bo4m1"]
@@ -251,6 +268,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColorRect:material:shader_parameter/blur")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.000000095]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_grgsf"]
 _data = {
@@ -262,6 +291,14 @@ _data = {
 layer = 37
 script = ExtResource("1_kwhm3")
 group = ExtResource("2_o4apy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=316679465]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Control" parent="." unique_id=2624837]
 modulate = Color(1, 1, 1, 0)
