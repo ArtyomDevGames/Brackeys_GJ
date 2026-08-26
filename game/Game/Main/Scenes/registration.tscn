@@ -1,10 +1,175 @@
 [gd_scene format=3 uid="uid://b1hsf0u1vwvqb"]
 
-[node name="Registration" type="CanvasLayer" unique_id=1944704444]
+[ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_1yo7q"]
+[ext_resource type="Script" uid="uid://bloywjulrcxrl" path="res://Game/Main/Scripts/registration.gd" id="1_brqll"]
+[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="1_jk18y"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1303768010]
-anchors_preset = -1
-anchor_left = 0.228125
-anchor_right = 0.76875
-anchor_bottom = 1.0
-metadata/_edit_use_anchors_ = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.6509804, 0.7411765, 0.8, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk18y"]
+bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
+
+[sub_resource type="Animation" id="Animation_jk18y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_brqll"]
+resource_name = "ShowRegistration"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.4000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05804"]
+_data = {
+&"RESET": SubResource("Animation_jk18y"),
+&"ShowRegistration": SubResource("Animation_brqll")
+}
+
+[node name="Registration" type="CanvasLayer" unique_id=1944704444]
+layer = 35
+script = ExtResource("1_brqll")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1087151481]
+modulate = Color(1, 1, 1, 0)
+offset_left = 292.0
+offset_right = 1006.0
+offset_bottom = 554.0
+follow_focus = true
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="ScrollContainer" unique_id=2102286434]
+custom_minimum_size = Vector2(692, 900)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=630184495]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 706.0
+offset_bottom = 916.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="ColorRect" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=398110902]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 254.0
+offset_right = 676.0
+offset_bottom = 900.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect" unique_id=1143509898]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 90.0
+offset_right = 498.0
+offset_bottom = 475.0
+theme_override_constants/separation = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer" unique_id=1634041627]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="NameContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer" unique_id=93114081]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/NameContainer" unique_id=1776320015]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Name: "
+
+[node name="NameLine" type="LineEdit" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/NameContainer" unique_id=1444954017]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="UsernameContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer" unique_id=1325621820]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/UsernameContainer" unique_id=1432483072]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Username: "
+
+[node name="UsernameLine" type="LineEdit" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/UsernameContainer" unique_id=778117991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="PasswordContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer" unique_id=519887838]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/PasswordContainer" unique_id=879656977]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Password: "
+
+[node name="PasswordLine" type="LineEdit" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/VBoxContainer/PasswordContainer" unique_id=1557999562]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+secret = true
+
+[node name="CustomButton" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer" unique_id=1194507549 instance=ExtResource("1_jk18y")]
+layout_mode = 2
+size_flags_vertical = 3
+button_name = "ContinueButton"
+button_text = "Continue"
+
+[node name="ColorRect2" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=109517695]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 676.0
+offset_bottom = 261.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk18y")
+
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/ColorRect2" unique_id=727484853 instance=ExtResource("1_1yo7q")]
+texture_filter = 2
+position = Vector2(332, 169.00002)
+scale = Vector2(0.11117553, 0.11117553)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=950181109]
+libraries/ = SubResource("AnimationLibrary_05804")
+
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer/CustomButton" to="." method="_on_custom_button_pressed"]

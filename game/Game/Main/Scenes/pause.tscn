@@ -135,7 +135,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("ColorRect:material:shader_parameter/blur")
+tracks/10/path = NodePath("Blur:material:shader_parameter/blur")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -343,7 +343,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("ColorRect:material:shader_parameter/blur")
+tracks/10/path = NodePath("Blur:material:shader_parameter/blur")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -537,7 +537,8 @@ layer = 37
 script = ExtResource("1_kwhm3")
 group = ExtResource("2_o4apy")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=316679465]
+[node name="Blur" type="ColorRect" parent="." unique_id=316679465]
+visible = false
 material = SubResource("ShaderMaterial_g4v7s")
 anchors_preset = 15
 anchor_right = 1.0

@@ -22,16 +22,13 @@ func _on_button_mouse_exited() -> void:
 
 
 func _on_button_pressed() -> void:
-	print("Жмак")
 	if is_screen_on == false:
 		screen_animation.play("TurnOn")
 		await screen_animation.animation_finished
-		print("Включили")
 		screen.visible = false
 		is_screen_on = true
 	else:
 		screen.visible = true
 		screen_animation.play_backwards("TurnOn")
 		await screen_animation.animation_finished
-		print("Выключили")
 		is_screen_on = false
