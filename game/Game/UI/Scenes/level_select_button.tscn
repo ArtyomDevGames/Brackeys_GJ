@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://ddybls5jx3blt"]
 
+[ext_resource type="Script" uid="uid://la2kir4tsjhe" path="res://Game/UI/Scripts/level_select_button.gd" id="1_5i4tm"]
 [ext_resource type="Texture2D" uid="uid://37pt3irr0osr" path="res://Assets/Art/UI/Unavailable.png" id="1_ctuxq"]
 [ext_resource type="Texture2D" uid="uid://rdhidjx5lu62" path="res://Assets/Art/UI/ClearSuccess.png" id="2_5i4tm"]
 [ext_resource type="Texture2D" uid="uid://mq86iwdf5thn" path="res://Assets/Art/UI/ClearFailed.png" id="3_sd57o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 40
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 80
 border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
 
@@ -35,21 +36,88 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i4tm"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_5i4tm"]
+resource_name = "Hover"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoverPanel:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.09803922)]
+}
+
+[sub_resource type="Animation" id="Animation_sd57o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoverPanel:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_woj1u"]
+_data = {
+&"Hover": SubResource("Animation_5i4tm"),
+&"RESET": SubResource("Animation_sd57o")
+}
+
 [node name="LevelSelectButton" type="Button" unique_id=865650154]
-offset_right = 117.0
-offset_bottom = 143.0
+offset_right = 223.0
+offset_bottom = 276.0
 flat = true
+script = ExtResource("1_5i4tm")
 
 [node name="Panel" type="Panel" parent="." unique_id=421326221]
 layout_mode = 0
-offset_right = 117.0
-offset_bottom = 143.0
+offset_right = 226.0
+offset_bottom = 276.22223
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
-[node name="ItemIcon" type="AnimatedSprite2D" parent="." unique_id=1575802936]
+[node name="ItemIcon" type="AnimatedSprite2D" parent="Panel" unique_id=1575802936]
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 
-[node name="StateIcon" type="AnimatedSprite2D" parent="." unique_id=99723056]
-position = Vector2(59.000004, 53)
-scale = Vector2(0.082421854, 0.082421854)
+[node name="StateIcon" type="AnimatedSprite2D" parent="Panel" unique_id=99723056]
+position = Vector2(116, 102.00001)
+scale = Vector2(0.16748047, 0.16748047)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="ItemNameLabel" type="Label" parent="Panel" unique_id=1647892740]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 217.0
+offset_right = 165.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 24
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverPanel" type="Panel" parent="." unique_id=1985106921]
+layout_mode = 0
+offset_right = 226.0
+offset_bottom = 276.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5i4tm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=570764805]
+libraries/ = SubResource("AnimationLibrary_woj1u")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

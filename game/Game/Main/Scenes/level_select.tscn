@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvdgm3ioewtcg"]
 
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_542fk"]
+[ext_resource type="PackedScene" uid="uid://ddybls5jx3blt" path="res://Game/UI/Scenes/level_select_button.tscn" id="2_l13d0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l13d0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -59,6 +60,30 @@ offset_top = 222.0
 offset_right = 965.0
 offset_bottom = 901.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_drr54")
+
+[node name="LevelSelectButton2" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=865650154 instance=ExtResource("2_l13d0")]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 157.0
+offset_right = 583.0
+offset_bottom = 433.0
+item_name = "Item2"
+
+[node name="LevelSelectButton" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=754221516 instance=ExtResource("2_l13d0")]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 157.0
+offset_right = 301.0
+offset_bottom = 433.0
+item_name = "Item1"
+
+[node name="LevelSelectButton3" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=881846728 instance=ExtResource("2_l13d0")]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 157.0
+offset_right = 859.0
+offset_bottom = 433.0
+item_name = "Item3"
 
 [node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=674656292]
 layout_mode = 0
