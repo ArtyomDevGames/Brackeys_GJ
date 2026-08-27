@@ -17,15 +17,15 @@ func _ready() -> void:
 
 func _on_custom_button_pressed() -> void:
 	if Global.is_paused == false:
-		Pause.show_pause()
+		await Pause.show_pause()
 		Global.is_paused = true
 	else:
-		Pause.hide_pause()
+		await Pause.hide_pause()
 		Global.is_paused = false
 
 
 func _on_custom_button_mouse_entered() -> void:
-	start_button_icon.material.set_shader_parameter(\"brightness\", 1.2)
+	start_button_icon.material.set_shader_parameter(\"brightness\", 1.5)
 
 
 func _on_custom_button_mouse_exited() -> void:
@@ -76,14 +76,14 @@ color = Color(0.6225, 0.70112497, 0.75, 1)
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("1_yg766")]
 offset_left = 43.0
-offset_top = 569.0
+offset_top = 561.0
 offset_bottom = 640.0
 flat = true
 button_name = "PauseButton"
 
 [node name="StartButtonIcon" type="Sprite2D" parent="CustomButton" unique_id=528157131]
 material = SubResource("ShaderMaterial_mhbco")
-position = Vector2(40.999996, 18.000002)
+position = Vector2(41.999996, 24.000004)
 scale = Vector2(0.020764165, 0.020764165)
 texture = ExtResource("2_mhbco")
 
@@ -95,7 +95,7 @@ offset_bottom = 640.0
 color = Color(0.62352943, 0.7019608, 0.7490196, 1)
 
 [node name="BrowserIcon" type="Sprite2D" parent="." unique_id=463573532]
-position = Vector2(161, 588)
+position = Vector2(161, 586)
 scale = Vector2(0.020039054, 0.020039054)
 texture = ExtResource("3_inbqr")
 

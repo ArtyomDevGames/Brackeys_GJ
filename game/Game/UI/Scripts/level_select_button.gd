@@ -30,10 +30,10 @@ func set_item_state_icon() -> void:
 func _on_pressed() -> void:
 	Global.current_level_name = item_name
 	get_tree().change_scene_to_file("res://Game/Main/Scenes/game.tscn")
+	Global.current_scene = "res://Game/Main/Scenes/game.tscn"
 
 
 func _on_mouse_entered() -> void:
-	print("Кнопка: ", item_name, "\nПоказываем")
 	animation_player.play("Hover")
 
 func _on_mouse_exited() -> void:

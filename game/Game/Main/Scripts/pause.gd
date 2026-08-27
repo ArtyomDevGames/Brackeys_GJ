@@ -4,49 +4,54 @@ extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var blur: ColorRect = $Blur
 
+@onready var custom_button_3: Button = $CustomButton3
+
 
 func _ready() -> void:
-	pass 
+	pass
 
 func button_pressed() -> void:
 	var button = group.get_pressed_button()
 	
-	if button.button_name == "ContinueButton": hide_pause()
-	elif button.button_name == "SettingsButton": show_settings()
-	elif button.button_name == "BackButton": hide_settings()
+	if button.button_name == "ContinueButton": await hide_pause()
+	elif button.button_name == "SettingsButton": await show_settings()
+	elif button.button_name == "BackButton": await hide_settings()
+	elif button.button_name == "CreditsButton":
+		await hide_pause()
+		get_tree().change_scene_to_file("res://Game/Main/Scenes/credits.tscn")
+		Global.is_scene_credits = true
 	elif button.button_name == "ExitButton": get_tree().quit()
 
 # Анимации появления / скрытия меню
 # Пауза
-func show_pause() -> bool:
+func show_pause():
+	if Global.is_scene_credits == true: custom_button_3.disabled = true
+	else: custom_button_3.disabled = false
+	
 	blur.visible = true
 	visible = true
 	NoTouchRect.visible = true
 	animation_player.play("ShowPause")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
-	return true
 
-func hide_pause() -> bool:
+func hide_pause():
 	NoTouchRect.visible = true
 	animation_player.play_backwards("ShowPause")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
 	blur.visible = false
 	visible = false
-	return true
 
 # Настройки
-func show_settings() -> bool:
+func show_settings():
 	NoTouchRect.visible = true
 	animation_player.play("ShowSettings")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
-	return true
 
-func hide_settings() -> bool:
+func hide_settings():
 	NoTouchRect.visible = true
 	animation_player.play_backwards("ShowSettings")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
-	return true

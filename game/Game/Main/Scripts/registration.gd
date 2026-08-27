@@ -11,7 +11,7 @@ func _on_custom_button_pressed() -> void:
 	await hide_registration()
 	print("Идём в выбор уровня")
 	get_tree().change_scene_to_file("res://Game/Main/Scenes/level_select.tscn")
-	
+	Global.current_scene = "res://Game/Main/Scenes/level_select.tscn"
 
 # Анимации появления / скрытия меню
 func show_registration():

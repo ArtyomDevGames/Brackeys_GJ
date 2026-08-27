@@ -67,7 +67,6 @@ offset_left = 360.0
 offset_top = 220.0
 offset_right = 583.0
 offset_bottom = 496.0
-item_state_id = 1
 item_name = "Item2"
 
 [node name="LevelSelectButton" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=754221516 instance=ExtResource("2_l13d0")]
@@ -85,7 +84,6 @@ offset_left = 636.0
 offset_top = 220.0
 offset_right = 859.0
 offset_bottom = 496.0
-item_state_id = 2
 item_name = "Item3"
 
 [node name="ProgressBar" type="ProgressBar" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=523755810]

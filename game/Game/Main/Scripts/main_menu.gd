@@ -23,5 +23,6 @@ func button_pressed() -> void:
 		$Background.visible = false
 		NoTouchRect.visible = false
 		get_tree().change_scene_to_file("res://Game/Main/Scenes/registration.tscn")
+		Global.current_scene = "res://Game/Main/Scenes/registration.tscn"
 	elif button.button_name == "ExitButton":
 		get_tree().quit()

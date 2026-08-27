@@ -15,3 +15,6 @@ func set_user_name(text : String):
 
 func _on_custom_button_pressed() -> void:
 	visible = false
+
+func show_profile() -> void:
+	visible = true

@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://dtv47mbvrqf66"]
+
+[ext_resource type="Script" uid="uid://cdt0awp23qy5n" path="res://Game/Main/Scripts/credits.gd" id="1_4egx0"]
+[ext_resource type="PackedScene" uid="uid://cy1n884xd0exv" path="res://Game/UI/Scenes/user_button.tscn" id="1_yqri4"]
+[ext_resource type="Script" uid="uid://bsq0mofn4x34t" path="res://Game/UI/Scripts/user_button_developers.gd" id="2_4egx0"]
+[ext_resource type="ButtonGroup" uid="uid://cswciee4g26yd" path="res://Resources/Groups/CreditsGroup.tres" id="2_17smv"]
+[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="4_iq24j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq24j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17smv"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 10
+border_width_top = 40
+border_width_right = 10
+border_width_bottom = 15
+border_color = Color(0.6509804, 0.7411765, 0.8, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crgib"]
+bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[node name="Credits" type="CanvasLayer" unique_id=2143786421]
+script = ExtResource("1_4egx0")
+group = ExtResource("2_17smv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1100663029]
+offset_left = 330.0
+offset_right = 1001.0
+offset_bottom = 581.0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="ScrollContainer" unique_id=296758235]
+custom_minimum_size = Vector2(671, 800)
+layout_mode = 2
+
+[node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=1824173067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iq24j")
+
+[node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=2051954206]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 233.0
+offset_right = 650.0
+offset_bottom = 900.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_17smv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=803929212]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 61.0
+offset_right = 601.0
+offset_bottom = 310.0
+theme_override_constants/separation = 20
+
+[node name="UserButton" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1240136226 instance=ExtResource("1_yqri4")]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_17smv")
+script = ExtResource("2_4egx0")
+developer_role = "GameDesigner, Programmer "
+user_name = "ArtyomDev"
+
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" index="0" unique_id=727484853]
+position = Vector2(42.78124, 43.78124)
+scale = Vector2(0.067529336, 0.067529336)
+
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" index="1" unique_id=1866972064]
+offset_left = 92.0
+offset_top = 8.0
+offset_right = 199.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" unique_id=2069402731]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 48.0
+offset_right = 133.0
+offset_bottom = 71.0
+text = "TEXT"
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" unique_id=1505682978]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 52.0
+offset_right = 566.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 14
+text = "See more"
+horizontal_alignment = 2
+
+[node name="UserButton2" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1364099749 instance=ExtResource("1_yqri4")]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_17smv")
+script = ExtResource("2_4egx0")
+developer_role = "GameDesigner, Programmer "
+user_name = "Сырок (GlazedCheeseGames)"
+
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" index="0" unique_id=727484853]
+position = Vector2(42.78124, 43.78124)
+scale = Vector2(0.067529336, 0.067529336)
+
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" index="1" unique_id=1866972064]
+offset_left = 92.0
+offset_top = 8.0
+offset_right = 199.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" unique_id=125079389]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 48.0
+offset_right = 133.0
+offset_bottom = 71.0
+text = "TEXT"
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" unique_id=570809459]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 52.0
+offset_right = 566.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 14
+text = "See more"
+horizontal_alignment = 2
+
+[node name="UserButton3" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1727682408 instance=ExtResource("1_yqri4")]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_17smv")
+script = ExtResource("2_4egx0")
+developer_role = "Artist"
+user_name = "Halva"
+
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" index="0" unique_id=727484853]
+position = Vector2(42.78124, 43.78124)
+scale = Vector2(0.067529336, 0.067529336)
+
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" index="1" unique_id=1866972064]
+offset_left = 92.0
+offset_top = 8.0
+offset_right = 199.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" unique_id=463846691]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 48.0
+offset_right = 133.0
+offset_bottom = 71.0
+text = "TEXT"
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" unique_id=1496257507]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 52.0
+offset_right = 566.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 14
+text = "See more"
+horizontal_alignment = 2
+
+[node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=1727991922]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 650.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_crgib")
+
+[node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=2119871946]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.041
+offset_left = 28.0
+offset_top = 156.619
+offset_right = 609.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 62
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("4_iq24j")]
+offset_left = 134.0
+offset_top = 516.0
+offset_right = 307.0
+offset_bottom = 558.0
+button_name = "BackButton"
+button_text = "Back"
+
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" to="." method="dev_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" to="." method="dev_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" to="." method="dev_button_pressed"]
+[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
+
+[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton"]
+[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2"]
+[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3"]

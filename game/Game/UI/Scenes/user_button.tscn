@@ -7,6 +7,7 @@
 custom_minimum_size = Vector2(200, 48)
 offset_right = 200.0
 offset_bottom = 48.0
+mouse_default_cursor_shape = 2
 script = ExtResource("1_48ey1")
 
 [node name="IconFrame" parent="." unique_id=727484853 instance=ExtResource("2_cjakb")]

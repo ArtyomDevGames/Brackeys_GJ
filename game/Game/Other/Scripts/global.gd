@@ -8,3 +8,6 @@ var tutorial_state = 0 # 0 - Обучение не пройдено; 1 - обу�
 
 var current_level_id = 0
 var current_level_name = ""
+
+var current_scene : String
+var is_scene_credits : bool = false

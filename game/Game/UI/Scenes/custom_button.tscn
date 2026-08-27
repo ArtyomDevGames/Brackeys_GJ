@@ -5,6 +5,7 @@
 [node name="CustomButton" type="Button" unique_id=1194507549]
 offset_right = 115.0
 offset_bottom = 42.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "TEXT"

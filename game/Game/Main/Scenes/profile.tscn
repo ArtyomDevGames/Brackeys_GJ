@@ -93,10 +93,10 @@ theme_override_font_sizes/font_size = 42
 text = "Name"
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("2_53oc8")]
-offset_left = 88.0
-offset_top = 515.0
-offset_right = 280.0
-offset_bottom = 569.0
+offset_left = 118.0
+offset_top = 93.0
+offset_right = 310.0
+offset_bottom = 147.0
 button_name = "BackButton"
 button_text = "Back"
 

@@ -111,12 +111,39 @@ offset_right = 1162.0
 offset_bottom = 719.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
 
-[node name="Button" type="Button" parent="BackPanel/Background/Bottom" unique_id=345755344]
+[node name="LineEdit" type="LineEdit" parent="BackPanel/Background/Bottom" unique_id=1305210099]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 12.0
-offset_right = 298.0
-offset_bottom = 66.0
+offset_left = 87.0
+offset_right = 625.0
+offset_bottom = 41.0
+editable = false
+
+[node name="ChoiceButtons" type="HBoxContainer" parent="BackPanel/Background/Bottom" unique_id=1658987700]
+layout_mode = 0
+offset_left = 108.0
+offset_top = -45.0
+offset_right = 711.0
+offset_bottom = -3.0
+theme_override_constants/separation = 10
+
+[node name="CustomButton" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=1958710994 instance=ExtResource("3_6gq2s")]
+layout_mode = 2
+size_flags_horizontal = 3
+button_name = "Option1Button"
+button_text = "Option 1"
+
+[node name="CustomButton2" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=2024447890 instance=ExtResource("3_6gq2s")]
+layout_mode = 2
+size_flags_horizontal = 3
+button_name = "Option2Button"
+button_text = "Option 2"
+
+[node name="CustomButton" parent="BackPanel/Background/Bottom" unique_id=1132699801 instance=ExtResource("3_6gq2s")]
+layout_mode = 0
+offset_left = 642.0
+offset_right = 757.0
+button_name = "SendButton"
+button_text = "Send"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BackPanel" unique_id=1216533846]
 layout_mode = 0
