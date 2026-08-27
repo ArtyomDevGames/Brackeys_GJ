@@ -20,9 +20,8 @@ func show_registration():
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
 
-func hide_registration() -> bool:
+func hide_registration():
 	NoTouchRect.visible = true
 	animation_player.play_backwards("ShowRegistration")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
-	return true

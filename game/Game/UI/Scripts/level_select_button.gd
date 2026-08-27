@@ -33,6 +33,7 @@ func _on_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
+	print("Кнопка: ", item_name, "\nПоказываем")
 	animation_player.play("Hover")
 
 func _on_mouse_exited() -> void:

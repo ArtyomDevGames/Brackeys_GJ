@@ -111,6 +111,13 @@ offset_right = 1162.0
 offset_bottom = 719.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
 
+[node name="Button" type="Button" parent="BackPanel/Background/Bottom" unique_id=345755344]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 298.0
+offset_bottom = 66.0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="BackPanel" unique_id=1216533846]
 layout_mode = 0
 offset_left = 23.0
@@ -140,6 +147,7 @@ offset_left = 8.0
 offset_top = 28.0
 offset_right = 301.0
 offset_bottom = 507.0
+theme_override_constants/separation = 10
 
 [node name="UserButton" parent="BackPanel/ScrollContainer/Control/Panel/Buttons" unique_id=1240136226 instance=ExtResource("4_6gq2s")]
 layout_mode = 2

@@ -14,6 +14,7 @@ func button_pressed() -> void:
 	if button.button_name == "ContinueButton": hide_pause()
 	elif button.button_name == "SettingsButton": show_settings()
 	elif button.button_name == "BackButton": hide_settings()
+	elif button.button_name == "ExitButton": get_tree().quit()
 
 # Анимации появления / скрытия меню
 # Пауза
