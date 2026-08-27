@@ -68,13 +68,13 @@ script = ExtResource("1_brqll")
 modulate = Color(1, 1, 1, 0)
 offset_left = 292.0
 offset_right = 1006.0
-offset_bottom = 554.0
+offset_bottom = 581.0
 follow_focus = true
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
 [node name="Control" type="Control" parent="ScrollContainer" unique_id=2102286434]
-custom_minimum_size = Vector2(692, 900)
+custom_minimum_size = Vector2(692, 1000)
 layout_mode = 2
 mouse_filter = 2
 
@@ -82,7 +82,7 @@ mouse_filter = 2
 layout_mode = 0
 offset_left = 8.0
 offset_right = 706.0
-offset_bottom = 916.0
+offset_bottom = 1000.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
 
@@ -91,7 +91,7 @@ layout_mode = 0
 offset_left = 22.0
 offset_top = 254.0
 offset_right = 676.0
-offset_bottom = 900.0
+offset_bottom = 1254.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 

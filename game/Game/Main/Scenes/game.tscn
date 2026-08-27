@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://cia8qk86c6ynm"]
 
 [ext_resource type="Script" uid="uid://cm24tbwln5gps" path="res://Game/Main/Scripts/game.gd" id="1_5ytc6"]
+[ext_resource type="ButtonGroup" uid="uid://b3vqq08xisvrh" path="res://Resources/Groups/GameGroup.tres" id="2_a4awf"]
+[ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
+[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
+[ext_resource type="PackedScene" uid="uid://cy1n884xd0exv" path="res://Game/UI/Scenes/user_button.tscn" id="4_6gq2s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
 border_width_right = 10
 border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 320
+border_width_right = 10
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqxs1"]
 bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
@@ -22,12 +35,14 @@ corner_radius_bottom_left = 5
 bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
 border_width_left = 7
 border_width_top = 7
-border_width_right = 7
 border_width_bottom = 60
 border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ytc6"]
+
 [node name="Game" type="CanvasLayer" unique_id=162558194]
 script = ExtResource("1_5ytc6")
+group = ExtResource("2_a4awf")
 
 [node name="BackPanel" type="Panel" parent="." unique_id=1893453874]
 offset_left = 33.0
@@ -36,42 +51,123 @@ offset_right = 1242.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_whohe")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1216533846]
-offset_left = 56.0
-offset_top = 1.0
-offset_right = 366.0
-offset_bottom = 720.0
-vertical_scroll_mode = 3
-tile_scroll_hint = true
+[node name="Background" type="Panel" parent="BackPanel" unique_id=1213833007]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 1185.0
+offset_bottom = 719.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
-[node name="Control" type="Control" parent="ScrollContainer" unique_id=1974422685]
+[node name="ScrollContainer2" type="ScrollContainer" parent="BackPanel/Background" unique_id=2074268087]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.149
+anchor_bottom = 0.081
+offset_left = 318.0
+offset_top = 131.0
+offset_right = 981.8591
+offset_bottom = 459.761
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Top" type="Panel" parent="BackPanel/Background" unique_id=1061052605]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 1162.0
+offset_bottom = 147.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="IconFrame" parent="BackPanel/Background/Top" unique_id=727484853 instance=ExtResource("2_ocass")]
+visible = false
+position = Vector2(52.4375, 107.4375)
+scale = Vector2(0.055371087, 0.055371087)
+frame = 1
+
+[node name="UserNameLabel" type="Label" parent="BackPanel/Background/Top" unique_id=538516275]
+visible = false
+layout_mode = 0
+offset_left = 87.4375
+offset_top = 93.4375
+offset_right = 156.4375
+offset_bottom = 127.4375
+theme_override_font_sizes/font_size = 24
+text = "Name"
+
+[node name="CustomButton" parent="BackPanel/Background/Top" unique_id=1194507549 instance=ExtResource("3_6gq2s")]
+visible = false
+layout_mode = 0
+offset_left = 672.4375
+offset_top = 93.4375
+offset_right = 832.4375
+offset_bottom = 135.4375
+button_name = "ProfileButton"
+button_text = "To Profile"
+
+[node name="Bottom" type="Panel" parent="BackPanel/Background" unique_id=2048847022]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 506.0
+offset_right = 1162.0
+offset_bottom = 719.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BackPanel" unique_id=1216533846]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 309.0
+offset_right = 333.0
+offset_bottom = 719.0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="BackPanel/ScrollContainer" unique_id=1974422685]
 custom_minimum_size = Vector2(310, 1000)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="ScrollContainer/Control" unique_id=778596497]
+[node name="Panel" type="Panel" parent="BackPanel/ScrollContainer/Control" unique_id=778596497]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.201
 anchor_bottom = 0.296
-offset_top = 296.0
+offset_top = -14.0
 offset_right = 247.69
 offset_bottom = 704.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iqxs1")
 
-[node name="Top" type="Panel" parent="ScrollContainer/Control" unique_id=1372201525]
+[node name="Buttons" type="VBoxContainer" parent="BackPanel/ScrollContainer/Control/Panel" unique_id=768520448]
 layout_mode = 0
-offset_right = 310.0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 301.0
+offset_bottom = 507.0
+
+[node name="UserButton" parent="BackPanel/ScrollContainer/Control/Panel/Buttons" unique_id=1240136226 instance=ExtResource("4_6gq2s")]
+layout_mode = 2
+user_name = "Аляля"
+user_icon_id = 1
+
+[node name="UserButton2" parent="BackPanel/ScrollContainer/Control/Panel/Buttons" unique_id=338616913 instance=ExtResource("4_6gq2s")]
+layout_mode = 2
+user_name = "Ну хрен вообще"
+
+[node name="Top" type="Panel" parent="BackPanel" unique_id=1372201525]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 333.0
 offset_bottom = 309.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ytc6")
 
-[node name="ItemIcon" type="AnimatedSprite2D" parent="ScrollContainer/Control/Top" unique_id=912419358]
+[node name="ItemIcon" type="AnimatedSprite2D" parent="BackPanel/Top" unique_id=912419358]
+sprite_frames = SubResource("SpriteFrames_5ytc6")
 
-[node name="ItemNameLabel" type="Label" parent="ScrollContainer/Control/Top" unique_id=1902375974]
+[node name="ItemNameLabel" type="Label" parent="BackPanel/Top" unique_id=1902375974]
 layout_mode = 0
-offset_left = 97.0
+offset_left = 82.0
 offset_top = 261.0
-offset_right = 240.0
+offset_right = 225.0
 offset_bottom = 295.0
 theme_override_font_sizes/font_size = 24
 text = "TEXT"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="BackPanel/Background/Top/CustomButton" to="." method="_on_custom_button_pressed"]

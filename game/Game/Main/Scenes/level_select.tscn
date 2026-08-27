@@ -36,7 +36,7 @@ layer = 35
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=875850990]
 offset_left = 141.0
 offset_right = 1131.0
-offset_bottom = 554.0
+offset_bottom = 569.0
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
@@ -64,26 +64,48 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_drr54")
 [node name="LevelSelectButton2" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=865650154 instance=ExtResource("2_l13d0")]
 layout_mode = 0
 offset_left = 360.0
-offset_top = 157.0
+offset_top = 220.0
 offset_right = 583.0
-offset_bottom = 433.0
+offset_bottom = 496.0
+item_state_id = 1
 item_name = "Item2"
 
 [node name="LevelSelectButton" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=754221516 instance=ExtResource("2_l13d0")]
 layout_mode = 0
 offset_left = 78.0
-offset_top = 157.0
+offset_top = 220.0
 offset_right = 301.0
-offset_bottom = 433.0
+offset_bottom = 496.0
+item_state_id = 3
 item_name = "Item1"
 
 [node name="LevelSelectButton3" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=881846728 instance=ExtResource("2_l13d0")]
 layout_mode = 0
 offset_left = 636.0
-offset_top = 157.0
+offset_top = 220.0
 offset_right = 859.0
-offset_bottom = 433.0
+offset_bottom = 496.0
+item_state_id = 2
 item_name = "Item3"
+
+[node name="ProgressBar" type="ProgressBar" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=523755810]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 133.0
+offset_right = 859.0
+offset_bottom = 171.0
+
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=1934007068]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 79.0
+offset_right = 648.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+theme_override_font_sizes/font_size = 24
+text = "Total money earned: []"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=674656292]
 layout_mode = 0
@@ -98,10 +120,10 @@ scale = Vector2(0.17177731, 0.17177731)
 
 [node name="NameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1929879447]
 layout_mode = 0
-offset_left = 264.93747
-offset_top = 186.93747
-offset_right = 371.93747
-offset_bottom = 253.93747
+offset_left = 265.0
+offset_top = 160.0
+offset_right = 372.0
+offset_bottom = 227.0
 theme_override_font_sizes/font_size = 48
 text = "User"
 

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://xckw8e44ujnq"]
+
+[ext_resource type="Script" uid="uid://cn8xo4wp0huq0" path="res://Game/Main/Scripts/profile.gd" id="1_53oc8"]
+[ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_w0aak"]
+[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="2_53oc8"]
+[ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="2_kjvjx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("2_kjvjx")
+shader_parameter/blur = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjvjx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o717j"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 10
+border_width_top = 150
+border_width_right = 10
+border_width_bottom = 15
+border_color = Color(0.6509804, 0.7411765, 0.8, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpmup"]
+bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[node name="Profile" type="CanvasLayer" unique_id=855943]
+layer = 5
+visible = false
+script = ExtResource("1_53oc8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=890475172]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=409404121]
+offset_left = 330.0
+offset_right = 1001.0
+offset_bottom = 581.0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="ScrollContainer" unique_id=1684577108]
+custom_minimum_size = Vector2(671, 900)
+layout_mode = 2
+
+[node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=1117722212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjvjx")
+
+[node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=477023414]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 233.0
+offset_right = 650.0
+offset_bottom = 900.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o717j")
+
+[node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=988145918]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 650.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpmup")
+
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Top" unique_id=727484853 instance=ExtResource("1_w0aak")]
+position = Vector2(112, 167)
+scale = Vector2(0.1576172, 0.1576172)
+frame = 1
+
+[node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=636750415]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.041
+offset_left = 220.0
+offset_top = 156.619
+offset_right = 342.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 42
+text = "Name"
+
+[node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("2_53oc8")]
+offset_left = 88.0
+offset_top = 515.0
+offset_right = 280.0
+offset_bottom = 569.0
+button_name = "BackButton"
+button_text = "Back"
+
+[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

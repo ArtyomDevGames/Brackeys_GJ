@@ -46,48 +46,63 @@ script = SubResource("GDScript_yg766")
 
 [node name="ColorRect" type="Panel" parent="." unique_id=399203404]
 anchors_preset = -1
-anchor_top = 0.75555557
+anchor_top = 0.7902778
 anchor_right = 1.0
 anchor_bottom = 1.0000001
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1121498741]
+offset_left = 1133.0
+offset_top = 569.0
+offset_right = 1281.0
+offset_bottom = 645.0
+color = Color(0.6225, 0.70112497, 0.75, 1)
+
+[node name="Label" type="Label" parent="ColorRect4" unique_id=438493132]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 18
+text = "0000.00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1700024287]
-offset_top = 544.0
+offset_top = 569.0
 offset_right = 116.0
-offset_bottom = 615.0
+offset_bottom = 640.0
 color = Color(0.6225, 0.70112497, 0.75, 1)
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("1_yg766")]
 offset_left = 43.0
-offset_top = 544.0
-offset_bottom = 615.0
+offset_top = 569.0
+offset_bottom = 640.0
 flat = true
 button_name = "PauseButton"
 
 [node name="StartButtonIcon" type="Sprite2D" parent="CustomButton" unique_id=528157131]
 material = SubResource("ShaderMaterial_mhbco")
-position = Vector2(39.999996, 28.000004)
-scale = Vector2(0.03955079, 0.03955079)
+position = Vector2(40.999996, 18.000002)
+scale = Vector2(0.020764165, 0.020764165)
 texture = ExtResource("2_mhbco")
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=2058506427]
 offset_left = 124.0
-offset_top = 544.0
+offset_top = 569.0
 offset_right = 198.0
-offset_bottom = 615.0
+offset_bottom = 640.0
 color = Color(0.62352943, 0.7019608, 0.7490196, 1)
 
 [node name="BrowserIcon" type="Sprite2D" parent="." unique_id=463573532]
-position = Vector2(162, 573)
-scale = Vector2(0.04, 0.04)
+position = Vector2(161, 588)
+scale = Vector2(0.020039054, 0.020039054)
 texture = ExtResource("3_inbqr")
 
 [node name="ColorRect5" type="ColorRect" parent="." unique_id=1793472087]
-offset_left = -1.0
-offset_top = 544.0
-offset_right = 1280.0
-offset_bottom = 550.0
+offset_top = 569.0
+offset_right = 1281.0
+offset_bottom = 575.0
 color = Color(1, 1, 1, 0.14509805)
 
 [connection signal="mouse_entered" from="CustomButton" to="." method="_on_custom_button_mouse_entered"]
