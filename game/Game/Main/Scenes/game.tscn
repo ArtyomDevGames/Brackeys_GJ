@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cia8qk86c6ynm"]
+
+[ext_resource type="Script" uid="uid://cm24tbwln5gps" path="res://Game/Main/Scripts/game.gd" id="1_5ytc6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqxs1"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 15
+border_width_top = 30
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.6509804, 0.7411765, 0.8, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ytc6"]
+bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 60
+border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[node name="Game" type="CanvasLayer" unique_id=162558194]
+script = ExtResource("1_5ytc6")
+
+[node name="BackPanel" type="Panel" parent="." unique_id=1893453874]
+offset_left = 33.0
+offset_top = 1.0
+offset_right = 1242.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_whohe")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1216533846]
+offset_left = 56.0
+offset_top = 1.0
+offset_right = 366.0
+offset_bottom = 720.0
+vertical_scroll_mode = 3
+tile_scroll_hint = true
+
+[node name="Control" type="Control" parent="ScrollContainer" unique_id=1974422685]
+custom_minimum_size = Vector2(310, 1000)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ScrollContainer/Control" unique_id=778596497]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.201
+anchor_bottom = 0.296
+offset_top = 296.0
+offset_right = 247.69
+offset_bottom = 704.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iqxs1")
+
+[node name="Top" type="Panel" parent="ScrollContainer/Control" unique_id=1372201525]
+layout_mode = 0
+offset_right = 310.0
+offset_bottom = 309.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ytc6")
+
+[node name="ItemIcon" type="AnimatedSprite2D" parent="ScrollContainer/Control/Top" unique_id=912419358]
+
+[node name="ItemNameLabel" type="Label" parent="ScrollContainer/Control/Top" unique_id=1902375974]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 261.0
+offset_right = 240.0
+offset_bottom = 295.0
+theme_override_font_sizes/font_size = 24
+text = "TEXT"
+horizontal_alignment = 1

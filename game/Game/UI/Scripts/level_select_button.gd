@@ -23,8 +23,8 @@ func set_item_state_icon() -> void:
 
 
 func _on_pressed() -> void:
-	print("Начинаем продажу, ёптыть")
-	print(item_name)
+	Global.current_level_name = item_name
+	get_tree().change_scene_to_file("res://Game/Main/Scenes/game.tscn")
 
 
 func _on_mouse_entered() -> void:
