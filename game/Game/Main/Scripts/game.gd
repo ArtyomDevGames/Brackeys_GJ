@@ -18,6 +18,9 @@ const user = preload("res://Game/UI/Scenes/user_button.tscn")
 var is_chat_selected = false
 var is_profile_visible = false
 
+# Чат
+@onready var chat: VBoxContainer = $BackPanel/Background/ScrollContainer2/Chat
+
 # Кнопочки с покупателями
 @onready var buttons: VBoxContainer = $BackPanel/ScrollContainer/Control/Panel/Buttons
 
@@ -84,6 +87,8 @@ func button_pressed() -> void:
 	
 	current_user_id = button.user_icon_id
 	current_user_name = button.user_name
+	
+	for message in chat.get_children(): await message.show_reply()
 
 
 func create_user(id : int) -> void:
