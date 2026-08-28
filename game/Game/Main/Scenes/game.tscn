@@ -4,6 +4,7 @@
 [ext_resource type="ButtonGroup" uid="uid://b3vqq08xisvrh" path="res://Resources/Groups/GameGroup.tres" id="2_a4awf"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
+[ext_resource type="PackedScene" uid="uid://b0ik5polb78kh" path="res://Game/UI/Scenes/user_reply.tscn" id="3_a4awf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -63,16 +64,33 @@ anchors_preset = -1
 anchor_right = 0.149
 anchor_bottom = 0.081
 offset_left = 320.0
-offset_top = 131.0
-offset_right = 979.862
-offset_bottom = 459.761
+offset_top = 147.0
+offset_right = 978.862
+offset_bottom = 447.761
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
 [node name="Chat" type="VBoxContainer" parent="BackPanel/Background/ScrollContainer2" unique_id=920354821]
-custom_minimum_size = Vector2(833, 600)
+custom_minimum_size = Vector2(832, 700)
 layout_mode = 2
-theme_override_constants/separation = 15
+size_flags_horizontal = 4
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(16.33, -400)
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="UserReply" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1725523483 instance=ExtResource("3_a4awf")]
+layout_mode = 2
+
+[node name="UserReply2" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=833352286 instance=ExtResource("3_a4awf")]
+layout_mode = 2
+
+[node name="UserReply3" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1064956478 instance=ExtResource("3_a4awf")]
+layout_mode = 2
+
+[node name="UserReply4" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1711687402 instance=ExtResource("3_a4awf")]
+layout_mode = 2
 
 [node name="Top" type="Panel" parent="BackPanel/Background" unique_id=1061052605]
 layout_mode = 0
@@ -132,7 +150,7 @@ text = "Offered price: "
 [node name="Bottom" type="Panel" parent="BackPanel/Background" unique_id=2048847022]
 layout_mode = 0
 offset_left = 320.0
-offset_top = 506.0
+offset_top = 493.0
 offset_right = 1162.0
 offset_bottom = 719.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
@@ -140,19 +158,21 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
 [node name="TextLine" type="LineEdit" parent="BackPanel/Background/Bottom" unique_id=1305210099]
 visible = false
 layout_mode = 0
-offset_left = 87.0
+offset_left = 17.0
+offset_top = 21.0
 offset_right = 625.0
-offset_bottom = 41.0
+offset_bottom = 62.0
 editable = false
 
 [node name="ChoiceButtons" type="HBoxContainer" parent="BackPanel/Background/Bottom" unique_id=1658987700]
 visible = false
 layout_mode = 0
-offset_left = 108.0
-offset_top = -45.0
-offset_right = 711.0
-offset_bottom = -3.0
+offset_left = 212.0
+offset_top = -62.0
+offset_right = 530.0
+offset_bottom = -20.0
 theme_override_constants/separation = 10
+metadata/_edit_group_ = true
 
 [node name="CustomButton" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=1958710994 instance=ExtResource("3_6gq2s")]
 layout_mode = 2
@@ -160,17 +180,13 @@ size_flags_horizontal = 3
 button_name = "Option1Button"
 button_text = "Option 1"
 
-[node name="CustomButton2" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=2024447890 instance=ExtResource("3_6gq2s")]
-layout_mode = 2
-size_flags_horizontal = 3
-button_name = "Option2Button"
-button_text = "Option 2"
-
 [node name="CustomButton" parent="BackPanel/Background/Bottom" unique_id=1132699801 instance=ExtResource("3_6gq2s")]
 visible = false
 layout_mode = 0
 offset_left = 642.0
-offset_right = 757.0
+offset_top = 21.0
+offset_right = 821.0
+offset_bottom = 63.0
 button_name = "SendButton"
 button_text = "Send"
 

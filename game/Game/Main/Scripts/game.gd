@@ -24,7 +24,6 @@ var is_profile_visible = false
 # Элементы нижней панели меню чата
 @onready var choice_buttons: HBoxContainer = $BackPanel/Background/Bottom/ChoiceButtons
 @onready var option_1_button: Button = $BackPanel/Background/Bottom/ChoiceButtons/CustomButton
-@onready var option_2_button: Button = $BackPanel/Background/Bottom/ChoiceButtons/CustomButton2
 @onready var text_line: LineEdit = $BackPanel/Background/Bottom/TextLine
 @onready var send_button: Button = $BackPanel/Background/Bottom/CustomButton
 
@@ -99,7 +98,7 @@ func create_user(id : int) -> void:
 		"user_icon" : 0,
 		"user_description" : "damn" + str(id),
 		"user_date" : Global.current_day,
-		"phrases" : ["phrase1", "phrase2", "phrase3"],
+		"phrases" : ["phrase1", "phrase2", "phrase3", "phrase4"],
 		"current_phrase" : 0,
 		"offered_price" : user_offered_price,
 		"user_state" : 0

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b0ik5polb78kh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+content_margin_left = 20.0
+bg_color = Color(0.7647059, 0.8235294, 0.85882354, 1)
+border_width_left = 15
+border_color = Color(0.49624032, 0.5908352, 0.646585, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+shadow_color = Color(0.09239999, 0.10988, 0.12, 0.25882354)
+shadow_size = 4
+shadow_offset = Vector2(0, 3)
+
+[node name="UserReply" type="Label" unique_id=1725523483]
+custom_minimum_size = Vector2(292, 49)
+custom_maximum_size = Vector2(500, -1)
+offset_right = 292.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.49803922, 0.5921569, 0.64705884, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+text = "	TEXT"
+vertical_alignment = 1
+autowrap_mode = 3
