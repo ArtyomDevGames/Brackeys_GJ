@@ -6,11 +6,14 @@ const user = preload("res://Game/UI/Scenes/user_button.tscn")
 
 # Элементы товара
 @onready var item_name_label: Label = $BackPanel/Top/ItemNameLabel
+@onready var item_price: RichTextLabel = $BackPanel/Top/ItemPrice
 
 # Элементы верхней панели меню чата
 @onready var icon_frame: AnimatedSprite2D = $BackPanel/Background/Top/IconFrame
 @onready var user_name_label: Label = $BackPanel/Background/Top/UserNameLabel
 @onready var custom_button: Button = $BackPanel/Background/Top/CustomButton
+@onready var offered_price: RichTextLabel = $BackPanel/Background/Top/OfferedPrice
+@onready var label: Label = $BackPanel/Background/Top/Label
 
 var is_chat_selected = false
 var is_profile_visible = false
@@ -33,6 +36,7 @@ var questions : int = 3
 
 func _ready() -> void:
 	item_name_label.text = Global.current_level_name
+	item_price.text = item_price.text.format([Global.prices[Global.current_level_id]], "{}")
 	
 	if Global.users.is_empty() == false:
 		print("Не, не надо человеков")
@@ -60,12 +64,15 @@ func button_pressed() -> void:
 	
 	print("Пользователь: ", Global.users[button.user_id]["user_type"])
 	
+	
 	if is_chat_selected == false:
 		is_chat_selected = true
 		
 		icon_frame.visible = true
 		user_name_label.visible = true
 		custom_button.visible = true
+		offered_price.visible = true
+		label.visible = true
 		
 		choice_buttons.visible = true
 		text_line.visible = true
@@ -74,6 +81,7 @@ func button_pressed() -> void:
 	
 	icon_frame.frame = button.user_icon_id
 	user_name_label.text = button.user_name
+	offered_price.text = "	[color=GREEN][wave]{}$[/wave][/color]".format([Global.users[button.user_id]["offered_price"]], "{}")
 	
 	current_user_id = button.user_icon_id
 	current_user_name = button.user_name
@@ -82,6 +90,7 @@ func button_pressed() -> void:
 func create_user(id : int) -> void:
 	var name_id = randi_range(0, 9)
 	var type_id = randi_range(0, 2)
+	var user_offered_price = count_offered_price(type_id)
 	
 	var new_user = {
 		"user_id" : id,
@@ -92,10 +101,22 @@ func create_user(id : int) -> void:
 		"user_date" : Global.current_day,
 		"phrases" : ["phrase1", "phrase2", "phrase3"],
 		"current_phrase" : 0,
+		"offered_price" : user_offered_price,
 		"user_state" : 0
 	}
 	
 	Global.users.append(new_user)
+
+func count_offered_price(user_type) -> int:
+	var current_price = Global.prices[Global.current_level_id]
+	
+	var price_range = Global.what_price_range(user_type)
+	var min_price : int = price_range[0] * current_price + current_price
+	var max_price : int = price_range[1] * current_price + current_price
+	
+	var new_price = randi_range(min_price, max_price)
+	
+	return new_price
 
 func add_user_buttons(id : int) -> void:
 	var customer = user.instantiate()

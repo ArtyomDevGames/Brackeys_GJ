@@ -34,7 +34,7 @@ corner_radius_bottom_left = 5
 bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
 border_width_left = 7
 border_width_top = 7
-border_width_bottom = 60
+border_width_bottom = 80
 border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ytc6"]
@@ -106,6 +106,28 @@ offset_right = 821.0
 offset_bottom = 122.0
 button_name = "ProfileButton"
 button_text = "To Profile"
+
+[node name="OfferedPrice" type="RichTextLabel" parent="BackPanel/Background/Top" unique_id=233446000]
+visible = false
+layout_mode = 0
+offset_left = 378.0
+offset_top = 93.0
+offset_right = 496.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "	[color=GREEN][wave]{}$[/wave][/color]"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BackPanel/Background/Top" unique_id=1257981068]
+visible = false
+layout_mode = 0
+offset_left = 212.0
+offset_top = 93.0
+offset_right = 323.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 24
+text = "Offered price: "
 
 [node name="Bottom" type="Panel" parent="BackPanel/Background" unique_id=2048847022]
 layout_mode = 0
@@ -195,12 +217,24 @@ sprite_frames = SubResource("SpriteFrames_5ytc6")
 
 [node name="ItemNameLabel" type="Label" parent="BackPanel/Top" unique_id=1902375974]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 261.0
-offset_right = 225.0
-offset_bottom = 295.0
+offset_left = 84.0
+offset_top = 237.0
+offset_right = 227.0
+offset_bottom = 271.0
 theme_override_font_sizes/font_size = 24
 text = "TEXT"
 horizontal_alignment = 1
+
+[node name="ItemPrice" type="RichTextLabel" parent="BackPanel/Top" unique_id=1925267848]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 262.0
+offset_right = 288.0
+offset_bottom = 302.0
+bbcode_enabled = true
+text = "Price: 	[color=GREEN][wave]{}$[/wave][/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BackPanel/Background/Top/CustomButton" to="." method="_on_custom_button_pressed"]

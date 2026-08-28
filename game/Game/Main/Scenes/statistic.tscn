@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cn5rynswy0yxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odmi4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opgfd"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 10
+border_width_top = 40
+border_width_right = 10
+border_width_bottom = 15
+border_color = Color(0.6509804, 0.7411765, 0.8, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sknm"]
+bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+
+[node name="Statistic" type="CanvasLayer" unique_id=1701129147]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091716575]
+offset_left = 330.0
+offset_right = 1001.0
+offset_bottom = 581.0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="ScrollContainer" unique_id=1388737113]
+custom_minimum_size = Vector2(671, 900)
+layout_mode = 2
+
+[node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=258470989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_odmi4")
+
+[node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=264132695]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 233.0
+offset_right = 650.0
+offset_bottom = 900.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_opgfd")
+
+[node name="Stats" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=963088032]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 54.0
+offset_right = 455.0
+offset_bottom = 303.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=628570666]
+layout_mode = 2
+
+[node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=1676291349]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 650.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sknm")
+
+[node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=1554525377]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.041
+offset_left = 61.0
+offset_top = 166.619
+offset_right = 554.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 40
+text = "STATISTICS"
+horizontal_alignment = 1
+vertical_alignment = 1
