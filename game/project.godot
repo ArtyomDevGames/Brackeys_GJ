@@ -35,6 +35,12 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[importer_defaults]
+
+mp3={
+&"loop": true
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

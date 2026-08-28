@@ -28,11 +28,6 @@ func set_item_state_icon() -> void:
 	else: state_icon.visible = false
 
 
-func _on_pressed() -> void:
-	Global.current_level_name = item_name
-	Global.set_time(item_id)
-	get_tree().change_scene_to_file("res://Game/Main/Scenes/game.tscn")
-	Global.current_scene = "res://Game/Main/Scenes/game.tscn"
 
 
 func _on_mouse_entered() -> void:

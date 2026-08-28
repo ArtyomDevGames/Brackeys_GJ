@@ -120,6 +120,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5i4tm")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=570764805]
 libraries/ = SubResource("AnimationLibrary_woj1u")
 
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=5243553]
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="." to="." method="_on_pressed"]

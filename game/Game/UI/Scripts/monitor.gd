@@ -6,6 +6,10 @@ var is_screen_on : bool = false
 @onready var screen_animation: AnimationPlayer = $ScreenAnimation
 @onready var screen: ColorRect = $Screen
 
+# Звуки
+@onready var monitor_sound: AudioStreamPlayer2D = $MonitorSound
+@onready var turn_on_sound: AudioStreamPlayer2D = $TurnOnSound
+@onready var turn_off_sound: AudioStreamPlayer2D = $TurnOffSound
 
 func expand_monitor() -> bool:
 	animation_player.play("GameStart")
@@ -23,11 +27,13 @@ func _on_button_mouse_exited() -> void:
 
 func _on_button_pressed() -> void:
 	if is_screen_on == false:
+		turn_on_sound.play()
 		screen_animation.play("TurnOn")
 		await screen_animation.animation_finished
 		screen.visible = false
 		is_screen_on = true
 	else:
+		turn_off_sound.play()
 		screen.visible = true
 		screen_animation.play_backwards("TurnOn")
 		await screen_animation.animation_finished

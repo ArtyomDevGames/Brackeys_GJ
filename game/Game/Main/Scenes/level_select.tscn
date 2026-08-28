@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_542fk"]
 [ext_resource type="Script" uid="uid://dt0fanoiyhj7g" path="res://Game/Main/Scripts/level_select.gd" id="1_drr54"]
+[ext_resource type="ButtonGroup" uid="uid://r328xbw1tc0" path="res://Resources/Groups/LevelSelectGroup.tres" id="2_0utjo"]
 [ext_resource type="PackedScene" uid="uid://ddybls5jx3blt" path="res://Game/UI/Scenes/level_select_button.tscn" id="2_l13d0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l13d0"]
@@ -23,19 +24,49 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0utjo"]
 bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
 
+[sub_resource type="Animation" id="Animation_drr54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_d5ugc"]
 resource_name = "ShowLevelSelect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mc43n"]
 _data = {
+&"RESET": SubResource("Animation_drr54"),
 &"ShowLevelSelect": SubResource("Animation_d5ugc")
 }
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=2052156145]
 layer = 35
 script = ExtResource("1_drr54")
+group = ExtResource("2_0utjo")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=875850990]
+modulate = Color(1, 1, 1, 0)
 offset_left = 141.0
 offset_right = 1131.0
 offset_bottom = 569.0
@@ -69,6 +100,8 @@ offset_left = 360.0
 offset_top = 220.0
 offset_right = 583.0
 offset_bottom = 496.0
+toggle_mode = true
+button_group = ExtResource("2_0utjo")
 item_id = 1
 item_name = "Item2"
 
@@ -78,6 +111,8 @@ offset_left = 78.0
 offset_top = 220.0
 offset_right = 301.0
 offset_bottom = 496.0
+toggle_mode = true
+button_group = ExtResource("2_0utjo")
 item_state_id = 3
 item_name = "Item1"
 
@@ -87,6 +122,8 @@ offset_left = 636.0
 offset_top = 220.0
 offset_right = 859.0
 offset_bottom = 496.0
+toggle_mode = true
+button_group = ExtResource("2_0utjo")
 item_id = 2
 item_name = "Item3"
 
@@ -131,3 +168,7 @@ text = "User"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=520544005]
 libraries/ = SubResource("AnimationLibrary_mc43n")
+
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel2/LevelSelectButton2" to="." method="on_level_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel2/LevelSelectButton" to="." method="on_level_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel2/LevelSelectButton3" to="." method="on_level_button_pressed"]

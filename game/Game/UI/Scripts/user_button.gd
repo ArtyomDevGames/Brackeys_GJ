@@ -2,6 +2,7 @@ extends Button
 
 @export var user_name : String
 @export_range(0, 1) var user_icon_id : int
+@export var button_theme : Theme
 
 @onready var icon_frame: AnimatedSprite2D = $IconFrame
 @onready var user_name_label: Label = $UserNameLabel
@@ -16,3 +17,6 @@ func set_users_name():
 
 func set_icon():
 	icon_frame.frame = user_icon_id
+
+func set_button_theme():
+	if button_theme != null: theme = button_theme

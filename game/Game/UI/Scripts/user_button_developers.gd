@@ -8,6 +8,7 @@ func _ready() -> void:
 	set_role()
 	set_icon()
 	set_users_name()
+	set_button_theme()
 
 func set_role() -> void:
 	role_label.text = developer_role
