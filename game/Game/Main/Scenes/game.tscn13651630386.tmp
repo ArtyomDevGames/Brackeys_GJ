@@ -4,6 +4,7 @@
 [ext_resource type="ButtonGroup" uid="uid://b3vqq08xisvrh" path="res://Resources/Groups/GameGroup.tres" id="2_a4awf"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
+[ext_resource type="PackedScene" uid="uid://cy1n884xd0exv" path="res://Game/UI/Scenes/user_button.tscn" id="4_6gq2s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -182,6 +183,15 @@ offset_top = 28.0
 offset_right = 301.0
 offset_bottom = 507.0
 theme_override_constants/separation = 10
+
+[node name="UserButton" parent="BackPanel/ScrollContainer/Control/Panel/Buttons" unique_id=1240136226 instance=ExtResource("4_6gq2s")]
+layout_mode = 2
+user_name = "Аляля"
+user_icon_id = 1
+
+[node name="UserButton2" parent="BackPanel/ScrollContainer/Control/Panel/Buttons" unique_id=338616913 instance=ExtResource("4_6gq2s")]
+layout_mode = 2
+user_name = "Ну хрен вообще"
 
 [node name="Top" type="Panel" parent="BackPanel" unique_id=1372201525]
 layout_mode = 0

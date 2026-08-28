@@ -25,11 +25,73 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crgib"]
 bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
+[sub_resource type="Animation" id="Animation_17smv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CustomButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_crgib"]
+resource_name = "ShowCredits"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CustomButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2s1w0"]
+_data = {
+&"RESET": SubResource("Animation_17smv"),
+&"ShowCredits": SubResource("Animation_crgib")
+}
+
 [node name="Credits" type="CanvasLayer" unique_id=2143786421]
 script = ExtResource("1_4egx0")
 group = ExtResource("2_17smv")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1100663029]
+modulate = Color(1, 1, 1, 0)
 offset_left = 330.0
 offset_right = 1001.0
 offset_bottom = 581.0
@@ -57,7 +119,7 @@ offset_right = 650.0
 offset_bottom = 900.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_17smv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=803929212]
+[node name="Developers" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=803929212]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 61.0
@@ -65,7 +127,7 @@ offset_right = 601.0
 offset_bottom = 310.0
 theme_override_constants/separation = 20
 
-[node name="UserButton" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1240136226 instance=ExtResource("1_yqri4")]
+[node name="UserButton" parent="ScrollContainer/Control/BackPanel/Panel/Developers" unique_id=1240136226 instance=ExtResource("1_yqri4")]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 toggle_mode = true
@@ -74,18 +136,18 @@ script = ExtResource("2_4egx0")
 developer_role = "GameDesigner, Programmer "
 user_name = "ArtyomDev"
 
-[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" index="0" unique_id=727484853]
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
 
-[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" index="1" unique_id=1866972064]
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="1" unique_id=1866972064]
 offset_left = 92.0
 offset_top = 8.0
 offset_right = 199.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 24
 
-[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" unique_id=2069402731]
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" unique_id=2069402731]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 48.0
@@ -93,7 +155,7 @@ offset_right = 133.0
 offset_bottom = 71.0
 text = "TEXT"
 
-[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" unique_id=1505682978]
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" unique_id=1505682978]
 layout_mode = 0
 offset_left = 409.0
 offset_top = 52.0
@@ -103,27 +165,27 @@ theme_override_font_sizes/font_size = 14
 text = "See more"
 horizontal_alignment = 2
 
-[node name="UserButton2" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1364099749 instance=ExtResource("1_yqri4")]
+[node name="UserButton2" parent="ScrollContainer/Control/BackPanel/Panel/Developers" unique_id=1364099749 instance=ExtResource("1_yqri4")]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "GameDesigner, Programmer "
-user_name = "Сырок (GlazedCheeseGames)"
+user_name = "GlazedCheeseGames"
 
-[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" index="0" unique_id=727484853]
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
 
-[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" index="1" unique_id=1866972064]
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" index="1" unique_id=1866972064]
 offset_left = 92.0
 offset_top = 8.0
 offset_right = 199.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 24
 
-[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" unique_id=125079389]
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" unique_id=125079389]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 48.0
@@ -131,7 +193,7 @@ offset_right = 133.0
 offset_bottom = 71.0
 text = "TEXT"
 
-[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" unique_id=570809459]
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" unique_id=570809459]
 layout_mode = 0
 offset_left = 409.0
 offset_top = 52.0
@@ -141,7 +203,7 @@ theme_override_font_sizes/font_size = 14
 text = "See more"
 horizontal_alignment = 2
 
-[node name="UserButton3" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1727682408 instance=ExtResource("1_yqri4")]
+[node name="UserButton3" parent="ScrollContainer/Control/BackPanel/Panel/Developers" unique_id=1727682408 instance=ExtResource("1_yqri4")]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 toggle_mode = true
@@ -150,18 +212,18 @@ script = ExtResource("2_4egx0")
 developer_role = "Artist"
 user_name = "Halva"
 
-[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" index="0" unique_id=727484853]
+[node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
 
-[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" index="1" unique_id=1866972064]
+[node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="1" unique_id=1866972064]
 offset_left = 92.0
 offset_top = 8.0
 offset_right = 199.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 24
 
-[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" unique_id=463846691]
+[node name="RoleLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" unique_id=463846691]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 48.0
@@ -169,7 +231,7 @@ offset_right = 133.0
 offset_bottom = 71.0
 text = "TEXT"
 
-[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" unique_id=1496257507]
+[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" unique_id=1496257507]
 layout_mode = 0
 offset_left = 409.0
 offset_top = 52.0
@@ -200,6 +262,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("4_iq24j")]
+modulate = Color(1, 1, 1, 0)
 offset_left = 134.0
 offset_top = 516.0
 offset_right = 307.0
@@ -207,11 +270,14 @@ offset_bottom = 558.0
 button_name = "BackButton"
 button_text = "Back"
 
-[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton" to="." method="dev_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2" to="." method="dev_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3" to="." method="dev_button_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589095916]
+libraries/ = SubResource("AnimationLibrary_2s1w0")
+
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" to="." method="dev_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" to="." method="dev_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" to="." method="dev_button_pressed"]
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
 
-[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton"]
-[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton2"]
-[editable path="ScrollContainer/Control/BackPanel/Panel/VBoxContainer/UserButton3"]
+[editable path="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton"]
+[editable path="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2"]
+[editable path="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3"]

@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @export var group : ButtonGroup
 
+const user = preload("res://Game/UI/Scenes/user_button.tscn")
+
 # Элементы товара
 @onready var item_name_label: Label = $BackPanel/Top/ItemNameLabel
 
@@ -32,9 +34,20 @@ var questions : int = 3
 func _ready() -> void:
 	item_name_label.text = Global.current_level_name
 	
+	if Global.users.is_empty() == false:
+		print("Не, не надо человеков")
+		for i in range(Global.user_amount[Global.current_level_id]):
+			add_user_buttons(i)
+	else:
+		print("Надо человеков")
+		for i in range(Global.user_amount[Global.current_level_id]):
+			create_user(i)
+			add_user_buttons(i)
+	
 	for child in buttons.get_children():
 		child.button_group = group
 		child.pressed.connect(button_pressed)
+		await child.show_button()
 
 func _on_custom_button_pressed() -> void:
 	Profile.set_user_icon(current_user_id)
@@ -44,6 +57,8 @@ func _on_custom_button_pressed() -> void:
 
 func button_pressed() -> void:
 	var button = group.get_pressed_button()
+	
+	print("Пользователь: ", Global.users[button.user_id]["user_type"])
 	
 	if is_chat_selected == false:
 		is_chat_selected = true
@@ -56,8 +71,37 @@ func button_pressed() -> void:
 		text_line.visible = true
 		send_button.visible = true
 	
+	
 	icon_frame.frame = button.user_icon_id
 	user_name_label.text = button.user_name
 	
 	current_user_id = button.user_icon_id
 	current_user_name = button.user_name
+
+
+func create_user(id : int) -> void:
+	var name_id = randi_range(0, 9)
+	var type_id = randi_range(0, 2)
+	
+	var new_user = {
+		"user_id" : id,
+		"user_name" : Global.user_name_list[name_id],
+		"user_type" : Global.user_types[type_id],
+		"user_icon" : 0,
+		"user_description" : "damn" + str(id),
+		"user_date" : Global.current_day,
+		"phrases" : ["phrase1", "phrase2", "phrase3"],
+		"current_phrase" : 0,
+		"user_state" : 0
+	}
+	
+	Global.users.append(new_user)
+
+func add_user_buttons(id : int) -> void:
+	var customer = user.instantiate()
+	
+	customer.user_id = Global.users[id]["user_id"]
+	customer.user_name = Global.users[id]["user_name"]
+	customer.user_icon_id = Global.users[id]["user_icon"]
+	
+	buttons.add_child(customer)

@@ -2,8 +2,14 @@ extends CanvasLayer
 
 @export var group : ButtonGroup
 
+@onready var developers: VBoxContainer = $ScrollContainer/Control/BackPanel/Panel/Developers
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _ready() -> void:
-	pass # Replace with function body.
+	await show_credits()
+	
+	for dev in developers.get_children():
+		await dev.show_button()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,5 +25,19 @@ func dev_button_pressed() -> void:
 
 
 func _on_custom_button_pressed() -> void:
+	await hide_credits()
 	get_tree().change_scene_to_file(Global.current_scene)
 	Global.is_scene_credits = false
+
+
+func show_credits():
+	NoTouchRect.visible = true
+	animation_player.play("ShowCredits")
+	await animation_player.animation_finished
+	NoTouchRect.visible = false
+
+func hide_credits():
+	NoTouchRect.visible = true
+	animation_player.play_backwards("ShowCredits")
+	await animation_player.animation_finished
+	NoTouchRect.visible = false

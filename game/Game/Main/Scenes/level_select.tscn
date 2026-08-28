@@ -102,6 +102,7 @@ offset_right = 583.0
 offset_bottom = 496.0
 toggle_mode = true
 button_group = ExtResource("2_0utjo")
+item_state_id = 3
 item_id = 1
 item_name = "Item2"
 
@@ -124,6 +125,7 @@ offset_right = 859.0
 offset_bottom = 496.0
 toggle_mode = true
 button_group = ExtResource("2_0utjo")
+item_state_id = 3
 item_id = 2
 item_name = "Item3"
 
