@@ -13,7 +13,7 @@ shader_parameter/blur = 2.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
 border_width_right = 10
-border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+border_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o717j"]
 bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)

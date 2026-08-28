@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvdgm3ioewtcg"]
 
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_542fk"]
+[ext_resource type="Script" uid="uid://dt0fanoiyhj7g" path="res://Game/Main/Scripts/level_select.gd" id="1_drr54"]
 [ext_resource type="PackedScene" uid="uid://ddybls5jx3blt" path="res://Game/UI/Scenes/level_select_button.tscn" id="2_l13d0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l13d0"]
@@ -32,6 +33,7 @@ _data = {
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=2052156145]
 layer = 35
+script = ExtResource("1_drr54")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=875850990]
 offset_left = 141.0
@@ -67,6 +69,7 @@ offset_left = 360.0
 offset_top = 220.0
 offset_right = 583.0
 offset_bottom = 496.0
+item_id = 1
 item_name = "Item2"
 
 [node name="LevelSelectButton" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=754221516 instance=ExtResource("2_l13d0")]
@@ -84,6 +87,7 @@ offset_left = 636.0
 offset_top = 220.0
 offset_right = 859.0
 offset_bottom = 496.0
+item_id = 2
 item_name = "Item3"
 
 [node name="ProgressBar" type="ProgressBar" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=523755810]
@@ -93,7 +97,7 @@ offset_top = 133.0
 offset_right = 859.0
 offset_bottom = 171.0
 
-[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=1934007068]
+[node name="MoneyLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Panel2" unique_id=1934007068]
 layout_mode = 0
 offset_left = 277.0
 offset_top = 79.0

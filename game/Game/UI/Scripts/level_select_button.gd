@@ -1,16 +1,17 @@
 extends Button
 
 @export_range(0, 3) var item_state_id : int # Это за иконку статуста уровня
-@export_range(0, 2) var item_id : int # Это за картинку
+@export_range(0, 2) var item_id : int # Это за картинку (уровень по порядку)
 @export var item_name : String # Это за название уровня
 
 @onready var state_icon: AnimatedSprite2D = $Panel/StateIcon
 @onready var item_name_label: Label = $Panel/ItemNameLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if item_state_id != 3: disabled = true
+	else: disabled = false
+	
 	set_item_name()
 	set_item_state_icon()
 
@@ -29,12 +30,13 @@ func set_item_state_icon() -> void:
 
 func _on_pressed() -> void:
 	Global.current_level_name = item_name
+	Global.set_time(item_id)
 	get_tree().change_scene_to_file("res://Game/Main/Scenes/game.tscn")
 	Global.current_scene = "res://Game/Main/Scenes/game.tscn"
 
 
 func _on_mouse_entered() -> void:
-	animation_player.play("Hover")
+	if item_state_id == 3: animation_player.play("Hover")
 
 func _on_mouse_exited() -> void:
-	animation_player.play_backwards("Hover")
+	if item_state_id == 3: animation_player.play_backwards("Hover")

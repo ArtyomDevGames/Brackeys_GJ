@@ -9,10 +9,11 @@
 script/source = "extends CanvasLayer
 
 @onready var start_button_icon: Sprite2D = $CustomButton/StartButtonIcon
+@onready var time_label: Label = $ColorRect4/TimeLabel
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	set_time()
 
 
 func _on_custom_button_pressed() -> void:
@@ -30,6 +31,9 @@ func _on_custom_button_mouse_entered() -> void:
 
 func _on_custom_button_mouse_exited() -> void:
 	start_button_icon.material.set_shader_parameter(\"brightness\", 1.0)
+
+func set_time() -> void:
+	time_label.text = \"2026.08.\" + str(Global.current_day)
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -59,7 +63,7 @@ offset_right = 1281.0
 offset_bottom = 645.0
 color = Color(0.6225, 0.70112497, 0.75, 1)
 
-[node name="Label" type="Label" parent="ColorRect4" unique_id=438493132]
+[node name="TimeLabel" type="Label" parent="ColorRect4" unique_id=438493132]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 34.0
@@ -72,6 +76,7 @@ vertical_alignment = 1
 offset_top = 569.0
 offset_right = 116.0
 offset_bottom = 640.0
+mouse_filter = 2
 color = Color(0.6225, 0.70112497, 0.75, 1)
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("1_yg766")]
@@ -83,7 +88,7 @@ button_name = "PauseButton"
 
 [node name="StartButtonIcon" type="Sprite2D" parent="CustomButton" unique_id=528157131]
 material = SubResource("ShaderMaterial_mhbco")
-position = Vector2(41.999996, 24.000004)
+position = Vector2(41.999996, 23.000004)
 scale = Vector2(0.020764165, 0.020764165)
 texture = ExtResource("2_mhbco")
 
@@ -95,7 +100,7 @@ offset_bottom = 640.0
 color = Color(0.62352943, 0.7019608, 0.7490196, 1)
 
 [node name="BrowserIcon" type="Sprite2D" parent="." unique_id=463573532]
-position = Vector2(161, 586)
+position = Vector2(162, 585)
 scale = Vector2(0.020039054, 0.020039054)
 texture = ExtResource("3_inbqr")
 
@@ -103,6 +108,7 @@ texture = ExtResource("3_inbqr")
 offset_top = 569.0
 offset_right = 1281.0
 offset_bottom = 575.0
+mouse_filter = 2
 color = Color(1, 1, 1, 0.14509805)
 
 [connection signal="mouse_entered" from="CustomButton" to="." method="_on_custom_button_mouse_entered"]

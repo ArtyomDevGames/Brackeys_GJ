@@ -6,9 +6,11 @@ extends CanvasLayer
 
 @onready var custom_button_3: Button = $CustomButton3
 
+@onready var name_label: Label = $Panel/Dark/NameLabel
+
 
 func _ready() -> void:
-	pass
+	name_label.text = Global.PC_user_name
 
 func button_pressed() -> void:
 	var button = group.get_pressed_button()
@@ -55,3 +57,7 @@ func hide_settings():
 	animation_player.play_backwards("ShowSettings")
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
+
+
+func update_name():
+	name_label.text = Global.PC_user_name

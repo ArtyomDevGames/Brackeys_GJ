@@ -98,9 +98,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect" unique_id=1634041627]
 layout_mode = 0
 offset_left = 143.0
-offset_top = 90.0
+offset_top = 114.0
 offset_right = 538.0
-offset_bottom = 276.0
+offset_bottom = 300.0
 theme_override_constants/separation = 30
 
 [node name="NameContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2" unique_id=93114081]
@@ -149,6 +149,20 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 secret = true
 
+[node name="WarningLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/ColorRect" unique_id=2039990153]
+visible = false
+layout_mode = 0
+offset_left = 143.0
+offset_top = 44.0
+offset_right = 538.0
+offset_bottom = 82.0
+theme_override_colors/default_color = Color(0.82, 0.29847997, 0.22959997, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave]Fill in all fields![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CustomButton" parent="ScrollContainer/Control/BackPanel" unique_id=1194507549 instance=ExtResource("1_jk18y")]
 layout_mode = 0
 offset_left = 203.0
@@ -174,5 +188,9 @@ scale = Vector2(0.11117553, 0.11117553)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=950181109]
 libraries/ = SubResource("AnimationLibrary_05804")
+
+[node name="Timer" type="Timer" parent="." unique_id=585216177]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="pressed" from="ScrollContainer/Control/BackPanel/CustomButton" to="." method="_on_custom_button_pressed"]
