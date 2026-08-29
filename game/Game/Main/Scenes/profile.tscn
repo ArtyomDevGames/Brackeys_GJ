@@ -99,7 +99,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jpmup")
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Top" unique_id=727484853 instance=ExtResource("1_w0aak")]
 position = Vector2(112, 167)
 scale = Vector2(0.1576172, 0.1576172)
-frame = 1
+frame = 0
 
 [node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=636750415]
 layout_mode = 1
@@ -113,11 +113,13 @@ theme_override_font_sizes/font_size = 40
 text = "Name"
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("2_53oc8")]
-offset_left = 118.0
+offset_left = 1020.0
 offset_top = 93.0
-offset_right = 310.0
+offset_right = 1212.0
 offset_bottom = 147.0
 button_name = "BackButton"
 button_text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635207494]
 
 [connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]

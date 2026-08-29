@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_1yo7q"]
 [ext_resource type="Script" uid="uid://bloywjulrcxrl" path="res://Game/Main/Scripts/registration.gd" id="1_brqll"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="1_jk18y"]
+[ext_resource type="Texture2D" uid="uid://btsn5bst7lggb" path="res://Assets/Art/UI/Arrow.svg" id="4_05804"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -58,6 +59,43 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_jk18y"),
 &"ShowRegistration": SubResource("Animation_brqll")
+}
+
+[sub_resource type="Animation" id="Animation_mc43n"]
+resource_name = "Mooving"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1076.0001, 525.00006), Vector2(1076, 538), Vector2(1076.0001, 525.00006)]
+}
+
+[sub_resource type="Animation" id="Animation_mrnjt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1076.0001, 525.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqort"]
+_data = {
+&"Mooving": SubResource("Animation_mc43n"),
+&"RESET": SubResource("Animation_mrnjt")
 }
 
 [node name="Registration" type="CanvasLayer" unique_id=1944704444]
@@ -185,6 +223,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jk18y")
 texture_filter = 2
 position = Vector2(332, 169.00002)
 scale = Vector2(0.11117553, 0.11117553)
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=950181109]
 libraries/ = SubResource("AnimationLibrary_05804")
@@ -192,5 +231,13 @@ libraries/ = SubResource("AnimationLibrary_05804")
 [node name="Timer" type="Timer" parent="." unique_id=585216177]
 wait_time = 3.0
 one_shot = true
+
+[node name="Arrow2" type="Sprite2D" parent="." unique_id=1452658644]
+position = Vector2(1076.0001, 525.00006)
+scale = Vector2(0.01933573, 0.01933573)
+texture = ExtResource("4_05804")
+
+[node name="AnimationArrow" type="AnimationPlayer" parent="." unique_id=1012089195]
+libraries/ = SubResource("AnimationLibrary_gqort")
 
 [connection signal="pressed" from="ScrollContainer/Control/BackPanel/CustomButton" to="." method="_on_custom_button_pressed"]

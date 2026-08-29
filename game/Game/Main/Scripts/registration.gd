@@ -28,7 +28,6 @@ func _on_custom_button_pressed() -> void:
 		Global.PC_user_name = username_line.text
 		Pause.update_name()
 		get_tree().change_scene_to_file("res://Game/Main/Scenes/level_select.tscn")
-		Global.current_scene = "res://Game/Main/Scenes/level_select.tscn"
 
 # Анимации появления / скрытия меню
 func show_registration():

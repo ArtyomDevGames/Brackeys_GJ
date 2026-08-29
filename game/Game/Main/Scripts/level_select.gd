@@ -33,4 +33,3 @@ func on_level_button_pressed():
 	Global.current_level_name = button.item_name
 	Global.set_time(button.item_id)
 	get_tree().change_scene_to_file("res://Game/Main/Scenes/game.tscn")
-	Global.current_scene = "res://Game/Main/Scenes/game.tscn"

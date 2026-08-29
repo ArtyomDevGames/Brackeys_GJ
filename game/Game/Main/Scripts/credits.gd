@@ -26,8 +26,7 @@ func dev_button_pressed() -> void:
 
 func _on_custom_button_pressed() -> void:
 	await hide_credits()
-	get_tree().change_scene_to_file(Global.current_scene)
-	Global.is_scene_credits = false
+	get_tree().change_scene_to_file("res://Game/Main/Scenes/thanks.tscn")
 
 
 func show_credits():

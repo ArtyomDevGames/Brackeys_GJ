@@ -1,6 +1,10 @@
 extends CanvasLayer
 
+var database : SQLite
+
 @export var group : ButtonGroup
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const user = preload("res://Game/UI/Scenes/user_button.tscn")
 
@@ -37,6 +41,16 @@ var current_user_id : int
 var questions : int = 3
 
 func _ready() -> void:
+	database = SQLite.new()
+	database.path = "res://Assets/Database/dialogue_phrases.db"
+	database.open_db()
+	
+	database.query("select * from {}".format([Global.support_phrases], "{}"))
+	var data = database.query_result
+	print(data)
+	
+	await show_menu()
+	
 	item_name_label.text = Global.current_level_name
 	item_price.text = item_price.text.format([Global.prices[Global.current_level_id]], "{}")
 	
@@ -54,6 +68,18 @@ func _ready() -> void:
 		child.button_group = group
 		child.pressed.connect(button_pressed)
 		await child.show_button()
+
+func show_menu():
+	NoTouchRect.visible = true
+	animation_player.play("ShowMenu")
+	await animation_player.animation_finished
+	NoTouchRect.visible = false
+
+func hide_menu():
+	NoTouchRect.visible = true
+	animation_player.play_backwards("ShowMenu")
+	await animation_player.animation_finished
+	NoTouchRect.visible = false
 
 func _on_custom_button_pressed() -> void:
 	Profile.set_user_icon(current_user_id)
@@ -88,12 +114,20 @@ func button_pressed() -> void:
 	current_user_id = button.user_icon_id
 	current_user_name = button.user_name
 	
-	for message in chat.get_children(): await message.show_reply()
+	for message in chat.get_children(): await message.show_message()
 
 
 func create_user(id : int) -> void:
 	var name_id = randi_range(0, 9)
-	var type_id = randi_range(0, 2)
+	
+	var random_number = randi_range(0, 100)
+	var type_id : int
+	var customer_chance = Global.what_user_chance()
+	
+	if random_number <= customer_chance[0]: type_id = 0
+	elif customer_chance[0] < random_number and random_number <= customer_chance[1]: type_id = 1
+	else: type_id = 2
+	
 	var user_offered_price = count_offered_price(type_id)
 	
 	var new_user = {

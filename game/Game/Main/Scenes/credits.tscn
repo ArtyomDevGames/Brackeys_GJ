@@ -139,6 +139,7 @@ user_name = "ArtyomDev"
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
+frame = 0
 
 [node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="1" unique_id=1866972064]
 offset_left = 92.0
@@ -172,11 +173,13 @@ toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "GameDesigner, Programmer "
+user_id = 1
 user_name = "GlazedCheeseGames"
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
+frame = 1
 
 [node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" index="1" unique_id=1866972064]
 offset_left = 92.0
@@ -210,6 +213,7 @@ toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "Artist"
+user_id = 2
 user_name = "Halva"
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="0" unique_id=727484853]
@@ -263,12 +267,12 @@ vertical_alignment = 1
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("4_iq24j")]
 modulate = Color(1, 1, 1, 0)
-offset_left = 134.0
-offset_top = 516.0
-offset_right = 307.0
-offset_bottom = 558.0
-button_name = "BackButton"
-button_text = "Back"
+offset_left = 1025.0
+offset_top = 515.0
+offset_right = 1198.0
+offset_bottom = 557.0
+button_name = "NextButton"
+button_text = "Next"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589095916]
 libraries/ = SubResource("AnimationLibrary_2s1w0")

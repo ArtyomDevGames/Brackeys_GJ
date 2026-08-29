@@ -4,8 +4,6 @@ extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var blur: ColorRect = $Blur
 
-@onready var custom_button_3: Button = $CustomButton3
-
 @onready var name_label: Label = $Panel/Dark/NameLabel
 
 
@@ -18,18 +16,11 @@ func button_pressed() -> void:
 	if button.button_name == "ContinueButton": await hide_pause()
 	elif button.button_name == "SettingsButton": await show_settings()
 	elif button.button_name == "BackButton": await hide_settings()
-	elif button.button_name == "CreditsButton":
-		await hide_pause()
-		get_tree().change_scene_to_file("res://Game/Main/Scenes/credits.tscn")
-		Global.is_scene_credits = true
 	elif button.button_name == "ExitButton": get_tree().quit()
 
 # Анимации появления / скрытия меню
 # Пауза
 func show_pause():
-	if Global.is_scene_credits == true: custom_button_3.disabled = true
-	else: custom_button_3.disabled = false
-	
 	blur.visible = true
 	visible = true
 	NoTouchRect.visible = true
