@@ -70,13 +70,9 @@ offset_top = 54.0
 offset_right = 591.0
 offset_bottom = 445.0
 
-[node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1862385270]
+[node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1862385270]
 custom_minimum_size = Vector2(552, 90)
-layout_mode = 0
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 590.0
-offset_bottom = 144.0
+layout_mode = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -85,12 +81,9 @@ text = "You have sold your item to:
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=894940673]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 176.0
-offset_right = 591.0
-offset_bottom = 294.0
+[node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=894940673]
+custom_minimum_size = Vector2(553, 118)
+layout_mode = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
