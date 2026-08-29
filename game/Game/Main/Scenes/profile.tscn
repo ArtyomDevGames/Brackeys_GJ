@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cn8xo4wp0huq0" path="res://Game/Main/Scripts/profile.gd" id="1_53oc8"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_w0aak"]
-[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="2_53oc8"]
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="2_kjvjx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
@@ -33,7 +32,7 @@ layer = 5
 visible = false
 script = ExtResource("1_53oc8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=890475172]
+[node name="ColorRect" type="Button" parent="." unique_id=692439060]
 material = SubResource("ShaderMaterial_g4v7s")
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,14 +110,6 @@ offset_bottom = 205.0
 theme_override_font_sizes/font_size = 40
 text = "Name"
 
-[node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("2_53oc8")]
-offset_left = 1020.0
-offset_top = 77.0
-offset_right = 1212.0
-offset_bottom = 131.0
-button_name = "BackButton"
-button_text = "Back"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=635207494]
 
-[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="pressed" from="ColorRect" to="." method="_on_custom_button_pressed"]

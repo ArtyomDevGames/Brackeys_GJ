@@ -4,6 +4,7 @@
 [ext_resource type="ButtonGroup" uid="uid://b3vqq08xisvrh" path="res://Resources/Groups/GameGroup.tres" id="2_a4awf"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
+[ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="5_a4awf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -75,6 +76,22 @@ _data = {
 &"RESET": SubResource("Animation_r5k4a"),
 &"ShowMenu": SubResource("Animation_wr7mi")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("5_a4awf")
+shader_parameter/blur = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5k4a"]
+bg_color = Color(0.81960785, 0.87058824, 0.9019608, 1)
+border_width_left = 20
+border_width_top = 150
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Game" type="CanvasLayer" unique_id=162558194]
 script = ExtResource("1_5ytc6")
@@ -274,6 +291,63 @@ libraries/ = SubResource("AnimationLibrary_a1gum")
 wait_time = 0.5
 one_shot = true
 
+[node name="Decision" type="Button" parent="." unique_id=634224256]
+visible = false
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.777832
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Decision" unique_id=1921687980]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 95.0
+offset_right = 1029.0955
+offset_bottom = 538.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5k4a")
+
+[node name="Label" type="Label" parent="Decision/Panel" unique_id=835793332]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 53.0
+offset_right = 688.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 32
+text = "YOUR DECISION?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Decision/Panel" unique_id=1950664943]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 181.0
+offset_right = 491.89255
+offset_bottom = 377.0
+theme_override_constants/separation = 10
+
+[node name="CustomButton" parent="Decision/Panel/VBoxContainer" unique_id=2143373785 instance=ExtResource("3_6gq2s")]
+layout_mode = 2
+size_flags_vertical = 3
+button_name = "AcceptButton"
+button_text = "Accept"
+
+[node name="CustomButton2" parent="Decision/Panel/VBoxContainer" unique_id=1094876069 instance=ExtResource("3_6gq2s")]
+layout_mode = 2
+size_flags_vertical = 3
+button_name = "DeclineButton"
+button_text = "Decline"
+
+[node name="CustomButton3" parent="Decision/Panel/VBoxContainer" unique_id=1663959137 instance=ExtResource("3_6gq2s")]
+layout_mode = 2
+size_flags_vertical = 3
+button_name = "ReportButton"
+button_text = "Report"
+
 [connection signal="pressed" from="BackPanel/Background/Top/CustomButton" to="." method="_on_custom_button_pressed"]
 [connection signal="pressed" from="BackPanel/Background/Bottom/ChoiceButtons/Choice" to="." method="choice_pressed"]
 [connection signal="pressed" from="BackPanel/Background/Bottom/Send" to="." method="send_pressed"]
+[connection signal="pressed" from="BackPanel/Background/Bottom/Decide" to="." method="_on_decide_pressed"]

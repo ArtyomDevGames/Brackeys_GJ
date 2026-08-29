@@ -49,6 +49,8 @@ var current_user_icon : int
 var current_user_id : int
 
 func _ready() -> void:
+	$Decision.pressed.connect(hide_decision)
+	
 	var file = FileAccess.open(dialogue_path, FileAccess.READ)
 	dialogue_data = JSON.parse_string(file.get_as_text())
 	
@@ -171,6 +173,13 @@ func send_pressed():
 	send.disabled = true
 	var customer = Global.users[current_user_id]
 	
+	for child in buttons.get_children():
+		child.disabled = true
+	
+	custom_button.disabled = true
+	
+	
+	
 	if customer["user_state"] != 1:
 		if customer["current_question"] < 2: customer["current_question"] += 1
 		customer["current_phrase"] += 1
@@ -221,6 +230,11 @@ func send_pressed():
 		text_line.text = ""
 		choice.visible = true
 		send.disabled = true
+	
+	for child in buttons.get_children():
+		child.disabled = false
+	
+	custom_button.disabled = false
 
 
 func create_user(id : int) -> void:
@@ -313,3 +327,10 @@ func show_message(message : Dictionary) -> Control:
 	chat.add_child(chat_bubble)
 	
 	return chat_bubble
+
+
+func _on_decide_pressed() -> void:
+	$Decision.visible = true
+
+func hide_decision():
+	$Decision.visible = false

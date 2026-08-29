@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_udjpa"]
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="3_pl3rp"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="4_o4apy"]
+[ext_resource type="Texture2D" uid="uid://sotrfpxp472o" path="res://Assets/Art/UI/continue_button.png" id="6_csfab"]
+[ext_resource type="Texture2D" uid="uid://drque5oqjnha" path="res://Assets/Art/UI/settings_button.png" id="7_qsqfy"]
+[ext_resource type="Texture2D" uid="uid://jklmqua6mlal" path="res://Assets/Art/UI/exit_button.png" id="8_qgdy3"]
+[ext_resource type="Texture2D" uid="uid://da72ro0ijg246" path="res://Assets/Art/UI/back_button.png" id="9_qsqfy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("3_pl3rp")
@@ -307,7 +311,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_pl3rp"]
 resource_name = "ShowSettings"
-length = 2.2
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -315,7 +319,7 @@ tracks/0/path = NodePath("CustomButton:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.1),
+"times": PackedFloat32Array(0, 0.6, 0.8000001),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 157), Vector2(0, 157), Vector2(-360, 157)]
@@ -327,7 +331,7 @@ tracks/1/path = NodePath("CustomButton2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 225), Vector2(0, 225), Vector2(-360, 225)]
@@ -342,7 +346,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 361), Vector2(-360, 361)]
+"values": [Vector2(0, 293), Vector2(-360, 293)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -351,7 +355,7 @@ tracks/3/path = NodePath("CustomButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.1),
+"times": PackedFloat32Array(0, 0.6, 0.8000001),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -363,7 +367,7 @@ tracks/4/path = NodePath("CustomButton2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -387,7 +391,7 @@ tracks/6/path = NodePath("CustomButton5:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.8, 2),
+"times": PackedFloat32Array(0, 1.5999999, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -399,7 +403,7 @@ tracks/7/path = NodePath("CustomButton5:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.8, 2),
+"times": PackedFloat32Array(0, 1.5999999, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-360, 476), Vector2(-360, 476), Vector2(0, 476)]
@@ -411,7 +415,7 @@ tracks/8/path = NodePath("SoundSetting:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.4),
+"times": PackedFloat32Array(0, 1, 1.1999999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-360, 157), Vector2(-360, 157), Vector2(0, 157)]
@@ -423,7 +427,7 @@ tracks/9/path = NodePath("SoundSetting:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.4),
+"times": PackedFloat32Array(0, 1, 1.1999999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -435,7 +439,7 @@ tracks/10/path = NodePath("MusicSetting:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.7),
+"times": PackedFloat32Array(0, 1.3, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-360, 293), Vector2(-360, 293), Vector2(0, 293)]
@@ -447,7 +451,7 @@ tracks/11/path = NodePath("MusicSetting:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.7),
+"times": PackedFloat32Array(0, 1.3, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -494,13 +498,12 @@ color = Color(0.5616591, 0.6394864, 0.68683344, 1)
 [node name="Dark" type="ColorRect" parent="Panel" unique_id=1723747315]
 layout_mode = 0
 offset_right = 359.0
-offset_bottom = 157.0
+offset_bottom = 159.0
 color = Color(0.33810002, 0.43177167, 0.49, 1)
 
 [node name="IconFrame" parent="Panel/Dark" unique_id=727484853 instance=ExtResource("2_udjpa")]
 position = Vector2(105.00001, 106.00001)
 scale = Vector2(0.06093751, 0.06093751)
-frame = 0
 
 [node name="NameLabel" type="Label" parent="Panel/Dark" unique_id=1382811778]
 layout_mode = 0
@@ -523,8 +526,23 @@ offset_top = 157.0
 offset_right = -1.0
 offset_bottom = 225.0
 button_group = ExtResource("2_o4apy")
+flat = true
 button_name = "ContinueButton"
 button_text = "Continue"
+
+[node name="ContinueButton" type="Sprite2D" parent="CustomButton" unique_id=1622503600]
+position = Vector2(169.03972, 54.000008)
+scale = Vector2(0.5130424, 0.44387752)
+texture = ExtResource("6_csfab")
+
+[node name="Label" type="Label" parent="CustomButton" unique_id=1391518647]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 17.0
+offset_right = 315.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 24
+text = "CONTINUE"
 
 [node name="CustomButton2" parent="." unique_id=668894082 instance=ExtResource("4_o4apy")]
 modulate = Color(1, 1, 1, 0)
@@ -533,8 +551,23 @@ offset_top = 225.0
 offset_right = -1.0
 offset_bottom = 293.0
 button_group = ExtResource("2_o4apy")
+flat = true
 button_name = "SettingsButton"
 button_text = "Settings"
+
+[node name="SettingsButton" type="Sprite2D" parent="CustomButton2" unique_id=1559109688]
+position = Vector2(168.99998, 53.500015)
+scale = Vector2(0.5131195, 0.46088433)
+texture = ExtResource("7_qsqfy")
+
+[node name="Label" type="Label" parent="CustomButton2" unique_id=923333558]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 17.0
+offset_right = 315.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
 
 [node name="CustomButton4" parent="." unique_id=494030567 instance=ExtResource("4_o4apy")]
 modulate = Color(1, 1, 1, 0)
@@ -543,8 +576,23 @@ offset_top = 361.0
 offset_right = -1.0
 offset_bottom = 429.0
 button_group = ExtResource("2_o4apy")
+flat = true
 button_name = "ExitButton"
 button_text = "Exit"
+
+[node name="ExitButton" type="Sprite2D" parent="CustomButton4" unique_id=204734371]
+position = Vector2(169, 53)
+scale = Vector2(0.5131196, 0.44557816)
+texture = ExtResource("8_qgdy3")
+
+[node name="Label" type="Label" parent="CustomButton4" unique_id=379219525]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 17.0
+offset_right = 315.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
 
 [node name="SoundSetting" type="Control" parent="." unique_id=1798834648]
 modulate = Color(1, 1, 1, 0)
@@ -623,8 +671,23 @@ offset_top = 476.0
 offset_right = -1.0
 offset_bottom = 544.0
 button_group = ExtResource("2_o4apy")
+flat = true
 button_name = "BackButton"
 button_text = "Back"
+
+[node name="BackButton" type="Sprite2D" parent="CustomButton5" unique_id=493813065]
+position = Vector2(169.50002, 55.49997)
+scale = Vector2(0.5140914, 0.4642857)
+texture = ExtResource("9_qsqfy")
+
+[node name="Label" type="Label" parent="CustomButton5" unique_id=1115917704]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 17.0
+offset_right = 315.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 24
+text = "BACK"
 
 [connection signal="pressed" from="CustomButton" to="." method="button_pressed"]
 [connection signal="pressed" from="CustomButton2" to="." method="button_pressed"]
