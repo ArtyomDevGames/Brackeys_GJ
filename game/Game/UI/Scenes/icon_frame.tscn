@@ -30,6 +30,8 @@ animations = [{
 }]
 
 [node name="IconFrame" type="AnimatedSprite2D" unique_id=727484853]
+texture_filter = 1
+texture_repeat = 1
 position = Vector2(-2.7105054e-20, 5.9604645e-08)
 scale = Vector2(0.09648437, 0.09648437)
 sprite_frames = SubResource("SpriteFrames_g4v7s")

@@ -179,7 +179,6 @@ func send_pressed():
 	custom_button.disabled = true
 	
 	
-	
 	if customer["user_state"] != 1:
 		if customer["current_question"] < 2: customer["current_question"] += 1
 		customer["current_phrase"] += 1
@@ -196,6 +195,7 @@ func send_pressed():
 		
 		bubble = show_message({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
 		await bubble.show_message()
+		bubble.play_sound()
 		customer["dialogue"].append({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
 		message_timer.start(1)
 		await message_timer.timeout
@@ -206,6 +206,7 @@ func send_pressed():
 					customer["current_phrase"] = i
 					bubble = show_message({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
 					await bubble.show_message()
+					bubble.play_sound()
 					customer["dialogue"].append({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
 					message_timer.start(2)
 					await message_timer.timeout

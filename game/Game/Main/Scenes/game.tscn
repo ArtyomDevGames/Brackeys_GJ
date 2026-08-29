@@ -122,6 +122,7 @@ offset_left = 320.0
 offset_top = 147.0
 offset_right = 978.862
 offset_bottom = 447.761
+follow_focus = true
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
@@ -229,6 +230,7 @@ offset_left = 23.0
 offset_top = 309.0
 offset_right = 333.0
 offset_bottom = 719.0
+follow_focus = true
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
