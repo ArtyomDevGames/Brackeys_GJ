@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cn5rynswy0yxf"]
 
+[ext_resource type="Script" uid="uid://bhaf852ia2erk" path="res://Game/Main/Scripts/statistic.gd" id="1_opgfd"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odmi4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
@@ -20,6 +22,7 @@ corner_radius_bottom_left = 5
 bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
 [node name="Statistic" type="CanvasLayer" unique_id=1701129147]
+script = ExtResource("1_opgfd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091716575]
 offset_left = 330.0
@@ -50,6 +53,7 @@ offset_bottom = 900.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_opgfd")
 
 [node name="Stats" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=963088032]
+visible = false
 layout_mode = 0
 offset_left = 177.0
 offset_top = 54.0
@@ -58,6 +62,42 @@ offset_bottom = 303.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=628570666]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1133407330]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 591.0
+offset_bottom = 445.0
+
+[node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1862385270]
+custom_minimum_size = Vector2(552, 90)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 590.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "You have sold your item to:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=894940673]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 176.0
+offset_right = 591.0
+offset_bottom = 294.0
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Money received:
+[color=#64BC6D][wave]${}[/wave][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=1676291349]
 layout_mode = 0

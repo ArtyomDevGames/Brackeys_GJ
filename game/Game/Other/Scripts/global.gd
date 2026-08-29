@@ -47,6 +47,11 @@ const prices : Array = [30, 50, 100]
 
 var current_day : int = 28 + current_level_id
 
+# Окно статистики
+var stats_title = "DAY RESULTS"
+var who_sold_to = ""
+
+
 func set_time(day):
 	current_level_id = day
 	current_day = 28 + current_level_id
