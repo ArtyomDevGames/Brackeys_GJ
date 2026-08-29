@@ -585,75 +585,83 @@
 			},
 			{
 				"PhraseID": 4,
-				"Phrase": "Congratulations! You just got your first buyer."
+				"Phrase": "I'm just kidding, don't worry"
 			},
 			{
 				"PhraseID": 5,
-				"Phrase": "...Well, technically, you didn't."
+				"Phrase": "Anyway..."
 			},
 			{
 				"PhraseID": 6,
-				"Phrase": "I'm from Customer Support. This was a little test."
+				"Phrase": "Congratulations! You just got your first buyer!"
 			},
 			{
 				"PhraseID": 7,
-				"Phrase": "Before you sell anything, you should always check who you're dealing with."
+				"Phrase": "...Well, technically, you didn't."
 			},
 			{
 				"PhraseID": 8,
-				"Phrase": "Some buyers are perfectly normal. Some are not."
+				"Phrase": "I'm from Customer Support. This was a little test."
 			},
 			{
 				"PhraseID": 9,
-				"Phrase": "And some are very interested in your item for absolutely no reason."
+				"Phrase": "Before you sell anything, you should always check who you're dealing with."
 			},
 			{
 				"PhraseID": 10,
-				"Phrase": "Pay attention to what they say, how they behave, and whether their offer makes sense."
+				"Phrase": "Some buyers are perfectly normal. Some are not."
 			},
 			{
 				"PhraseID": 11,
-				"Phrase": "A suspiciously high offer is not necessarily a good thing."
+				"Phrase": "And some are very interested in your item for absolutely no reason."
 			},
 			{
 				"PhraseID": 12,
-				"Phrase": "Neither is someone trying to rush you."
+				"Phrase": "Pay attention to what they say, how they behave, and whether their offer makes sense."
 			},
 			{
 				"PhraseID": 13,
-				"Phrase": "You can ask buyers questions before making your decision."
+				"Phrase": "A suspiciously high offer is not necessarily a good thing."
 			},
 			{
 				"PhraseID": 14,
-				"Phrase": "You have three questions per buyer, so use them wisely."
+				"Phrase": "Neither is someone trying to rush you."
 			},
 			{
 				"PhraseID": 15,
-				"Phrase": "If something feels wrong, you don't have to sell."
+				"Phrase": "You can ask buyers questions before making your decision."
 			},
 			{
 				"PhraseID": 16,
-				"Phrase": "You can refuse the deal or report the buyer to Support."
+				"Phrase": "You have three questions per buyer, so use them wisely."
 			},
 			{
 				"PhraseID": 17,
-				"Phrase": "And don't worry — refusing a normal buyer won't get you arrested."
+				"Phrase": "If something feels wrong, you don't have to sell."
 			},
 			{
 				"PhraseID": 18,
-				"Phrase": "...Usually."
+				"Phrase": "You can refuse the deal or report the buyer to Support."
 			},
 			{
 				"PhraseID": 19,
-				"Phrase": "Anyway, good luck. You've got three days to make enough money for your ticket."
+				"Phrase": "And don't worry — refusing a normal buyer won't get you arrested."
 			},
 			{
 				"PhraseID": 20,
-				"Phrase": "Try not to get scammed."
+				"Phrase": "...Usually."
 			},
 			{
 				"PhraseID": 21,
-				"Phrase": "Especially by Customer Support."
+				"Phrase": "Anyway, good luck. You've got three days to make enough money for your ticket."
+			},
+			{
+				"PhraseID": 22,
+				"Phrase": "Try not to get scammed."
+			},
+			{
+				"PhraseID": 23,
+				"Phrase": "Especially by Customer Support *wink-wink*"
 			}
 		]
 	},

@@ -7,6 +7,7 @@ const dialogue_path = "res://Assets/Database/dialogue_phrases.json"
 
 # Остальное
 @export var group : ButtonGroup
+@export var decision_group : ButtonGroup
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var message_timer: Timer = $MessageTimer
@@ -49,6 +50,7 @@ var current_user_icon : int
 var current_user_id : int
 
 func _ready() -> void:
+	Global.users = []
 	$Decision.pressed.connect(hide_decision)
 	
 	var file = FileAccess.open(dialogue_path, FileAccess.READ)
@@ -67,7 +69,8 @@ func _ready() -> void:
 		
 		var support = {
 			"user_id" : 0,
-			"user_name" : "Dave",
+			"user_name" : "DaveNotTheDiver",
+			"user_type_id": 2,
 			"user_type" : Global.user_types[2],
 			"user_icon" : 0,
 			"user_description" : "Helping everybody just because I can",
@@ -83,8 +86,11 @@ func _ready() -> void:
 		Global.users.append(support)
 		add_user_buttons(0)
 		
-		create_user(1)
-		add_user_buttons(1)
+		for i in range(1, Global.user_amount[Global.current_level_id]):
+			create_user(i)
+			add_user_buttons(i)
+			
+			buttons.get_child(i).disabled = true
 	else:
 		if Global.users.is_empty() == false:
 			print("Не, не надо человеков")
@@ -113,7 +119,7 @@ func hide_menu():
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
 
-
+# Кнопки жмаются
 func _on_custom_button_pressed() -> void:
 	Profile.set_user_icon(current_user_icon)
 	Profile.set_user_name(current_user_name)
@@ -149,6 +155,14 @@ func button_pressed() -> void:
 		text_line.visible = false
 		send.visible = false
 		decide.visible = true
+		decide.disabled = false
+		decide.text = "DECIDE"
+	
+	if customer["user_state"] > 1:
+		decide.text = Global.user_states[customer["user_state"]]
+		decide.visible = true
+		decide.disabled = true
+	
 	
 	icon_frame.frame = button.user_icon_id
 	user_name_label.text = button.user_name
@@ -163,6 +177,68 @@ func button_pressed() -> void:
 	choice.set_button_text()
 	
 	show_chat(button.user_id)
+
+func decision_pressed() -> void:
+	var button = decision_group.get_pressed_button()
+	var state : int
+	
+	
+	if button.button_name == "AcceptButton":
+		state = 2
+		show_sure(state)
+	elif button.button_name == "DeclineButton":
+		state = 3
+		show_sure(state)
+	elif button.button_name == "ReportButton":
+		state = 4
+		show_sure(state)
+	
+	if button.button_name == "NoButton":
+		hide_sure()
+		hide_decision()
+	elif button.button_name == "YesButton":
+		match button.decision:
+			2:
+				Global.who_sold_to = Global.users[current_user_id]["user_type_id"]
+				Global.money_recieved = Global.users[current_user_id]["offered_price"]
+				Global.current_money_amount += Global.money_recieved
+				$EndDayButton.visible = true
+			3:
+				Global.total_rejected += 1
+			4:
+				Global.total_reported += 1
+		
+		Global.users[current_user_id]["user_state"] = button.decision
+		
+		decide.disabled = true
+		decide.text = Global.user_states[button.decision]
+		
+		hide_sure()
+		hide_decision()
+
+func _on_end_day_button_pressed() -> void:
+	$EndDayButton.visible = false
+	await hide_menu()
+	
+	if Global.current_level_id == 2: Global.stats_title = "SUMMARY STATISTICS"
+	
+	get_tree().change_scene_to_file("res://Game/Main/Scenes/statistic.tscn")
+
+
+func show_sure(decision : int):
+	$Decision/Panel/Label1.visible = false
+	$Decision/Panel/VBoxContainer.visible = false
+	$Decision/Panel/AreYouSure.visible = true
+	$Decision/Panel/Label.visible = true
+	
+	$Decision/Panel/AreYouSure/CustomButton.decision = decision
+	$Decision/Panel/AreYouSure/CustomButton2.decision = decision
+
+func hide_sure():
+	$Decision/Panel/Label1.visible = true
+	$Decision/Panel/VBoxContainer.visible = true
+	$Decision/Panel/AreYouSure.visible = false
+	$Decision/Panel/Label.visible = false
 
 func choice_pressed():
 	text_line.text = choice.button_text
@@ -202,6 +278,8 @@ func send_pressed():
 		
 		if customer["current_phrase"] == 3:
 			if Global.current_level_id == 0 and customer["user_id"] == 0:
+				message_timer.start(1.5)
+				await message_timer.timeout
 				for i in range(4, customer["phrases"].size()):
 					customer["current_phrase"] = i
 					bubble = show_message({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
@@ -210,7 +288,11 @@ func send_pressed():
 					customer["dialogue"].append({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
 					message_timer.start(2)
 					await message_timer.timeout
-		
+				
+				
+				for i in range(1, Global.user_amount[Global.current_level_id]):
+					buttons.get_child(i).disabled = true
+			
 			customer["user_state"] = 1
 	
 	if customer["user_state"] == 1:
@@ -232,21 +314,62 @@ func send_pressed():
 		choice.visible = true
 		send.disabled = true
 	
+	
 	for child in buttons.get_children():
 		child.disabled = false
 	
+	if Global.current_level_id == 0 and customer["user_id"] == 0 and customer["user_state"] != 1:
+		for i in range(1, Global.user_amount[Global.current_level_id]):
+			buttons.get_child(i).disabled = true
+	
 	custom_button.disabled = false
 
+func _on_decide_pressed() -> void:
+	$Decision.visible = true
+	
+	var is_accepted : bool = false
+	var total_decided : int = 0
+	var total_accepted : int = 0
+	for thing in Global.users:
+		if thing["user_state"] == 2:
+			is_accepted = true
+			total_accepted += 1
+		if thing["user_state"] != 1 and thing["user_state"] != 0:
+			total_decided += 1
+	
+	if is_accepted == false and total_decided == Global.users.size() - 1:
+		$Decision/Panel/VBoxContainer/CustomButton2.disabled = true
+		$Decision/Panel/VBoxContainer/CustomButton3.disabled = true
+		$Decision/Panel/AreYouSure/CustomButton2.disabled = true
+	
+	if total_accepted >= 1:
+		$Decision/Panel/VBoxContainer/CustomButton.disabled = true
 
+func hide_decision():
+	$Decision.visible = false
+	
+	$Decision/Panel/VBoxContainer/CustomButton.disabled = false
+	$Decision/Panel/VBoxContainer/CustomButton2.disabled = false
+	$Decision/Panel/VBoxContainer/CustomButton3.disabled = false
+	$Decision/Panel/AreYouSure/CustomButton2.disabled = false
+	$Decision/Panel/AreYouSure/CustomButton.disabled = false
+
+# Пользовательские штуки
 func create_user(id : int) -> void:
 	var icon_id = randi_range(0, 5) # Для выбора иконки
 	var random_number = randi_range(0, 100) # Для выбора типа
 	var type_id : int
 	var customer_chance = Global.what_user_chance()
 	
-	if random_number <= customer_chance[0]: type_id = 0
-	elif customer_chance[0] < random_number and random_number <= customer_chance[1]: type_id = 1
-	else: type_id = 2
+	if random_number <= customer_chance[0]:
+		type_id = 0
+		Global.total_basic += 1
+	elif customer_chance[0] < random_number and random_number <= customer_chance[1]:
+		type_id = 1
+		Global.total_trolls += 1
+	else:
+		type_id = 2
+		Global.total_scammers += 1
 	
 	var type = Global.user_types[type_id]
 	
@@ -260,6 +383,7 @@ func create_user(id : int) -> void:
 	var new_user = {
 		"user_id" : id,
 		"user_name" : get_random_name(),
+		"user_type_id": type_id,
 		"user_type" : type,
 		"user_icon" : icon_id,
 		"user_description" : generate_user_info(type, Global.desc),
@@ -295,7 +419,6 @@ func generate_user_info(customer_type : String, info_name : String) -> String:
 	
 	return str(random_row[info_name]).strip_edges()
 
-
 func add_user_buttons(id : int) -> void:
 	var customer = user.instantiate()
 	
@@ -305,6 +428,8 @@ func add_user_buttons(id : int) -> void:
 	
 	buttons.add_child(customer)
 
+
+# Штуки чата
 func show_chat(customer_id : int) -> void:
 	for message in chat.get_children():
 		message.queue_free()
@@ -316,6 +441,7 @@ func show_chat(customer_id : int) -> void:
 	for i in range(chat_lenght):
 		var bubble = show_message(Global.users[customer_id]["dialogue"][i])
 		bubble.show_message()
+		if chat_lenght == 1: bubble.play_sound()
 
 func show_message(message : Dictionary) -> Control:
 	var chat_bubble
@@ -328,10 +454,3 @@ func show_message(message : Dictionary) -> Control:
 	chat.add_child(chat_bubble)
 	
 	return chat_bubble
-
-
-func _on_decide_pressed() -> void:
-	$Decision.visible = true
-
-func hide_decision():
-	$Decision.visible = false

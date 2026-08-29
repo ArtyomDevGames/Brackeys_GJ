@@ -12,3 +12,5 @@ theme_override_font_sizes/font_size = 48
 text = "Thank you for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=969241126]

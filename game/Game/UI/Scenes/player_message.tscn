@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dexh0wyvbi08j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fayeh"]
-content_margin_right = 20.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
 bg_color = Color(0.8496733, 0.80041337, 0.79176193, 1)
 border_width_right = 15
 border_color = Color(0.5277462, 0.4443159, 0.43177012, 1)

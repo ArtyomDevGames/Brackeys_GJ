@@ -51,6 +51,7 @@ scroll_hint_mode = 1
 [node name="Control" type="Control" parent="ScrollContainer" unique_id=1684577108]
 custom_minimum_size = Vector2(671, 900)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=1117722212]
 layout_mode = 1
@@ -59,6 +60,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjvjx")
 
 [node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=477023414]
@@ -67,6 +69,7 @@ offset_left = 21.0
 offset_top = 233.0
 offset_right = 650.0
 offset_bottom = 900.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o717j")
 
 [node name="RegistrationDate" type="Label" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=419513431]
@@ -94,6 +97,7 @@ layout_mode = 0
 offset_left = 21.0
 offset_right = 650.0
 offset_bottom = 259.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jpmup")
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Top" unique_id=727484853 instance=ExtResource("1_w0aak")]

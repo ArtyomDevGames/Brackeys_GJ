@@ -1,6 +1,8 @@
 extends "res://Game/UI/Scripts/user_button.gd"
 
 @export var developer_role : String
+@export var developer_birthday : String
+@export var developer_description : String
 
 @onready var role_label: Label = $RoleLabel
 

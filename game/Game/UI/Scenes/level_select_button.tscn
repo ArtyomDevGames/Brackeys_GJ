@@ -77,6 +77,7 @@ _data = {
 }
 
 [node name="LevelSelectButton" type="Button" unique_id=865650154]
+custom_minimum_size = Vector2(223, 276)
 offset_right = 223.0
 offset_bottom = 276.0
 mouse_default_cursor_shape = 2

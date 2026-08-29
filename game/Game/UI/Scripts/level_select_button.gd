@@ -9,9 +9,6 @@ extends Button
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	if item_state_id != 3: disabled = true
-	else: disabled = false
-	
 	set_item_name()
 	set_item_state_icon()
 
@@ -25,9 +22,10 @@ func set_item_state_icon() -> void:
 	if item_state_id != 3: 
 		state_icon.visible = true
 		state_icon.frame = item_state_id
-	else: state_icon.visible = false
-
-
+		disabled = true
+	else:
+		state_icon.visible = false
+		disabled = false
 
 
 func _on_mouse_entered() -> void:

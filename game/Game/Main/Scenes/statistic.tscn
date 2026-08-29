@@ -22,10 +22,47 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sknm"]
 bg_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
+[sub_resource type="Animation" id="Animation_4sknm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ib2q1"]
+resource_name = "ShowMenu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dgclj"]
+_data = {
+&"RESET": SubResource("Animation_4sknm"),
+&"ShowMenu": SubResource("Animation_ib2q1")
+}
+
 [node name="Statistic" type="CanvasLayer" unique_id=1701129147]
 script = ExtResource("1_opgfd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091716575]
+modulate = Color(1, 1, 1, 0)
 offset_left = 330.0
 offset_right = 1001.0
 offset_bottom = 581.0
@@ -34,8 +71,9 @@ vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
 [node name="Control" type="Control" parent="ScrollContainer" unique_id=1388737113]
-custom_minimum_size = Vector2(671, 900)
+custom_minimum_size = Vector2(671, 1200)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="BackPanel" type="Panel" parent="ScrollContainer/Control" unique_id=258470989]
 layout_mode = 1
@@ -44,6 +82,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_odmi4")
 
 [node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=264132695]
@@ -51,30 +90,111 @@ layout_mode = 0
 offset_left = 21.0
 offset_top = 233.0
 offset_right = 650.0
-offset_bottom = 900.0
+offset_bottom = 1337.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_opgfd")
 
 [node name="Stats" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=963088032]
 visible = false
 layout_mode = 0
-offset_left = 177.0
+offset_left = 137.0
 offset_top = 54.0
-offset_right = 455.0
-offset_bottom = 303.0
+offset_right = 506.0
+offset_bottom = 781.0
+mouse_filter = 2
+theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=628570666]
+[node name="basic" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=601823835]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total BASIC customers:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="troll" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=497444285]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total TROLL customers:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scam" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=1864564329]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total SCAMMER customers:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="reject" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=246143027]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total customers REJECTED:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="report" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=1677232492]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total customers REPORTED:
+[wave]{}[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoNeY" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=1451809017]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Total [color=#64BC6D][wave]MoNeY[/wave][/color] earned:
+[color=#64BC6D][wave]${}[/wave][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DayEnded" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1133407330]
+visible = false
 layout_mode = 0
 offset_left = 38.0
 offset_top = 54.0
 offset_right = 591.0
-offset_bottom = 445.0
+offset_bottom = 541.0
+mouse_filter = 2
 
 [node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/DayEnded" unique_id=1862385270]
-custom_minimum_size = Vector2(552, 90)
+custom_minimum_size = Vector2(552, 120)
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -86,6 +206,7 @@ vertical_alignment = 1
 [node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/DayEnded" unique_id=894940673]
 custom_minimum_size = Vector2(553, 118)
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -99,9 +220,9 @@ custom_minimum_size = Vector2(273, 48)
 custom_maximum_size = Vector2(273, 48)
 layout_mode = 0
 offset_left = 177.0
-offset_top = 331.0
+offset_top = 851.0
 offset_right = 450.0
-offset_bottom = 379.0
+offset_bottom = 899.0
 button_name = "NextDayButton"
 button_text = "NEXT DAY"
 
@@ -110,9 +231,10 @@ layout_mode = 0
 offset_left = 21.0
 offset_right = 650.0
 offset_bottom = 259.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4sknm")
 
-[node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=1554525377]
+[node name="StatLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=1554525377]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.041
@@ -124,3 +246,8 @@ theme_override_font_sizes/font_size = 40
 text = "STATISTICS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1127137451]
+libraries/ = SubResource("AnimationLibrary_dgclj")
+
+[connection signal="pressed" from="ScrollContainer/Control/BackPanel/Panel/NextDayButton" to="." method="_on_next_day_button_pressed"]

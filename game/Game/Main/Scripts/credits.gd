@@ -12,10 +12,6 @@ func _ready() -> void:
 		await dev.show_button()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func dev_button_pressed() -> void:
 	var button = group.get_pressed_button()
 	

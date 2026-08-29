@@ -5,13 +5,23 @@ extends CanvasLayer
 @onready var name_label: Label = $ScrollContainer/Control/BackPanel/Panel/NameLabel
 @onready var money_label: Label = $ScrollContainer/Control/BackPanel/Panel2/MoneyLabel
 
+@onready var levels: HBoxContainer = $ScrollContainer/Control/BackPanel/Panel2/HBoxContainer
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _ready() -> void:
+func _ready() -> void:	
 	name_label.text = Global.Player_name
 	money_label.text = money_label.text.format([Global.current_money_amount], "[]")
+	
+	$ScrollContainer/Control/BackPanel/Panel2/ProgressBar.value = Global.current_money_amount
+	
 	show_level_select()
+	check_state()
 
+func check_state():
+	for i in range(levels.get_child_count()):
+		levels.get_child(i).item_state_id = Global.current_level_state[i]
+		levels.get_child(i).set_item_state_icon()
 
 func show_level_select():
 	NoTouchRect.visible = true
