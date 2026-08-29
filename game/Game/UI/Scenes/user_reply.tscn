@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b0ik5polb78kh"]
 
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="1_3l18a"]
 [ext_resource type="AudioStream" uid="uid://pbf161qsvx5" path="res://Assets/Audio/Sounds/UI/message_notification_2.mp3" id="1_kq4hj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -104,6 +105,7 @@ offset_bottom = 49.0
 offset_transform_enabled = true
 offset_transform_position = Vector2(-300, 0)
 theme_override_colors/font_color = Color(0.28599998, 0.43420002, 0.52, 1)
+theme_override_fonts/font = ExtResource("1_3l18a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
 text = "	TEXT"
 vertical_alignment = 1

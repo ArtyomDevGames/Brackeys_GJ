@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://37pt3irr0osr" path="res://Assets/Art/UI/Unavailable.png" id="1_ctuxq"]
 [ext_resource type="Texture2D" uid="uid://rdhidjx5lu62" path="res://Assets/Art/UI/ClearSuccess.png" id="2_5i4tm"]
 [ext_resource type="Texture2D" uid="uid://mq86iwdf5thn" path="res://Assets/Art/UI/ClearFailed.png" id="3_sd57o"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="5_sd57o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.6509804, 0.7411765, 0.8, 1)
@@ -104,6 +105,7 @@ offset_left = 59.0
 offset_top = 217.0
 offset_right = 165.0
 offset_bottom = 251.0
+theme_override_fonts/font = ExtResource("5_sd57o")
 theme_override_font_sizes/font_size = 24
 text = "TITLE"
 horizontal_alignment = 1

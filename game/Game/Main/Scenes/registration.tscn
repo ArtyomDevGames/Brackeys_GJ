@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_1yo7q"]
 [ext_resource type="Script" uid="uid://bloywjulrcxrl" path="res://Game/Main/Scripts/registration.gd" id="1_brqll"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="1_jk18y"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="2_gqort"]
 [ext_resource type="Texture2D" uid="uid://btsn5bst7lggb" path="res://Assets/Art/UI/Arrow.svg" id="4_05804"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
@@ -172,6 +173,7 @@ theme_override_constants/separation = 64
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/NameContainer" unique_id=1776320015]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("2_gqort")
 theme_override_font_sizes/font_size = 24
 text = "Name: "
 
@@ -187,6 +189,7 @@ theme_override_constants/separation = 15
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/UsernameContainer" unique_id=1432483072]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("2_gqort")
 theme_override_font_sizes/font_size = 24
 text = "Username: "
 
@@ -202,6 +205,7 @@ theme_override_constants/separation = 23
 [node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/PasswordContainer" unique_id=879656977]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("2_gqort")
 theme_override_font_sizes/font_size = 24
 text = "Password: "
 

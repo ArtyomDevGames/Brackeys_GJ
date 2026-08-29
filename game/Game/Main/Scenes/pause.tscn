@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="3_pl3rp"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="4_o4apy"]
 [ext_resource type="Texture2D" uid="uid://sotrfpxp472o" path="res://Assets/Art/UI/continue_button.png" id="6_csfab"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="7_qgdy3"]
 [ext_resource type="Texture2D" uid="uid://drque5oqjnha" path="res://Assets/Art/UI/settings_button.png" id="7_qsqfy"]
 [ext_resource type="Texture2D" uid="uid://jklmqua6mlal" path="res://Assets/Art/UI/exit_button.png" id="8_qgdy3"]
 [ext_resource type="Texture2D" uid="uid://da72ro0ijg246" path="res://Assets/Art/UI/back_button.png" id="9_qsqfy"]
@@ -541,6 +542,7 @@ offset_left = 101.0
 offset_top = 17.0
 offset_right = 315.0
 offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 24
 text = "CONTINUE"
 
@@ -566,6 +568,7 @@ offset_left = 101.0
 offset_top = 17.0
 offset_right = 315.0
 offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 24
 text = "SETTINGS"
 
@@ -591,6 +594,7 @@ offset_left = 101.0
 offset_top = 17.0
 offset_right = 315.0
 offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 24
 text = "EXIT"
 
@@ -619,6 +623,7 @@ offset_left = 55.0
 offset_top = 17.0
 offset_right = 140.0
 offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 28
 text = "Sound"
 
@@ -654,6 +659,7 @@ offset_left = 55.0
 offset_top = 17.0
 offset_right = 140.0
 offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 28
 text = "Music"
 
@@ -686,6 +692,7 @@ offset_left = 101.0
 offset_top = 17.0
 offset_right = 315.0
 offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 24
 text = "BACK"
 

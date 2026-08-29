@@ -5,6 +5,7 @@
 [ext_resource type="ButtonGroup" uid="uid://r328xbw1tc0" path="res://Resources/Groups/LevelSelectGroup.tres" id="2_0utjo"]
 [ext_resource type="PackedScene" uid="uid://ddybls5jx3blt" path="res://Game/UI/Scenes/level_select_button.tscn" id="2_l13d0"]
 [ext_resource type="Texture2D" uid="uid://btsn5bst7lggb" path="res://Assets/Art/UI/Arrow.svg" id="5_d5ugc"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="5_mc43n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l13d0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -202,6 +203,7 @@ offset_left = 265.0
 offset_top = 160.0
 offset_right = 372.0
 offset_bottom = 227.0
+theme_override_fonts/font = ExtResource("5_mc43n")
 theme_override_font_sizes/font_size = 48
 text = "User"
 

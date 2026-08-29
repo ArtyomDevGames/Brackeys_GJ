@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://8rndrao5eeai"]
 
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="1_0ysww"]
 [ext_resource type="Script" uid="uid://dxovq8yet47yu" path="res://Game/UI/Scripts/custom_button.gd" id="1_tnfv0"]
 [ext_resource type="AudioStream" uid="uid://biyi6ql3iilq3" path="res://Assets/Audio/Sounds/UI/basic_button_hover.wav" id="2_ng47a"]
 [ext_resource type="AudioStream" uid="uid://dpy0uwd3kfusi" path="res://Assets/Audio/Sounds/UI/basic_button_pressed.wav" id="3_0ysww"]
@@ -8,6 +9,7 @@
 offset_right = 115.0
 offset_bottom = 42.0
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_0ysww")
 theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "TEXT"
