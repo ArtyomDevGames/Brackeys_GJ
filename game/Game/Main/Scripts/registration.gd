@@ -30,13 +30,15 @@ func _on_custom_button_pressed() -> void:
 		await timer.timeout
 		warning_label.visible = false
 	else:
+		var tree = Engine.get_main_loop() as SceneTree
+		
 		await hide_registration()
 		Global.Player_name = name_line.text
 		Global.PC_user_name = username_line.text
 		Pause.update_name()
-		get_tree().change_scene_to_file("res://Game/Main/Scenes/level_select.tscn")
+		
+		tree.change_scene_to_file("res://Game/Main/Scenes/level_select.tscn")
 
-# Анимации появления / скрытия меню
 func show_registration():
 	NoTouchRect.visible = true
 	animation_player.play("ShowRegistration")
