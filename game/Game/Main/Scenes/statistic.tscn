@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cn5rynswy0yxf"]
 
 [ext_resource type="Script" uid="uid://bhaf852ia2erk" path="res://Game/Main/Scripts/statistic.gd" id="1_opgfd"]
+[ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="2_4sknm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odmi4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -28,6 +29,7 @@ script = ExtResource("1_opgfd")
 offset_left = 330.0
 offset_right = 1001.0
 offset_bottom = 581.0
+follow_focus = true
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
@@ -63,14 +65,14 @@ offset_bottom = 303.0
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel/Stats" unique_id=628570666]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1133407330]
+[node name="DayEnded" type="VBoxContainer" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1133407330]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 54.0
 offset_right = 591.0
 offset_bottom = 445.0
 
-[node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=1862385270]
+[node name="SoldToLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/DayEnded" unique_id=1862385270]
 custom_minimum_size = Vector2(552, 90)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
@@ -81,7 +83,7 @@ text = "You have sold your item to:
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/VBoxContainer" unique_id=894940673]
+[node name="MoneyReceivedLabel" type="RichTextLabel" parent="ScrollContainer/Control/BackPanel/Panel/DayEnded" unique_id=894940673]
 custom_minimum_size = Vector2(553, 118)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
@@ -91,6 +93,17 @@ text = "Money received:
 [color=#64BC6D][wave]${}[/wave][/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NextDayButton" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=1194507549 instance=ExtResource("2_4sknm")]
+custom_minimum_size = Vector2(273, 48)
+custom_maximum_size = Vector2(273, 48)
+layout_mode = 0
+offset_left = 177.0
+offset_top = 331.0
+offset_right = 450.0
+offset_bottom = 379.0
+button_name = "NextDayButton"
+button_text = "NEXT DAY"
 
 [node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=1676291349]
 layout_mode = 0

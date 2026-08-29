@@ -1,9 +1,6 @@
 extends CanvasLayer
 
-@onready var animation_arrow: AnimationPlayer = $AnimationArrow
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-@onready var arrow: Sprite2D = $Arrow2
 
 
 @onready var name_line: LineEdit = $ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/NameContainer/NameLine
@@ -15,7 +12,6 @@ extends CanvasLayer
 
 func _ready() -> void:
 	await show_registration()
-	animation_arrow.play("Mooving")
 	Monitor.play_music()
 
 
