@@ -95,7 +95,7 @@ offset_right = 1185.0
 offset_bottom = 719.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="BackPanel/Background" unique_id=2074268087]
+[node name="ChatContainer" type="ScrollContainer" parent="BackPanel/Background" unique_id=2074268087]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.149
@@ -107,8 +107,8 @@ offset_bottom = 447.761
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 
-[node name="Chat" type="VBoxContainer" parent="BackPanel/Background/ScrollContainer2" unique_id=920354821]
-custom_minimum_size = Vector2(832, 700)
+[node name="Chat" type="VBoxContainer" parent="BackPanel/Background/ChatContainer" unique_id=920354821]
+custom_minimum_size = Vector2(832, 1800)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -149,28 +149,6 @@ offset_bottom = 122.0
 button_name = "ProfileButton"
 button_text = "To Profile"
 
-[node name="OfferedPrice" type="RichTextLabel" parent="BackPanel/Background/Top" unique_id=233446000]
-visible = false
-layout_mode = 0
-offset_left = 378.0
-offset_top = 93.0
-offset_right = 496.0
-offset_bottom = 128.0
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "	[color=GREEN][wave]{}$[/wave][/color]"
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="BackPanel/Background/Top" unique_id=1257981068]
-visible = false
-layout_mode = 0
-offset_left = 212.0
-offset_top = 93.0
-offset_right = 323.0
-offset_bottom = 116.0
-theme_override_font_sizes/font_size = 24
-text = "Offered price: "
-
 [node name="Bottom" type="Panel" parent="BackPanel/Background" unique_id=2048847022]
 layout_mode = 0
 offset_left = 320.0
@@ -191,28 +169,40 @@ editable = false
 [node name="ChoiceButtons" type="HBoxContainer" parent="BackPanel/Background/Bottom" unique_id=1658987700]
 visible = false
 layout_mode = 0
-offset_left = 212.0
-offset_top = -62.0
-offset_right = 530.0
+offset_left = 168.0
+offset_top = -68.0
+offset_right = 651.0
 offset_bottom = -20.0
 theme_override_constants/separation = 10
 metadata/_edit_group_ = true
 
-[node name="CustomButton" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=1958710994 instance=ExtResource("3_6gq2s")]
+[node name="Choice" parent="BackPanel/Background/Bottom/ChoiceButtons" unique_id=1958710994 instance=ExtResource("3_6gq2s")]
 layout_mode = 2
 size_flags_horizontal = 3
 button_name = "Option1Button"
 button_text = "Option 1"
 
-[node name="CustomButton" parent="BackPanel/Background/Bottom" unique_id=1132699801 instance=ExtResource("3_6gq2s")]
+[node name="Send" parent="BackPanel/Background/Bottom" unique_id=1132699801 instance=ExtResource("3_6gq2s")]
 visible = false
 layout_mode = 0
 offset_left = 642.0
 offset_top = 21.0
 offset_right = 821.0
 offset_bottom = 63.0
+disabled = true
+toggle_mode = false
 button_name = "SendButton"
 button_text = "Send"
+
+[node name="Decide" parent="BackPanel/Background/Bottom" unique_id=134181184 instance=ExtResource("3_6gq2s")]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 13.0
+offset_right = 651.0
+offset_bottom = 62.0
+button_name = "DesideButton"
+button_text = "DECIDE"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BackPanel" unique_id=1216533846]
 layout_mode = 0
@@ -281,5 +271,9 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_a1gum")
 
 [node name="MessageTimer" type="Timer" parent="." unique_id=1309794264]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="pressed" from="BackPanel/Background/Top/CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="pressed" from="BackPanel/Background/Bottom/ChoiceButtons/Choice" to="." method="choice_pressed"]
+[connection signal="pressed" from="BackPanel/Background/Bottom/Send" to="." method="send_pressed"]

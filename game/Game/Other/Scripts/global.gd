@@ -21,6 +21,7 @@ var user_state_id : int
 const user_states : Array = ["Active", "Decide", "Accepted", "Denied", "Reported"]
 
 const message_type = ["User", "Player"]
+const questions = ["Why are you interested in this item?", "Have you read the description?", "Are you satisfied with the price?"]
 
 const user_types_chances = [[70, 80, 100], [65, 80, 100], [60, 75, 100]]
 

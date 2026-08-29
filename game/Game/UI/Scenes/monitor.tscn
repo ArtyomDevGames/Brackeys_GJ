@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bsvcm2yhvwwgr" path="res://Assets/Audio/Sounds/UI/computer-sound.wav" id="4_shgky"]
 [ext_resource type="AudioStream" uid="uid://bi5q5vtb3oda0" path="res://Assets/Audio/Sounds/UI/windows-xp-startup.mp3" id="4_xvetb"]
 [ext_resource type="AudioStream" uid="uid://gljw74ksba5n" path="res://Assets/Audio/Sounds/UI/windows-xp-shutdown.mp3" id="5_bol4p"]
+[ext_resource type="AudioStream" uid="uid://bfttlnkcnb32e" path="res://Assets/Audio/Music/alex-morgan-jazz-rainy-lounge-music-556235.mp3" id="7_ben66"]
 
 [sub_resource type="Animation" id="Animation_ve7nu"]
 length = 0.001
@@ -203,6 +204,10 @@ volume_db = 0.5
 [node name="TurnOffSound" type="AudioStreamPlayer2D" parent="." unique_id=299892772]
 stream = ExtResource("5_bol4p")
 volume_db = 0.5
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1297599931]
+stream = ExtResource("7_ben66")
+volume_db = 1.0
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

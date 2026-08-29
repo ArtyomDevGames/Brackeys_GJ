@@ -16,6 +16,7 @@ extends CanvasLayer
 func _ready() -> void:
 	await show_registration()
 	animation_arrow.play("Mooving")
+	Monitor.play_music()
 
 
 func _on_custom_button_pressed() -> void:

@@ -11,6 +11,10 @@ var is_screen_on : bool = false
 @onready var monitor_sound: AudioStreamPlayer2D = $MonitorSound
 @onready var turn_on_sound: AudioStreamPlayer2D = $TurnOnSound
 @onready var turn_off_sound: AudioStreamPlayer2D = $TurnOffSound
+@onready var music: AudioStreamPlayer2D = $Music
+
+func play_music():
+	music.play()
 
 func _on_button_mouse_entered() -> void:
 	animation_button.play("ExpandIcon")

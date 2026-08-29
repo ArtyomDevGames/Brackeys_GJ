@@ -9,6 +9,7 @@ const dialogue_path = "res://Assets/Database/dialogue_phrases.json"
 @export var group : ButtonGroup
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var message_timer: Timer = $MessageTimer
 
 const user = preload("res://Game/UI/Scenes/user_button.tscn")
 
@@ -20,14 +21,13 @@ const user = preload("res://Game/UI/Scenes/user_button.tscn")
 @onready var icon_frame: AnimatedSprite2D = $BackPanel/Background/Top/IconFrame
 @onready var user_name_label: Label = $BackPanel/Background/Top/UserNameLabel
 @onready var custom_button: Button = $BackPanel/Background/Top/CustomButton
-@onready var offered_price: RichTextLabel = $BackPanel/Background/Top/OfferedPrice
-@onready var label: Label = $BackPanel/Background/Top/Label
 
 var is_chat_selected = false
 var is_profile_visible = false
 
 # Чат
-@onready var chat: VBoxContainer = $BackPanel/Background/ScrollContainer2/Chat
+@onready var chat_container: ScrollContainer = $BackPanel/Background/ChatContainer
+@onready var chat: VBoxContainer = $BackPanel/Background/ChatContainer/Chat
 const customer_responce = preload("res://Game/UI/Scenes/user_reply.tscn")
 const player_message = preload("res://Game/UI/Scenes/player_message.tscn")
 
@@ -36,16 +36,17 @@ const player_message = preload("res://Game/UI/Scenes/player_message.tscn")
 
 # Элементы нижней панели меню чата
 @onready var choice_buttons: HBoxContainer = $BackPanel/Background/Bottom/ChoiceButtons
-@onready var option_1_button: Button = $BackPanel/Background/Bottom/ChoiceButtons/CustomButton
+@onready var choice: Button = $BackPanel/Background/Bottom/ChoiceButtons/Choice
+
 @onready var text_line: LineEdit = $BackPanel/Background/Bottom/TextLine
-@onready var send_button: Button = $BackPanel/Background/Bottom/CustomButton
+@onready var send: Button = $BackPanel/Background/Bottom/Send
+@onready var decide: Button = $BackPanel/Background/Bottom/Decide
+
 
 # Для профиля инфа
 var current_user_name : String
 var current_user_icon : int
 var current_user_id : int
-
-var questions : int = 0
 
 func _ready() -> void:
 	var file = FileAccess.open(dialogue_path, FileAccess.READ)
@@ -110,6 +111,7 @@ func hide_menu():
 	await animation_player.animation_finished
 	NoTouchRect.visible = false
 
+
 func _on_custom_button_pressed() -> void:
 	Profile.set_user_icon(current_user_icon)
 	Profile.set_user_name(current_user_name)
@@ -118,13 +120,11 @@ func _on_custom_button_pressed() -> void:
 	Profile.visible = true
 	is_profile_visible = true
 
-
 func button_pressed() -> void:
+	chat_container.scroll_vertical = 0
+	
 	var button = group.get_pressed_button()
-	
-	print("\nПользователь: ", Global.users[button.user_id]["user_type"], "\tИмя: ", Global.users[button.user_id]["user_name"])
-	print("Реплики: ", Global.users[button.user_id]["phrases"])
-	
+	var customer = Global.users[button.user_id]
 	
 	if is_chat_selected == false:
 		is_chat_selected = true
@@ -132,23 +132,95 @@ func button_pressed() -> void:
 		icon_frame.visible = true
 		user_name_label.visible = true
 		custom_button.visible = true
-		offered_price.visible = true
-		label.visible = true
-		
+	
+	if customer["user_state"] == 0:
+		decide.visible = false
 		choice_buttons.visible = true
 		text_line.visible = true
-		send_button.visible = true
-	
+		send.visible = true
+		
+		text_line.text = ""
+		choice.visible = true
+		send.disabled = true
+	elif customer["user_state"] == 1:
+		choice_buttons.visible = false
+		text_line.visible = false
+		send.visible = false
+		decide.visible = true
 	
 	icon_frame.frame = button.user_icon_id
 	user_name_label.text = button.user_name
-	offered_price.text = "	[color=GREEN][wave]{}$[/wave][/color]".format([Global.users[button.user_id]["offered_price"]], "{}")
 	
 	current_user_id = button.user_id
 	current_user_icon = button.user_icon_id
 	current_user_name = button.user_name
 	
+	var current_question = Global.questions[Global.users[button.user_id]["current_question"]]
+	
+	choice.button_text = current_question
+	choice.set_button_text()
+	
 	show_chat(button.user_id)
+
+func choice_pressed():
+	text_line.text = choice.button_text
+	choice.visible = false
+	send.disabled = false
+
+func send_pressed():
+	send.disabled = true
+	var customer = Global.users[current_user_id]
+	
+	if customer["user_state"] != 1:
+		if customer["current_question"] < 2: customer["current_question"] += 1
+		customer["current_phrase"] += 1
+		
+		var bubble = show_message({"Phrase": text_line.text, "Type": "Player"})
+		await bubble.show_message()
+		customer["dialogue"].append({"Phrase": text_line.text, "Type": "Player"})
+		text_line.text = ""
+		message_timer.start(0.5)
+		await message_timer.timeout
+		
+		if customer["current_phrase"] == 3 and "XX" in customer["phrases"][customer["current_phrase"]]:
+			customer["phrases"][customer["current_phrase"]] = customer["phrases"][customer["current_phrase"]].format([customer["offered_price"]], "XX")
+		
+		bubble = show_message({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
+		await bubble.show_message()
+		customer["dialogue"].append({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
+		message_timer.start(1)
+		await message_timer.timeout
+		
+		if customer["current_phrase"] == 3:
+			if Global.current_level_id == 0 and customer["user_id"] == 0:
+				for i in range(4, customer["phrases"].size()):
+					customer["current_phrase"] = i
+					bubble = show_message({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
+					await bubble.show_message()
+					customer["dialogue"].append({"Phrase": customer["phrases"][customer["current_phrase"]], "Type": "User"})
+					message_timer.start(2)
+					await message_timer.timeout
+		
+			customer["user_state"] = 1
+	
+	if customer["user_state"] == 1:
+		choice_buttons.visible = false
+		text_line.visible = false
+		send.visible = false
+		decide.visible = true
+	else:
+		var current_question = Global.questions[customer["current_question"]]
+	
+		choice.button_text = current_question
+		choice.set_button_text()
+		
+		choice_buttons.visible = true
+		text_line.visible = true
+		send.visible = true
+		
+		text_line.text = ""
+		choice.visible = true
+		send.disabled = true
 
 
 func create_user(id : int) -> void:

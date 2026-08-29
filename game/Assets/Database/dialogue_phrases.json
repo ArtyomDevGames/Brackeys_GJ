@@ -581,7 +581,7 @@
 			},
 			{
 				"PhraseID": 3,
-				"Phrase": "Absolutely! I'll pay $10."
+				"Phrase": "Absolutely! I'll pay $XX."
 			},
 			{
 				"PhraseID": 4,
