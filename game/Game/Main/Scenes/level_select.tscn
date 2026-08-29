@@ -211,6 +211,7 @@ text = "User"
 libraries/ = SubResource("AnimationLibrary_mc43n")
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=1938159970]
+visible = false
 position = Vector2(1076.0001, 525.00006)
 scale = Vector2(0.01933573, 0.01933573)
 texture = ExtResource("5_d5ugc")

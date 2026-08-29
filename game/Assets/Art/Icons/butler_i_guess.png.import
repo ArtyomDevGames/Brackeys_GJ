@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://opus2lq41ihn"
-path="res://.godot/imported/butler_i_guess.png-3f02e31b7a4b8c22fc994bd61c7fd2bf.ctex"
+path="res://.godot/imported/butler_i_guess.png-849d187f5ca23e246c470faaf784385d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/UI/butler_i_guess.png"
-dest_files=["res://.godot/imported/butler_i_guess.png-3f02e31b7a4b8c22fc994bd61c7fd2bf.ctex"]
+source_file="res://Assets/Art/Icons/butler_i_guess.png"
+dest_files=["res://.godot/imported/butler_i_guess.png-849d187f5ca23e246c470faaf784385d.ctex"]
 
 [params]
 

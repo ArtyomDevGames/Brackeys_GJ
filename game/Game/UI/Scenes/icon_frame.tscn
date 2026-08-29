@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b2k3o8yn1urtn" path="res://Assets/Art/Icons/Cat.png" id="1_jxs24"]
 [ext_resource type="Texture2D" uid="uid://ctycf2blmvmk7" path="res://Assets/Art/Icons/Anonymous.png" id="2_nrgk6"]
 [ext_resource type="Texture2D" uid="uid://tu7ci01ru2e3" path="res://Assets/Art/Icons/Marta.png" id="3_nrgk6"]
+[ext_resource type="Texture2D" uid="uid://detjbpfyqut70" path="res://Assets/Art/Icons/duck.png" id="4_ofsoq"]
+[ext_resource type="Texture2D" uid="uid://opus2lq41ihn" path="res://Assets/Art/Icons/butler_i_guess.png" id="5_pynmv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -15,6 +17,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_nrgk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ofsoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pynmv")
 }],
 "loop": 1,
 "name": &"Icons",
@@ -26,4 +34,3 @@ position = Vector2(-2.7105054e-20, 5.9604645e-08)
 scale = Vector2(0.09648437, 0.09648437)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Icons"
-frame = 2

@@ -8,30 +8,29 @@ var PC_user_name = "User"
 
 var current_money_amount = 0
 
+# Сотрудник поддержки
+const support_phrases = "Support"
+
 # Покупатели
 var users : Array = []
 const user_amount : Array = [2, 3, 5]
-const user_name_list : Array = ["Name1", "Name2", "Name3", "Name4", "Name5", "Name6", "Name7", "Name8", "Name9", "Name10"]
 
-const support = {}
-const support_phrases = "Support"
+const user_name_list = "Names"
 
 var user_state_id : int
-const user_states : Array = ["Accepted", "Denied", "Reported"]
+const user_states : Array = ["Active", "Decide", "Accepted", "Denied", "Reported"]
+
+const message_type = ["User", "Player"]
 
 const user_types_chances = [[70, 80, 100], [65, 80, 100], [60, 75, 100]]
 
 # Для базы данных
 const user_types = ["Basic", "Troll", "Scammer"]
 
-const id = "PhraseID"
-const opening = "Opening_phrase"
-const first = "First_question"
-const second = "Second_question"
-const last = "Last_phrase"
+const phrases = ["Opening_phrase", "First_question", "Second_question", "Last_phrase"]
+
 const desc = "Profile_description"
 const date = "Registration_date"
-
 
 
 const basic_offered_price = [-0.2, 0.15]
@@ -53,8 +52,8 @@ func set_time(day):
 	
 	Taskbar.set_time()
 
-func what_price_range(id) -> Array:
-	match id:
+func what_price_range(customer_id) -> Array:
+	match customer_id:
 		0: return basic_offered_price
 		1: return troll_offered_price
 		2: return scammer_offered_price

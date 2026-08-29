@@ -4,8 +4,6 @@
 [ext_resource type="ButtonGroup" uid="uid://b3vqq08xisvrh" path="res://Resources/Groups/GameGroup.tres" id="2_a4awf"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
-[ext_resource type="PackedScene" uid="uid://b0ik5polb78kh" path="res://Game/UI/Scenes/user_reply.tscn" id="3_a4awf"]
-[ext_resource type="PackedScene" uid="uid://dexh0wyvbi08j" path="res://Game/UI/Scenes/player_message.tscn" id="4_r5k4a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -117,24 +115,6 @@ size_flags_vertical = 8
 offset_transform_enabled = true
 offset_transform_position = Vector2(16.33, 10)
 theme_override_constants/separation = 20
-
-[node name="UserReply" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1725523483 instance=ExtResource("3_a4awf")]
-layout_mode = 2
-
-[node name="UserReply2" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=833352286 instance=ExtResource("3_a4awf")]
-layout_mode = 2
-
-[node name="PlayerMessage" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1006268733 instance=ExtResource("4_r5k4a")]
-layout_mode = 2
-
-[node name="PlayerMessage2" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1527865297 instance=ExtResource("4_r5k4a")]
-layout_mode = 2
-
-[node name="PlayerMessage3" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=688698903 instance=ExtResource("4_r5k4a")]
-layout_mode = 2
-
-[node name="UserReply3" parent="BackPanel/Background/ScrollContainer2/Chat" unique_id=1202762348 instance=ExtResource("3_a4awf")]
-layout_mode = 2
 
 [node name="Top" type="Panel" parent="BackPanel/Background" unique_id=1061052605]
 layout_mode = 0
@@ -299,5 +279,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=327303054]
 libraries/ = SubResource("AnimationLibrary_a1gum")
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=1309794264]
 
 [connection signal="pressed" from="BackPanel/Background/Top/CustomButton" to="." method="_on_custom_button_pressed"]

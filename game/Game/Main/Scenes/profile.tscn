@@ -78,7 +78,7 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 24
 text = "Registration date: []"
 
-[node name="Label" type="Label" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=659578086]
+[node name="Description" type="Label" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=659578086]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 102.0
@@ -99,7 +99,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jpmup")
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Top" unique_id=727484853 instance=ExtResource("1_w0aak")]
 position = Vector2(112, 167)
 scale = Vector2(0.1576172, 0.1576172)
-frame = 0
 
 [node name="UserNameLabel" type="Label" parent="ScrollContainer/Control/BackPanel/Top" unique_id=636750415]
 layout_mode = 1
@@ -114,9 +113,9 @@ text = "Name"
 
 [node name="CustomButton" parent="." unique_id=1194507549 instance=ExtResource("2_53oc8")]
 offset_left = 1020.0
-offset_top = 93.0
+offset_top = 77.0
 offset_right = 1212.0
-offset_bottom = 147.0
+offset_bottom = 131.0
 button_name = "BackButton"
 button_text = "Back"
 

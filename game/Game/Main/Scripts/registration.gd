@@ -1,6 +1,11 @@
 extends CanvasLayer
 
+@onready var animation_arrow: AnimationPlayer = $AnimationArrow
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var arrow: Sprite2D = $Arrow2
+
+
 @onready var name_line: LineEdit = $ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/NameContainer/NameLine
 @onready var username_line: LineEdit = $ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/UsernameContainer/UsernameLine
 @onready var password_line: LineEdit = $ScrollContainer/Control/BackPanel/ColorRect/VBoxContainer2/PasswordContainer/PasswordLine
@@ -9,7 +14,8 @@ extends CanvasLayer
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	show_registration()
+	await show_registration()
+	animation_arrow.play("Mooving")
 
 
 func _on_custom_button_pressed() -> void:

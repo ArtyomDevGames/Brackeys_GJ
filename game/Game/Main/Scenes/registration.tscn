@@ -38,6 +38,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_brqll"]
 resource_name = "ShowRegistration"
@@ -49,6 +61,18 @@ tracks/0/path = NodePath("ScrollContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -233,6 +257,8 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=1452658644]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(1076.0001, 525.00006)
 scale = Vector2(0.01933573, 0.01933573)
 texture = ExtResource("4_05804")

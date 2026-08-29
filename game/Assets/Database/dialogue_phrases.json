@@ -1,0 +1,745 @@
+{
+	"Basic": {
+		"columns": [
+			"PhraseID",
+			"Opening_phrase",
+			"First_question",
+			"Second_question",
+			"Last_phrase",
+			"Profile_description",
+            "Registration_date"
+		],
+		"rows": [
+			{
+				"PhraseID": 5,
+				"Opening_phrase": "Hi! I'm interested in this item. ",
+				"First_question": "It looks useful. ",
+				"Second_question": "Yes, I did. ",
+				"Last_phrase": "I'll pay $XX! ",
+				"Profile_description": "Here from time to time.",
+				"Registration_date": "2024.05.22"
+			},
+			{
+				"PhraseID": 1,
+				"Opening_phrase": "Hello! Is this item still available?",
+				"First_question": "I've been looking for one. ",
+				"Second_question": "I read it. ",
+				"Last_phrase": "$XX works.",
+				"Profile_description": "I buy things I actually need.",
+				"Registration_date": "2023.08.27"
+			},
+			{
+				"PhraseID": 3,
+				"Opening_phrase": "Hey! I'd like to buy this. ",
+				"First_question": "I could really use this. ",
+				"Second_question": "Yep, all clear. ",
+				"Last_phrase": "I think $XX is fair. ",
+				"Profile_description": "Looking for something new for the home.",
+				"Registration_date": "2025.01.19"
+			},
+			{
+				"PhraseID": 7,
+				"Opening_phrase": "Hi! This caught my attention",
+				"First_question": "I liked the way it looks. ",
+				"Second_question": "Yes, everything looks good. ",
+				"Last_phrase": "I'll give you $XX. ",
+				"Profile_description": "Just browsing around.",
+				"Registration_date": "2025.09.17"
+			},
+			{
+				"PhraseID": 2,
+				"Opening_phrase": "Hello! I'm interested. Is it in good condition? ",
+				"First_question": "It seems like a good fit for me. ",
+				"Second_question": "Of course. ",
+				"Last_phrase": "Sure, I'll pay $XX. ",
+				"Profile_description": "Usually here to find a good deal.",
+				"Registration_date": "2024.11.05"
+			},
+			{
+				"PhraseID": 4,
+				"Opening_phrase": "Hey! I've been looking for something like this. ",
+				"First_question": "I need something like this. ",
+				"Second_question": "Yes, I checked it. ",
+				"Last_phrase": "Deal. $XX it is.",
+				"Profile_description": "I like second-hand stuff.",
+				"Registration_date": "2022.07.31"
+			},
+			{
+				"PhraseID": 0,
+				"Opening_phrase": "Hi! I think I'd like to buy it. ",
+				"First_question": "I've wanted one for a while. ",
+				"Second_question": "I did. No questions. ",
+				"Last_phrase": "I can do $XX. ",
+				"Profile_description": "Just looking for useful things.",
+				"Registration_date": "2024.03.14"
+			},
+			{
+				"PhraseID": 6,
+				"Opening_phrase": "Hello! Could you tell me a little more about it? ",
+				"First_question": "It just caught my eye. ",
+				"Second_question": "Yes, I went through it. ",
+				"Last_phrase": "$XX. Final answer. ",
+				"Profile_description": "Trying to spend less and reuse more.",
+				"Registration_date": "2023.12.05"
+			}
+		]
+	},
+	"Names": {
+		"columns": [
+			"NameID",
+            "Name"
+		],
+		"rows": [
+			{
+				"NameID": 0,
+				"Name": "Alex "
+			},
+			{
+				"NameID": 1,
+				"Name": "Sam "
+			},
+			{
+				"NameID": 2,
+				"Name": "Jamie "
+			},
+			{
+				"NameID": 3,
+				"Name": "Chris "
+			},
+			{
+				"NameID": 4,
+				"Name": "Taylor "
+			},
+			{
+				"NameID": 5,
+				"Name": "Jordan "
+			},
+			{
+				"NameID": 6,
+				"Name": "Casey "
+			},
+			{
+				"NameID": 7,
+				"Name": "Morgan "
+			},
+			{
+				"NameID": 8,
+				"Name": "Riley "
+			},
+			{
+				"NameID": 9,
+				"Name": "Robin "
+			},
+			{
+				"NameID": 10,
+				"Name": "Charlie "
+			},
+			{
+				"NameID": 11,
+				"Name": "Max "
+			},
+			{
+				"NameID": 12,
+				"Name": "Jack "
+			},
+			{
+				"NameID": 13,
+				"Name": "Leo "
+			},
+			{
+				"NameID": 14,
+				"Name": "Emma "
+			},
+			{
+				"NameID": 15,
+				"Name": "Mia "
+			},
+			{
+				"NameID": 16,
+				"Name": "Nina "
+			},
+			{
+				"NameID": 17,
+				"Name": "Anna "
+			},
+			{
+				"NameID": 18,
+				"Name": "Lily "
+			},
+			{
+				"NameID": 19,
+				"Name": "Noah"
+			},
+			{
+				"NameID": 20,
+				"Name": "Quinn "
+			},
+			{
+				"NameID": 21,
+				"Name": "Avery "
+			},
+			{
+				"NameID": 22,
+				"Name": "Rowan "
+			},
+			{
+				"NameID": 23,
+				"Name": "Blake "
+			},
+			{
+				"NameID": 24,
+				"Name": "Skyler "
+			},
+			{
+				"NameID": 25,
+				"Name": "River "
+			},
+			{
+				"NameID": 26,
+				"Name": "Sunny "
+			},
+			{
+				"NameID": 27,
+				"Name": "Sage "
+			},
+			{
+				"NameID": 28,
+				"Name": "Remy "
+			},
+			{
+				"NameID": 29,
+				"Name": "Jules "
+			},
+			{
+				"NameID": 30,
+				"Name": "Darcy "
+			},
+			{
+				"NameID": 31,
+				"Name": "Eden "
+			},
+			{
+				"NameID": 32,
+				"Name": "Salem "
+			},
+			{
+				"NameID": 33,
+				"Name": "Nova "
+			},
+			{
+				"NameID": 34,
+				"Name": "Echo "
+			},
+			{
+				"NameID": 35,
+				"Name": "Raven "
+			},
+			{
+				"NameID": 36,
+				"Name": "Ash "
+			},
+			{
+				"NameID": 37,
+				"Name": "Blue "
+			},
+			{
+				"NameID": 38,
+				"Name": "Kit "
+			},
+			{
+				"NameID": 39,
+				"Name": "Wren"
+			},
+			{
+				"NameID": 40,
+				"Name": "xXShadowXx "
+			},
+			{
+				"NameID": 41,
+				"Name": "Potato "
+			},
+			{
+				"NameID": 42,
+				"Name": "Bread "
+			},
+			{
+				"NameID": 43,
+				"Name": "Toast "
+			},
+			{
+				"NameID": 44,
+				"Name": "Pickle "
+			},
+			{
+				"NameID": 45,
+				"Name": "Noodle "
+			},
+			{
+				"NameID": 46,
+				"Name": "Cheese "
+			},
+			{
+				"NameID": 47,
+				"Name": "Sock "
+			},
+			{
+				"NameID": 48,
+				"Name": "Spoon "
+			},
+			{
+				"NameID": 49,
+				"Name": "Gremlin "
+			},
+			{
+				"NameID": 50,
+				"Name": "Goblin "
+			},
+			{
+				"NameID": 51,
+				"Name": "Worm "
+			},
+			{
+				"NameID": 52,
+				"Name": "Rat "
+			},
+			{
+				"NameID": 53,
+				"Name": "Duck "
+			},
+			{
+				"NameID": 54,
+				"Name": "Goose "
+			},
+			{
+				"NameID": 55,
+				"Name": "Pancake "
+			},
+			{
+				"NameID": 56,
+				"Name": "Microwave "
+			},
+			{
+				"NameID": 57,
+				"Name": "Toaster "
+			},
+			{
+				"NameID": 58,
+				"Name": "Calculator "
+			},
+			{
+				"NameID": 59,
+				"Name": "Keyboard"
+			},
+			{
+				"NameID": 60,
+				"Name": "DefinitelyHuman "
+			},
+			{
+				"NameID": 61,
+				"Name": "RealPerson "
+			},
+			{
+				"NameID": 62,
+				"Name": "TrustMe "
+			},
+			{
+				"NameID": 63,
+				"Name": "NothingSuspicious "
+			},
+			{
+				"NameID": 64,
+				"Name": "Buyer "
+			},
+			{
+				"NameID": 65,
+				"Name": "Customer "
+			},
+			{
+				"NameID": 66,
+				"Name": "Anonymous "
+			},
+			{
+				"NameID": 67,
+				"Name": "Unknown "
+			},
+			{
+				"NameID": 68,
+				"Name": "Nobody "
+			},
+			{
+				"NameID": 69,
+				"Name": "Someone "
+			},
+			{
+				"NameID": 70,
+				"Name": "Myself "
+			},
+			{
+				"NameID": 71,
+				"Name": "Why "
+			},
+			{
+				"NameID": 72,
+				"Name": "What "
+			},
+			{
+				"NameID": 73,
+				"Name": "Huh "
+			},
+			{
+				"NameID": 74,
+				"Name": "Okay "
+			},
+			{
+				"NameID": 75,
+				"Name": "Nope "
+			},
+			{
+				"NameID": 76,
+				"Name": "Perhaps "
+			},
+			{
+				"NameID": 77,
+				"Name": "Probably "
+			},
+			{
+				"NameID": 78,
+				"Name": "Yes "
+			},
+			{
+				"NameID": 79,
+				"Name": "Error404"
+			},
+			{
+				"NameID": 80,
+				"Name": "TrustworthyGuy "
+			},
+			{
+				"NameID": 81,
+				"Name": "HonestBuyer "
+			},
+			{
+				"NameID": 82,
+				"Name": "TotallyNormal "
+			},
+			{
+				"NameID": 83,
+				"Name": "SafePurchase "
+			},
+			{
+				"NameID": 84,
+				"Name": "RichPerson "
+			},
+			{
+				"NameID": 85,
+				"Name": "Businessman "
+			},
+			{
+				"NameID": 86,
+				"Name": "Millionaire "
+			},
+			{
+				"NameID": 87,
+				"Name": "DefinitelyNotAScam "
+			},
+			{
+				"NameID": 88,
+				"Name": "LegitBuyer "
+			},
+			{
+				"NameID": 89,
+				"Name": "SecurePayment "
+			},
+			{
+				"NameID": 90,
+				"Name": "FastDeal "
+			},
+			{
+				"NameID": 91,
+				"Name": "BestOffer "
+			},
+			{
+				"NameID": 92,
+				"Name": "MoneyMan "
+			},
+			{
+				"NameID": 93,
+				"Name": "MrMoney "
+			},
+			{
+				"NameID": 94,
+				"Name": "PayMe "
+			},
+			{
+				"NameID": 95,
+				"Name": "TrustMeBro"
+			}
+		]
+	},
+	"Scammer": {
+		"columns": [
+			"PhraseID",
+			"Opening_phrase",
+			"First_question",
+			"Second_question",
+			"Last_phrase",
+			"Profile_description",
+            "Registration_date"
+		],
+		"rows": [
+			{
+				"PhraseID": 0,
+				"Opening_phrase": "Hi! I want this right now! ",
+				"First_question": "I really need it! :) ",
+				"Second_question": "Of course! :) ",
+				"Last_phrase": "$XX? Sure! :) ",
+				"Profile_description": "Always looking for great deals!",
+				"Registration_date": "2026.08.02"
+			},
+			{
+				"PhraseID": 1,
+				"Opening_phrase": "Hello! Is this still available? :) ",
+				"First_question": "I've been looking everywhere for this! ",
+				"Second_question": "Yes, yes, everything is clear! ",
+				"Last_phrase": "I'll pay $XX! ",
+				"Profile_description": "I buy and sell online.",
+				"Registration_date": "2026.08.25"
+			},
+			{
+				"PhraseID": 2,
+				"Opening_phrase": "Hey! I absolutely need this! ",
+				"First_question": "It's perfect for me :3 ",
+				"Second_question": "Read it already! :3 ",
+				"Last_phrase": "$XX works perfectly! :3 ",
+				"Profile_description": "New here, but very interested.",
+				"Registration_date": "2026.08.28"
+			},
+			{
+				"PhraseID": 3,
+				"Opening_phrase": "Hi! Lucky me, I found it! ",
+				"First_question": "I've wanted this forever! ",
+				"Second_question": "Naturally! No problem! ",
+				"Last_phrase": "Sure, I can do $XX. ",
+				"Profile_description": "Looking for some specific items.",
+				"Registration_date": "2026.08.17"
+			},
+			{
+				"PhraseID": 4,
+				"Opening_phrase": "Hello! I'll take it! :D ",
+				"First_question": "I just knew I had to get it! ",
+				"Second_question": "Yep! I understand everything :) ",
+				"Last_phrase": "How about $XX? :) ",
+				"Profile_description": "Big fan of online shopping!",
+				"Registration_date": "2026.08.21"
+			},
+			{
+				"PhraseID": 5,
+				"Opening_phrase": "Hey! This is exactly what I've been looking for! ",
+				"First_question": "It looks amazing! :) ",
+				"Second_question": "Absolutely! Don't worry! ",
+				"Last_phrase": "I'll take it for $XX! ",
+				"Profile_description": "I don't usually use marketplaces.",
+				"Registration_date": "2026.08.04"
+			},
+			{
+				"PhraseID": 6,
+				"Opening_phrase": "Hi! Can we make a deal quickly? :) ",
+				"First_question": "My friend told me about it! ",
+				"Second_question": "Yes! Let's not waste time :D ",
+				"Last_phrase": "$XX? Deal! :D ",
+				"Profile_description": "Just joined! Hope to find something good.",
+				"Registration_date": "2026.08.26"
+			},
+			{
+				"PhraseID": 7,
+				"Opening_phrase": "Hello! I'm VERY interested! ",
+				"First_question": "I can't let this one get away! ",
+				"Second_question": "Of course I did! ",
+				"Last_phrase": "I can even do $XX if you want!",
+				"Profile_description": "Always ready to make a deal. :)",
+				"Registration_date": "2026.08.12"
+			}
+		]
+	},
+	"Support": {
+		"columns": [
+			"PhraseID",
+            "Phrase"
+		],
+		"rows": [
+			{
+				"PhraseID": 0,
+				"Phrase": "Hello! I'm interested in your item."
+			},
+			{
+				"PhraseID": 1,
+				"Phrase": "It looks exactly like what I need."
+			},
+			{
+				"PhraseID": 2,
+				"Phrase": "Of course! I read everything. :)"
+			},
+			{
+				"PhraseID": 3,
+				"Phrase": "Absolutely! I'll pay $10."
+			},
+			{
+				"PhraseID": 4,
+				"Phrase": "Congratulations! You just got your first buyer."
+			},
+			{
+				"PhraseID": 5,
+				"Phrase": "...Well, technically, you didn't."
+			},
+			{
+				"PhraseID": 6,
+				"Phrase": "I'm from Customer Support. This was a little test."
+			},
+			{
+				"PhraseID": 7,
+				"Phrase": "Before you sell anything, you should always check who you're dealing with."
+			},
+			{
+				"PhraseID": 8,
+				"Phrase": "Some buyers are perfectly normal. Some are not."
+			},
+			{
+				"PhraseID": 9,
+				"Phrase": "And some are very interested in your item for absolutely no reason."
+			},
+			{
+				"PhraseID": 10,
+				"Phrase": "Pay attention to what they say, how they behave, and whether their offer makes sense."
+			},
+			{
+				"PhraseID": 11,
+				"Phrase": "A suspiciously high offer is not necessarily a good thing."
+			},
+			{
+				"PhraseID": 12,
+				"Phrase": "Neither is someone trying to rush you."
+			},
+			{
+				"PhraseID": 13,
+				"Phrase": "You can ask buyers questions before making your decision."
+			},
+			{
+				"PhraseID": 14,
+				"Phrase": "You have three questions per buyer, so use them wisely."
+			},
+			{
+				"PhraseID": 15,
+				"Phrase": "If something feels wrong, you don't have to sell."
+			},
+			{
+				"PhraseID": 16,
+				"Phrase": "You can refuse the deal or report the buyer to Support."
+			},
+			{
+				"PhraseID": 17,
+				"Phrase": "And don't worry — refusing a normal buyer won't get you arrested."
+			},
+			{
+				"PhraseID": 18,
+				"Phrase": "...Usually."
+			},
+			{
+				"PhraseID": 19,
+				"Phrase": "Anyway, good luck. You've got three days to make enough money for your ticket."
+			},
+			{
+				"PhraseID": 20,
+				"Phrase": "Try not to get scammed."
+			},
+			{
+				"PhraseID": 21,
+				"Phrase": "Especially by Customer Support."
+			}
+		]
+	},
+	"Troll": {
+		"columns": [
+			"PhraseID",
+			"Opening_phrase",
+			"First_question",
+			"Second_question",
+			"Last_phrase",
+			"Profile_description",
+            "Registration_date"
+		],
+		"rows": [
+			{
+				"PhraseID": 0,
+				"Opening_phrase": "Yo.",
+				"First_question": "Why wouldn't I be? ",
+				"Second_question": "What description? ",
+				"Last_phrase": "$XX? That's a number. ",
+				"Profile_description": "I am here.",
+				"Registration_date": "2023.04.01"
+			},
+			{
+				"PhraseID": 1,
+				"Opening_phrase": "Is this thing real? ",
+				"First_question": "I saw it. ",
+				"Second_question": "There was a description? ",
+				"Last_phrase": "I can offer $7 and a sandwich. ",
+				"Profile_description": "Don't ask",
+				"Registration_date": "2024.07.13"
+			},
+			{
+				"PhraseID": 2,
+				"Opening_phrase": "First. ",
+				"First_question": "Because. ",
+				"Second_question": "I read the title. ",
+				"Last_phrase": "$XX. Final answer. ",
+				"Profile_description": "Professional buyer. Probably.",
+				"Registration_date": "2022.10.31"
+			},
+			{
+				"PhraseID": 3,
+				"Opening_phrase": "Hello???? ",
+				"First_question": "I wasn't. ",
+				"Second_question": "Probably. ",
+				"Last_phrase": "Sure. Probably. ",
+				"Profile_description": "I like buttons.",
+				"Registration_date": "2025.02.02"
+			},
+			{
+				"PhraseID": 4,
+				"Opening_phrase": "What is this? ",
+				"First_question": "My cat told me to. ",
+				"Second_question": "I looked at the picture. ",
+				"Last_phrase": "I'll give you $XX. ",
+				"Profile_description": "Looking for something.",
+				"Registration_date": "2021.09.09"
+			},
+			{
+				"PhraseID": 5,
+				"Opening_phrase": "I have arrived. ",
+				"First_question": "I have my reasons. ",
+				"Second_question": "Yesn't. ",
+				"Last_phrase": "Can I pay in exposure? ",
+				"Profile_description": "This seemed like a good idea.",
+				"Registration_date": "2026.06.17"
+			},
+			{
+				"PhraseID": 6,
+				"Opening_phrase": "Greetings, seller. ",
+				"First_question": "It was Tuesday. ",
+				"Second_question": "I skimmed it. ",
+				"Last_phrase": "$XX? In this economy? ",
+				"Profile_description": "My profile is none of your business.",
+				"Registration_date": "2024.04.04"
+			},
+			{
+				"PhraseID": 7,
+				"Opening_phrase": "So... this is for sale? ",
+				"First_question": "I like things. ",
+				"Second_question": "Define \"read.\" ",
+				"Last_phrase": "Fine. $XX. Congratulations.",
+				"Profile_description": "100% real human person.",
+				"Registration_date": "2026.08.28"
+			}
+		]
+	}
+}
