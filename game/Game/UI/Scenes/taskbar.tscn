@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://17eeeiwdvcn1"]
 
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="1_g2dc7"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="1_yg766"]
 [ext_resource type="Shader" uid="uid://bb0dq06ibih2x" path="res://Resources/Shaders/hover.gdshader" id="2_inbqr"]
 [ext_resource type="Texture2D" uid="uid://iselxg33sfay" path="res://Assets/Art/UI/StartButtonIcon.png" id="2_mhbco"]
@@ -67,6 +68,7 @@ color = Color(0.6225, 0.70112497, 0.75, 1)
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("1_g2dc7")
 theme_override_font_sizes/font_size = 18
 text = "0000.00.00"
 horizontal_alignment = 1

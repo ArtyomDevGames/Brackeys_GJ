@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cn8xo4wp0huq0" path="res://Game/Main/Scripts/profile.gd" id="1_53oc8"]
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="1_w0aak"]
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="2_kjvjx"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="3_kjvjx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("2_kjvjx")
@@ -78,6 +79,7 @@ offset_left = 11.0
 offset_top = 50.0
 offset_right = 368.0
 offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("3_kjvjx")
 theme_override_font_sizes/font_size = 24
 text = "Registration date: []"
 
@@ -88,6 +90,7 @@ offset_top = 102.0
 offset_right = 603.0
 offset_bottom = 300.0
 theme_override_colors/font_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("3_kjvjx")
 theme_override_font_sizes/font_size = 24
 text = "Description:
 		[]"
@@ -112,6 +115,7 @@ offset_left = 205.0
 offset_top = 157.619
 offset_right = 327.0
 offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("3_kjvjx")
 theme_override_font_sizes/font_size = 40
 text = "Name"
 

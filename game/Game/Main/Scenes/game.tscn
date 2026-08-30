@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ceqpcqdialil7" path="res://Game/UI/Scenes/icon_frame.tscn" id="2_ocass"]
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="3_6gq2s"]
 [ext_resource type="ButtonGroup" uid="uid://cy1ou4ajc8wm8" path="res://Resources/Groups/DecisionGroup.tres" id="3_r5k4a"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="4_r5k4a"]
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="5_a4awf"]
 [ext_resource type="Script" uid="uid://dh5l28gv01phr" path="res://Game/UI/Scripts/custom_button_sure.gd" id="7_wr7mi"]
 
@@ -163,6 +164,7 @@ offset_left = 87.4375
 offset_top = 93.4375
 offset_right = 156.4375
 offset_bottom = 127.4375
+theme_override_fonts/font = ExtResource("4_r5k4a")
 theme_override_font_sizes/font_size = 24
 text = "Name"
 
@@ -289,6 +291,7 @@ offset_left = 84.0
 offset_top = 237.0
 offset_right = 227.0
 offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("4_r5k4a")
 theme_override_font_sizes/font_size = 24
 text = "TEXT"
 horizontal_alignment = 1
@@ -331,6 +334,7 @@ offset_right = -1.777832
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_r5k4a")
 
 [node name="Panel" type="Panel" parent="Decision" unique_id=1921687980]
 layout_mode = 0
@@ -346,6 +350,7 @@ offset_left = 23.0
 offset_top = 53.0
 offset_right = 688.0
 offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("4_r5k4a")
 theme_override_font_sizes/font_size = 32
 text = "YOUR DECISION?"
 horizontal_alignment = 1
