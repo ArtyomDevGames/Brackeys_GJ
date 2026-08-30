@@ -224,6 +224,7 @@ developer_birthday = "11.02"
 developer_description = "Hi! I'm the artist on this project. I'm so glad I was able to contribute to this game. This is my first time working as a game artist, but it was a lot of fun. Thank you very much for completing this game!"
 user_id = 2
 user_name = "Halva"
+user_icon_id = 2
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
