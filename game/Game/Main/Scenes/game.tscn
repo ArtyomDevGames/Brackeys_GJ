@@ -307,9 +307,9 @@ sprite_frames = SubResource("SpriteFrames_5ytc6")
 
 [node name="ItemNameLabel" type="Label" parent="BackPanel/Top" unique_id=1902375974]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 9.0
 offset_top = 237.0
-offset_right = 227.0
+offset_right = 307.0
 offset_bottom = 271.0
 theme_override_fonts/font = ExtResource("4_r5k4a")
 theme_override_font_sizes/font_size = 24
