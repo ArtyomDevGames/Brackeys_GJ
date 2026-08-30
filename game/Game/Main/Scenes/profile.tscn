@@ -95,6 +95,7 @@ theme_override_fonts/font = ExtResource("3_kjvjx")
 theme_override_font_sizes/font_size = 24
 text = "Description:
 		[]"
+autowrap_mode = 3
 
 [node name="Top" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=988145918]
 layout_mode = 0
