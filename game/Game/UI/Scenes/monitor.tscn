@@ -208,6 +208,7 @@ volume_db = 0.5
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1297599931]
 stream = ExtResource("7_ben66")
 volume_db = -10.0
+bus = &"Music"
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

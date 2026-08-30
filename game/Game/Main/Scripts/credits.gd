@@ -17,6 +17,8 @@ func dev_button_pressed() -> void:
 	
 	Profile.set_user_icon(button.user_icon_id)
 	Profile.set_user_name(button.user_name)
+	Profile.set_user_registration(button.developer_birthday)
+	Profile.set_user_description(button.developer_description)
 	Profile.show_profile()
 
 

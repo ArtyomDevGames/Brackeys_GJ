@@ -15,6 +15,7 @@ const dialogue_path = "res://Assets/Database/dialogue_phrases.json"
 const user = preload("res://Game/UI/Scenes/user_button.tscn")
 
 # Элементы товара
+@onready var item_icon: AnimatedSprite2D = $BackPanel/Top/ItemIcon
 @onready var item_name_label: Label = $BackPanel/Top/ItemNameLabel
 @onready var item_price: RichTextLabel = $BackPanel/Top/ItemPrice
 
@@ -50,6 +51,8 @@ var current_user_icon : int
 var current_user_id : int
 
 func _ready() -> void:
+	item_icon.frame = Global.current_level_id
+	
 	Global.users = []
 	$Decision.pressed.connect(hide_decision)
 	
@@ -162,6 +165,10 @@ func button_pressed() -> void:
 		decide.text = Global.user_states[customer["user_state"]]
 		decide.visible = true
 		decide.disabled = true
+		choice_buttons.visible = false
+		text_line.visible = false
+		send.visible = false
+		
 	
 	
 	icon_frame.frame = button.user_icon_id
@@ -300,6 +307,8 @@ func send_pressed():
 		text_line.visible = false
 		send.visible = false
 		decide.visible = true
+		decide.disabled = false
+		decide.text = "DECIDE"
 	else:
 		var current_question = Global.questions[customer["current_question"]]
 	

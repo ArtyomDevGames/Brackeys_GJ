@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://la2kir4tsjhe" path="res://Game/UI/Scripts/level_select_button.gd" id="1_5i4tm"]
 [ext_resource type="Texture2D" uid="uid://37pt3irr0osr" path="res://Assets/Art/UI/Unavailable.png" id="1_ctuxq"]
 [ext_resource type="Texture2D" uid="uid://rdhidjx5lu62" path="res://Assets/Art/UI/ClearSuccess.png" id="2_5i4tm"]
+[ext_resource type="Texture2D" uid="uid://b1l2lv20uc26" path="res://Assets/Art/Items/TeddyBear.png" id="2_lc0cx"]
 [ext_resource type="Texture2D" uid="uid://mq86iwdf5thn" path="res://Assets/Art/UI/ClearFailed.png" id="3_sd57o"]
+[ext_resource type="Texture2D" uid="uid://dxq3mrljpwax2" path="res://Assets/Art/Items/T-Shirt.png" id="3_wpdmx"]
+[ext_resource type="Texture2D" uid="uid://15wontfjdjh6" path="res://Assets/Art/Items/phone.png" id="4_wpdmx"]
 [ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="5_sd57o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
@@ -19,6 +22,21 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lc0cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wpdmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wpdmx")
+}],
+"loop": 1,
+"name": &"items",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -93,9 +111,15 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
 [node name="ItemIcon" type="AnimatedSprite2D" parent="Panel" unique_id=1575802936]
+position = Vector2(111.99999, 156.50002)
+scale = Vector2(0.23750001, 0.27421877)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"items"
+frame = 1
+frame_progress = 0.9184914
 
 [node name="StateIcon" type="AnimatedSprite2D" parent="Panel" unique_id=99723056]
+visible = false
 position = Vector2(116, 102.00001)
 scale = Vector2(0.16748047, 0.16748047)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
@@ -113,10 +137,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HoverPanel" type="Panel" parent="." unique_id=1985106921]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 226.0
-offset_bottom = 276.0
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 225.0
+offset_bottom = 282.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5i4tm")
 

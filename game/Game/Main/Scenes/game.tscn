@@ -7,7 +7,10 @@
 [ext_resource type="ButtonGroup" uid="uid://cy1ou4ajc8wm8" path="res://Resources/Groups/DecisionGroup.tres" id="3_r5k4a"]
 [ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="4_r5k4a"]
 [ext_resource type="Shader" uid="uid://sp1fn1uv7o8" path="res://Resources/Shaders/blur.gdshader" id="5_a4awf"]
+[ext_resource type="Texture2D" uid="uid://b1l2lv20uc26" path="res://Assets/Art/Items/TeddyBear.png" id="7_d28x7"]
 [ext_resource type="Script" uid="uid://dh5l28gv01phr" path="res://Game/UI/Scripts/custom_button_sure.gd" id="7_wr7mi"]
+[ext_resource type="Texture2D" uid="uid://dxq3mrljpwax2" path="res://Assets/Art/Items/T-Shirt.png" id="8_mrlja"]
+[ext_resource type="Texture2D" uid="uid://15wontfjdjh6" path="res://Assets/Art/Items/phone.png" id="9_rn3bo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whohe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -42,6 +45,21 @@ border_width_bottom = 80
 border_color = Color(0.44705883, 0.57254905, 0.6509804, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ytc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_d28x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mrlja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rn3bo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_r5k4a"]
 length = 0.001
@@ -283,6 +301,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5ytc6")
 metadata/_edit_use_anchors_ = true
 
 [node name="ItemIcon" type="AnimatedSprite2D" parent="BackPanel/Top" unique_id=912419358]
+position = Vector2(158, 168.00002)
+scale = Vector2(0.32460934, 0.32460934)
 sprite_frames = SubResource("SpriteFrames_5ytc6")
 
 [node name="ItemNameLabel" type="Label" parent="BackPanel/Top" unique_id=1902375974]
@@ -317,7 +337,7 @@ one_shot = true
 
 [node name="EndDayButton" parent="." unique_id=345452935 instance=ExtResource("3_6gq2s")]
 visible = false
-offset_left = 101.0
+offset_left = 94.0
 offset_top = 104.0
 offset_right = 338.0
 offset_bottom = 146.0

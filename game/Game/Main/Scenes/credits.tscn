@@ -126,6 +126,7 @@ offset_left = 28.0
 offset_top = 61.0
 offset_right = 601.0
 offset_bottom = 310.0
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="UserButton" parent="ScrollContainer/Control/BackPanel/Panel/Developers" unique_id=1240136226 instance=ExtResource("1_yqri4")]
@@ -134,7 +135,9 @@ layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
-developer_role = "GameDesigner, Programmer "
+developer_role = "GameDesigner, Project Manager"
+developer_birthday = "09.03"
+developer_description = ""
 user_name = "ArtyomDev"
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="0" unique_id=727484853]
@@ -173,6 +176,8 @@ toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "GameDesigner, Programmer "
+developer_birthday = "10.11"
+developer_description = "Hi! Thanks for playing our game! It was very fun to make it (not counting the speedrun in just three days of course)"
 user_id = 1
 user_name = "GlazedCheeseGames"
 
@@ -213,6 +218,8 @@ toggle_mode = true
 button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "Artist"
+developer_birthday = "11.02"
+developer_description = "Hi! I'm the artist on this project. I'm so glad I was able to contribute to this game. This is my first time working as a game artist, but it was a lot of fun. Thank you very much for completing this game!"
 user_id = 2
 user_name = "Halva"
 

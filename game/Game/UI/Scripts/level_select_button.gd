@@ -7,16 +7,18 @@ extends Button
 @onready var state_icon: AnimatedSprite2D = $Panel/StateIcon
 @onready var item_name_label: Label = $Panel/ItemNameLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var item_icon: AnimatedSprite2D = $Panel/ItemIcon
 
 func _ready() -> void:
 	set_item_name()
 	set_item_state_icon()
+	set_item_icon()
 
 func set_item_name() -> void:
 	item_name_label.text = item_name
 
 func set_item_icon() -> void:
-	pass
+	item_icon.frame = item_id
 
 func set_item_state_icon() -> void:
 	if item_state_id != 3: 

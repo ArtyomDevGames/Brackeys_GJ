@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dt0fanoiyhj7g" path="res://Game/Main/Scripts/level_select.gd" id="1_drr54"]
 [ext_resource type="ButtonGroup" uid="uid://r328xbw1tc0" path="res://Resources/Groups/LevelSelectGroup.tres" id="2_0utjo"]
 [ext_resource type="PackedScene" uid="uid://ddybls5jx3blt" path="res://Game/UI/Scenes/level_select_button.tscn" id="2_l13d0"]
-[ext_resource type="Texture2D" uid="uid://btsn5bst7lggb" path="res://Assets/Art/UI/Arrow.svg" id="5_d5ugc"]
 [ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="5_mc43n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l13d0"]
@@ -60,43 +59,6 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_drr54"),
 &"ShowLevelSelect": SubResource("Animation_d5ugc")
-}
-
-[sub_resource type="Animation" id="Animation_mc43n"]
-resource_name = "Mooving"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1076.0001, 525.00006), Vector2(1076, 538), Vector2(1076.0001, 525.00006)]
-}
-
-[sub_resource type="Animation" id="Animation_mrnjt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1076.0001, 525.00006)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qm0tv"]
-_data = {
-&"Mooving": SubResource("Animation_mc43n"),
-&"RESET": SubResource("Animation_mrnjt")
 }
 
 [node name="LevelSelect" type="CanvasLayer" unique_id=2052156145]

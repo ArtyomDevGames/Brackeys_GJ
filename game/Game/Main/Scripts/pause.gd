@@ -6,9 +6,17 @@ extends CanvasLayer
 
 @onready var name_label: Label = $Panel/Dark/NameLabel
 
+@onready var master_slider: HSlider = $SoundSetting/MasterSlider
+@onready var music_slider: HSlider = $MusicSetting/MusicSlider
 
 func _ready() -> void:
 	name_label.text = Global.PC_user_name
+	
+	var master_index = AudioServer.get_bus_index("Master")
+	var music_index = AudioServer.get_bus_index("Music")
+	
+	master_slider.value = AudioServer.get_bus_volume_linear(master_index)
+	music_slider.value = AudioServer.get_bus_volume_linear(music_index)
 
 func button_pressed() -> void:
 	var button = group.get_pressed_button()
@@ -52,3 +60,12 @@ func hide_settings():
 
 func update_name():
 	name_label.text = Global.PC_user_name
+
+
+func _on_master_slider_value_changed(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_linear(bus_index, value)
+
+func _on_music_slider_value_changed(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("Music")
+	AudioServer.set_bus_volume_linear(bus_index, value)

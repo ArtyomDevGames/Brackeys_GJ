@@ -84,10 +84,11 @@ theme_override_font_sizes/font_size = 24
 text = "Registration date: []"
 
 [node name="Description" type="Label" parent="ScrollContainer/Control/BackPanel/Panel" unique_id=659578086]
+custom_maximum_size = Vector2(593, -1)
 layout_mode = 0
 offset_left = 15.0
 offset_top = 102.0
-offset_right = 603.0
+offset_right = 608.0
 offset_bottom = 300.0
 theme_override_colors/font_color = Color(0.30980393, 0.41960785, 0.4862745, 1)
 theme_override_fonts/font = ExtResource("3_kjvjx")

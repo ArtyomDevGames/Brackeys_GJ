@@ -176,26 +176,26 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("MusicSetting:position")
+tracks/13/path = NodePath("MusicSetting:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-360, 293)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("MusicSetting:modulate")
+tracks/14/path = NodePath("MusicSetting:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(-360, 293)]
 }
 
 [sub_resource type="Animation" id="Animation_bo4m1"]
@@ -436,26 +436,26 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("MusicSetting:position")
+tracks/10/path = NodePath("MusicSetting:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 1.3, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-360, 293), Vector2(-360, 293), Vector2(0, 293)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("MusicSetting:modulate")
+tracks/11/path = NodePath("MusicSetting:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 1.3, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(-360, 293), Vector2(-360, 293), Vector2(0, 293)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_grgsf"]
@@ -627,12 +627,15 @@ theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 28
 text = "Sound"
 
-[node name="HSlider" type="HSlider" parent="SoundSetting" unique_id=471726670]
+[node name="MasterSlider" type="HSlider" parent="SoundSetting" unique_id=471726670]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 68.0
 offset_right = 326.0
 offset_bottom = 99.0
+max_value = 5.0
+step = 0.1
+value = 0.5
 
 [node name="MusicSetting" type="Control" parent="." unique_id=354736698]
 modulate = Color(1, 1, 1, 0)
@@ -663,12 +666,15 @@ theme_override_fonts/font = ExtResource("7_qgdy3")
 theme_override_font_sizes/font_size = 28
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="MusicSetting" unique_id=899225579]
+[node name="MusicSlider" type="HSlider" parent="MusicSetting" unique_id=899225579]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 68.0
 offset_right = 326.0
 offset_bottom = 99.0
+max_value = 5.0
+step = 0.1
+value = 0.5
 
 [node name="CustomButton5" parent="." unique_id=415535880 instance=ExtResource("4_o4apy")]
 modulate = Color(1, 1, 1, 0)
@@ -699,4 +705,6 @@ text = "BACK"
 [connection signal="pressed" from="CustomButton" to="." method="button_pressed"]
 [connection signal="pressed" from="CustomButton2" to="." method="button_pressed"]
 [connection signal="pressed" from="CustomButton4" to="." method="button_pressed"]
+[connection signal="value_changed" from="SoundSetting/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MusicSetting/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="CustomButton5" to="." method="button_pressed"]
