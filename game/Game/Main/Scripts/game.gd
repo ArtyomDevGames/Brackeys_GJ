@@ -208,7 +208,7 @@ func decision_pressed() -> void:
 			2:
 				Global.who_sold_to = Global.users[current_user_id]["user_type_id"]
 				Global.money_recieved = Global.users[current_user_id]["offered_price"]
-				Global.current_money_amount += Global.money_recieved
+				if Global.who_sold_to != 2: Global.current_money_amount += Global.money_recieved
 				$EndDayButton.visible = true
 			3:
 				Global.total_rejected += 1
