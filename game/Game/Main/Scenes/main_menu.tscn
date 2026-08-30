@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8rndrao5eeai" path="res://Game/UI/Scenes/custom_button.tscn" id="1_nivgr"]
 [ext_resource type="Script" uid="uid://bxqenpnqvt03f" path="res://Game/Main/Scripts/main_menu.gd" id="1_ox7ec"]
 [ext_resource type="ButtonGroup" uid="uid://jkgi6hkugou3" path="res://Resources/Groups/MainMenuGroup.tres" id="2_efosf"]
+[ext_resource type="FontFile" uid="uid://baflds8p02vq5" path="res://Assets/Fonts/Inter-VariableFont_opsz,wght.ttf" id="4_efosf"]
 
 [sub_resource type="Animation" id="Animation_ox7ec"]
 resource_name = "HideBackground"
@@ -151,15 +152,19 @@ button_group = ExtResource("2_efosf")
 button_name = "ExitButton"
 button_text = "Exit"
 
-[node name="Label" type="Label" parent="." unique_id=1828160160]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1799918150]
 modulate = Color(1, 1, 1, 0)
-offset_left = 570.0
-offset_top = 159.0
-offset_right = 708.0
-offset_bottom = 210.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "TITLE"
+offset_left = 569.0
+offset_top = 119.0
+offset_right = 707.0
+offset_bottom = 275.0
+theme_override_colors/default_color = Color(0.155, 0.21358332, 0.25, 1)
+theme_override_fonts/normal_font = ExtResource("4_efosf")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[wave]Not
+For
+Sale"
 horizontal_alignment = 1
 vertical_alignment = 1
 

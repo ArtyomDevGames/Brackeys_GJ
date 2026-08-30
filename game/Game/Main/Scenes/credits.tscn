@@ -137,8 +137,9 @@ button_group = ExtResource("2_17smv")
 script = ExtResource("2_4egx0")
 developer_role = "GameDesigner, Project Manager"
 developer_birthday = "09.03"
-developer_description = ""
+developer_description = "He’s an absolutely awesome guy; without him, the whole project would’ve gone down the drain and there wouldn’t be a game at all (wrote GlazedCheeseGames)"
 user_name = "ArtyomDev"
+user_icon_id = 5
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
@@ -180,6 +181,7 @@ developer_birthday = "10.11"
 developer_description = "Hi! Thanks for playing our game! It was very fun to make it (not counting the speedrun in just three days of course)"
 user_id = 1
 user_name = "GlazedCheeseGames"
+user_icon_id = 6
 
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton2" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
@@ -226,6 +228,7 @@ user_name = "Halva"
 [node name="IconFrame" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="0" unique_id=727484853]
 position = Vector2(42.78124, 43.78124)
 scale = Vector2(0.067529336, 0.067529336)
+frame = 2
 
 [node name="UserNameLabel" parent="ScrollContainer/Control/BackPanel/Panel/Developers/UserButton3" index="1" unique_id=1866972064]
 offset_left = 92.0

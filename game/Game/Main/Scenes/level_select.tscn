@@ -131,21 +131,21 @@ layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_0utjo")
 item_state_id = 3
-item_name = "Item1"
+item_name = "Teddy"
 
 [node name="LevelSelectButton2" parent="ScrollContainer/Control/BackPanel/Panel2/HBoxContainer" unique_id=865650154 instance=ExtResource("2_l13d0")]
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_0utjo")
 item_id = 1
-item_name = "Item2"
+item_name = "Pajama T-shirt"
 
 [node name="LevelSelectButton3" parent="ScrollContainer/Control/BackPanel/Panel2/HBoxContainer" unique_id=881846728 instance=ExtResource("2_l13d0")]
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_0utjo")
 item_id = 2
-item_name = "Item3"
+item_name = "My Phone"
 
 [node name="Panel" type="Panel" parent="ScrollContainer/Control/BackPanel" unique_id=674656292]
 layout_mode = 0

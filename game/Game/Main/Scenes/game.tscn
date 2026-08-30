@@ -337,10 +337,10 @@ one_shot = true
 
 [node name="EndDayButton" parent="." unique_id=345452935 instance=ExtResource("3_6gq2s")]
 visible = false
-offset_left = 94.0
-offset_top = 104.0
-offset_right = 338.0
-offset_bottom = 146.0
+offset_left = 659.0
+offset_top = 158.0
+offset_right = 903.0
+offset_bottom = 214.0
 button_name = "EndDayButton"
 button_text = "End Day"
 

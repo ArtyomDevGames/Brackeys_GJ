@@ -2,7 +2,7 @@ extends Button
 
 @export var user_id : int
 @export var user_name : String
-@export_range(0, 1) var user_icon_id : int
+@export_range(0, 6) var user_icon_id : int
 @export var button_theme : Theme
 
 @onready var icon_frame: AnimatedSprite2D = $IconFrame

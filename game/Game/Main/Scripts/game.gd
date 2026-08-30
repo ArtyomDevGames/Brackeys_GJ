@@ -365,7 +365,7 @@ func hide_decision():
 
 # Пользовательские штуки
 func create_user(id : int) -> void:
-	var icon_id = randi_range(0, 5) # Для выбора иконки
+	var icon_id = randi_range(0, 6) # Для выбора иконки
 	var random_number = randi_range(0, 100) # Для выбора типа
 	var type_id : int
 	var customer_chance = Global.what_user_chance()
